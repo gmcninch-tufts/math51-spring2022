@@ -1,0 +1,28 @@
+
+* posted grades to canvas
+- [X] midterm
+- [ ] final  
+- [X] recitation worksheet 1
+- [X] recitation worksheet 2
+- [X] recitation worksheet 3
+- [X] recitation worksheet 4
+- [X] recitation quiz 1
+- [X] recitation worksheet 6
+- [X] recitation worksheet 7
+- [X] recitation worksheet 8
+- [X] recitation worksheet 9
+- [X] recitation worksheet 10
+- [X] recitation worksheet 11
+- [X] problem set 1
+- [X] problem set 2
+- [X] problem set 3
+- [X] problem set 4
+- [X] problem set 5
+- [X] problem set 6
+- [X] problem set 7
+- [X] problem set 8
+- [X] problem set 9
+- [ ] problem set 10
+- [ ] problem set 11
+- [ ] problem set 12
+

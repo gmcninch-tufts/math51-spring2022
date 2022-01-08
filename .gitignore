@@ -1,0 +1,11 @@
+exams/*.pdf
+exams/*.html
+lectures/*.pdf
+lectures/*.html
+resources/*.pdf
+resources/*.html
+pacing/*.pdf
+pacing/*.html
+pacing/*.md
+problem-sets/*.pdf
+problem-sets/*.html
