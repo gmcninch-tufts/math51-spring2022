@@ -4,7 +4,9 @@ title: |
   Problem Set 7 \
   Variation of parameters & Linear systems of ODEs
 date: due 2021-10-31 at 11:59 PM
-bibliography: /home/george/Prof-Math/assets/math-bibliography.bib
+bibliography: 
+ - /home/george/Prof-Math/assets/math-bibliography.bib
+ - /home/george/Prof-Math/assets/teaching.bib
 csl: assets/chicago-author-date.csl
 header-includes: |
   \usepackage[top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}

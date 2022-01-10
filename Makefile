@@ -1,10 +1,14 @@
 
+CMD=/home/george/.local/bin/course report
+
 PD=pandoc --from markdown 
 
 CSS_DEFAULT="/home/george/Classes/math51-fall2021/assets/default.css"
 CSS_PANDOC="/home/george/Classes/math51-fall2021/assets/pandoc.css"
 
 VPATH = pacing:resources:problem-sets:lectures:exams
+
+targets_md = pacing/*.md
 
 targets_admin = $(patsubst %.md,%.html,$(wildcard pacing/*.md resources/*.md)) \
                 $(patsubst %.md,%.pdf,$(wildcard pacing/*.md resources/*.md)) \
@@ -19,11 +23,10 @@ targets_psets = $(patsubst %.md,%.html,$(wildcard problem-sets/*.md)) \
 targets_exams = $(patsubst %.md,%.html,$(wildcard exams/*.md)) \
                 $(patsubst %.md,%.pdf,$(wildcard exams/*.md))
 
-# targets_pdf:= $(patsubst %.md,%.pdf ,$(wildcard problem-sets/*.md pacing/*.md resources/*.md lectures/*.md)) \
 
+all: md admin lectures psets exams
 
-all: admin lectures psets exams
-
+md: $(targets_md)
 admin: $(targets_admin)
 exams: $(targets_exams)
 lectures: $(targets_lectures)
@@ -34,6 +37,9 @@ MJ=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
 
 RP=.:problem-sets:lectures:exams
 
+pacing/%.md: Math051-AY2022.dhall
+	$(CMD) $<
+
 pacing/%.html resources/%.html: %.md
 	$(PD) $<  --standalone --css=$(CSS_DEFAULT) --mathjax=$(MJ) --to html  -o $@
 
@@ -41,7 +47,9 @@ problem-sets/%.pdf lectures/%.pdf exams/%.pdf: %.md
 	$(PD)  --number-sections --citeproc --self-contained --pdf-engine=xelatex --resource-path=$(RP) -t latex $<  -o $@
 
 pacing/%.pdf resources/%.pdf: %.md
-	$(PD) --self-contained --pdf-engine=wkhtmltopdf --pdf-engine-opt=--enable-local-file-access $<  -o $@
+	$(PD) --self-contained --css=$(CSS_DEFAULT) --pdf-engine=wkhtmltopdf --pdf-engine-opt=--enable-local-file-access $<  -o $@
+
+# 
 
 exams/%.html problem-sets/%.html lectures/%-reg.html resources/%.html: %.md
 	$(PD) $<  --number-sections --citeproc  --standalone --css=$(CSS_DEFAULT) --mathjax=$(MJ) --to html  -o $@
