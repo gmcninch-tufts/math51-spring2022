@@ -1,4 +1,4 @@
--- Time-stamp: <2022-01-09 Sun 22:20 EST - george@valhalla>
+-- Time-stamp: <2022-01-10 Mon 15:05 EST - george@podkayne>
 let Dow = < Mon | Tue | Wed | Thu | Fri | Sat | Sun >
 
 let concat = https://prelude.dhall-lang.org/List/concat
@@ -24,20 +24,18 @@ let ComponentSpec =
       >
 
 let assignments =
-      [ "PS1 - differential equations via integration (§1.1)"
-      , "PS2 - Integration & separation of variables; Linear Differential Equations (§ 1.2, 1.3)"
-      , "PS3 - Existence & Uniqueness; Graphing Solutions (§ 1.3, 1.6, 1.7)"
-      , "PS4 - Linear ODEs, Cramer’s Rule & the Wronskian (§ 2.2, 2.3)"
-      , "PS5 - Linear Independence, const coeff linear ODES (Real Roots) (§ 2.4, 2.5)"
-      , "(no assignment collected because of the midterm)"
-      , "PS6 - const coeff linear ODES (Complex Roots, undetermined coefficients) (§ 2.6, 2.7)"
-      , "PS7 - Variation of Parameters, Linear Systems (§ 2.8, 3.2)"
-      , "PS8 - Linear Systems, Linear Independence (§ 3.3, 3.4)"
-      , "PS9 - Eigenvalues, Eigenvectors, Row Reduction (§ 3.5, 3.6)"
-      , "PS10 - Homogeneous Linear Systems: Real and Complex Roots (§ 3.7, 3.8)"
-      , "no homework collected this week"
-      , "PS11 - Multiple Roots, Nonhomogeneous Systems (§ 3.9, 3.11)"
-      , "PS12 - Laplace Transform (§ 5.2, 5.3)"
+      [ "PS01: Differential equations via integration (§ 1.1)"
+      , "PS02: separation of variables & linear ODEs (§ 1.2, 1.3)"
+      , "PS03: Exist & unique; linear ODEs; Wronskian (§ 1.6, 1.7, 2.2, 2.3)"
+      , "PS04: Linear Independence, const coeff linear ODES (Real Roots) (§ 2.4, 2.5)"
+      , "PS05: const coeff linear ODES (Complex Roots) (§ 2.6)"
+      , "PS06: Non-homogeneous ODES; linear systems & independence (§ 2.7, 2.8, 3.2, 3.3, 3.4)"
+      , "PS07: Eigenvalues, eigenvectors; row reduction (§ 3.5, 3.6)"
+      , "PS08: Homogeneous Linear Systems (real and complex roots) (§ 3.7, 3.8)"
+      , "PS09: Homogeneous Linear Systems (double and multiple roots) (§ 3.9, 3.10)"
+      , "PS10: Non-homogeneous systems (§ 3.11)"
+      , "PS11: Laplace Transform \$\\mathscr{L}\$; \$\\mathscr{L}\$ and initial value problems (§ 5.2, 5.3)"
+      , "PS12: properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; functions defined in pieces; convolution (§ 5.4, 5.5, 5.6, 5.7)"
       ]
 
 let homework =
