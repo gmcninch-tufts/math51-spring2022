@@ -23,7 +23,8 @@ header-includes: |
  - [Loring Tu](https://math.tufts.edu/people/faculty/loring-tu)
    <<loring.tu@tufts.edu>>
   
- - *[Teaching Assistant]* <<ta@tufts.edu>>
+ - [Chandler Smith](https://math.tufts.edu/people/graduate-students) 
+   <<chandler.smith@tufts.edu>>
 
 ## Course text
 

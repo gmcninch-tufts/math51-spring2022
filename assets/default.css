@@ -6,23 +6,23 @@ html {
 body { /* margin-left: 50px; */
        width: 90%;
        margin: 5%;
-       color: navy;
+       color: black;
      }
 
 .title, .author, .date { text-align: center; }
 
-table th + th { border-left:2px solid navy;}
-th { border-bottom: 2px solid navy;
+table th + th { border-left:2px solid black;}
+th { border-bottom: 2px solid black;
      border-collapse: collapse; }
 
-table td + td { border-left:1px solid navy;}
+table td + td { border-left:1px solid black;}
 
-td { border-bottom:1px solid navy;
+td { border-bottom:1px solid black;
      border-collapse: collapse; }
 
 .title-slide h1 { text-align: center;
 		  font-family: Palatino;
-		  border-bottom: 1px solid navy;}
+		  border-bottom: 1px solid black;}
 
 .image-container {
     text-align: center;
@@ -33,7 +33,7 @@ td { border-bottom:1px solid navy;
     color: darkred;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid navy;}
+    border: 1px solid black;}
 
 .comment {
     padding: 5px 5px 5px 5px;

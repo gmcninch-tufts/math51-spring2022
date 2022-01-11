@@ -1,4 +1,4 @@
--- Time-stamp: <2022-01-10 Mon 15:05 EST - george@podkayne>
+-- Time-stamp: <2022-01-11 Tue 13:46 EST - george@valhalla>
 let Dow = < Mon | Tue | Wed | Thu | Fri | Sat | Sun >
 
 let concat = https://prelude.dhall-lang.org/List/concat
@@ -25,17 +25,17 @@ let ComponentSpec =
 
 let assignments =
       [ "PS01: Differential equations via integration (§ 1.1)"
-      , "PS02: separation of variables & linear ODEs (§ 1.2, 1.3)"
-      , "PS03: Exist & unique; linear ODEs; Wronskian (§ 1.6, 1.7, 2.2, 2.3)"
-      , "PS04: Linear Independence, const coeff linear ODES (Real Roots) (§ 2.4, 2.5)"
-      , "PS05: const coeff linear ODES (Complex Roots) (§ 2.6)"
-      , "PS06: Non-homogeneous ODES; linear systems & independence (§ 2.7, 2.8, 3.2, 3.3, 3.4)"
+      , "PS02: Separation of vars; 1st order linear ODEs (§ 1.2, 1.3)"
+      , "PS03: Exist/unique; linear ODEs; Wronskian (§ 1.6, 1.7, 2.2, 2.3)"
+      , "PS04: Linear Indep; Const coeff linear ODEs (real roots) (§ 2.4, 2.5)"
+      , "PS05: Const coeff linear ODEs (complex roots) (§ 2.6)"
+      , "PS06: Non-homog ODES; lin sys & indep (§ 2.7, 2.8, 3.2, 3.3, 3.4)"
       , "PS07: Eigenvalues, eigenvectors; row reduction (§ 3.5, 3.6)"
-      , "PS08: Homogeneous Linear Systems (real and complex roots) (§ 3.7, 3.8)"
-      , "PS09: Homogeneous Linear Systems (double and multiple roots) (§ 3.9, 3.10)"
+      , "PS08: Homog linear sys (real and complex roots) (§ 3.7, 3.8)"
+      , "PS09: Homog linear sys (double and multiple roots) (§ 3.9, 3.10)"
       , "PS10: Non-homogeneous systems (§ 3.11)"
-      , "PS11: Laplace Transform \$\\mathscr{L}\$; \$\\mathscr{L}\$ and initial value problems (§ 5.2, 5.3)"
-      , "PS12: properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; functions defined in pieces; convolution (§ 5.4, 5.5, 5.6, 5.7)"
+      , "PS11: Laplace transform \$\\mathscr{L}\$; \$\\mathscr{L}\$ & initial value problems (§ 5.2, 5.3)"
+      , "PS12: properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; piecewise functions; convolution (§ 5.4, 5.5, 5.6, 5.7)"
       ]
 
 let homework =
@@ -53,64 +53,64 @@ let homework =
 
 let lectureTopics =
       [ "Differential equations via integration (§ 1.1)"
-      , "Separation of variables. (§ 1.2)"
+      , "Separation of variables (§ 1.2)"
       , "Linear Differential Equations (§ 1.3)"
       , "Existence & Uniqueness; Graphing Solutions (§ 1.6, 1.7)"
       , "Linear ODEs; Cramer’s Rule and the Wronskian (§ 2.2, 2.3)"
       , "Linear Independence (§ 2.4)"
-      , "const coeff linear ODES (Real Roots) (§ 2.5)"
+      , "Const coeff linear ODEs (real roots) (§ 2.5)"
       , "(no lecture; midterm 1)"
-      , "const coeff linear ODES (Complex Roots) (§ 2.6)"
-      , "inhomogeneous linear ODEs via undetermined coefficients (§ 2.7)"
-      , "inhomogeneous linear ODEs via Variation of Parameters (§ 2.8)"
+      , "Const coeff linear ODEs (complex roots) (§ 2.6)"
+      , "Non-homog linear ODEs via undetermined coeffs (§ 2.7)"
+      , "Non-homog linear ODEs via variation of parameters (§ 2.8)"
       , "Linear Systems (§ 3.2, 3.3)"
-      , "Linear Systems and Linear Independence (§ 3.4)"
+      , "Linear systems and independence (§ 3.4)"
       , "Eigenvalues, Eigenvectors (§ 3.5)"
       , "Row Reduction (§ 3.6)"
-      , "Homogeneous Linear Systems (real roots) (§ 3.7)"
-      , "Homogeneous Linear Systems (complex roots) (§ 3.8)"
-      , "Homogeneous Linear Systems (double roots) (§ 3.9)"
-      , "Homogeneous Linear Systems (higher multiplicity roots) (§ 3.10)"
+      , "Homogeneous linear systems (real roots) (§ 3.7)"
+      , "Homogeneous linear systems (complex roots) (§ 3.8)"
+      , "Homogeneous linear systems (double roots) (§ 3.9)"
+      , "Homogeneous linear systems (higher multiplicity roots) (§ 3.10)"
       , "(no lecture; midterm 2)"
-      , "Nonhomogeneous Systems (§ 3.11)"
-      , "The Laplace Transform \$\\mathscr{L}\$ (§ 5.2)"
+      , "Non-homogeneous Systems (§ 3.11)"
+      , "The Laplace transform \$\\mathscr{L}\$ (§ 5.2)"
       , "\$\\mathscr{L}\$ and initial value problems (§ 5.3)"
       , "Properties of \$\\mathscr{L}\$ and \$\\mathscr{L}^{-1}\$ (§ 5.4)"
-      , "Functions defined in pieces (§ 5.5)"
+      , "Piecewise functions (§ 5.5)"
       , "Convolution (§ 5.6)"
       , "*Course review*"
       ]
 
 let recitationThuTopics =
-      [ "Differential equations via integration (§ 1.1)"
-      , "separation of variables & linear ODEs (§ 1.2, 1.3)"
+      [ "Introduction; Differential equations via integration (§ 1.1)"
+      , "Separation of variables; linear ODEs (§ 1.2, 1.3)"
       , "Exist & unique; linear ODEs; Wronskian (§ 1.6, 1.7, 2.2, 2.3)"
-      , "Linear Independence, const coeff linear ODES (Real Roots) (§ 2.4, 2.5)"
-      , "const coeff linear ODES (Complex Roots) (§ 2.6)"
-      , "Non-homogeneous ODES; linear systems & independence (§ 2.7, 2.8, 3.2, 3.3, 3.4)"
+      , "Linear Independence, const coeff linear ODEs (real roots) (§ 2.4, 2.5)"
+      , "Const coeff linear ODEs (complex roots) (§ 2.6)"
+      , "Non-homogeneous ODEs; linear sys & indep (§ 2.7, 2.8, 3.2, 3.3, 3.4)"
       , "Eigenvalues, eigenvectors; row reduction (§ 3.5, 3.6)"
       , "Homogeneous Linear Systems (real and complex roots) (§ 3.7, 3.8)"
       , "Homogeneous Linear Systems (double and multiple roots) (§ 3.9, 3.10)"
       , "Non-homogeneous systems (§ 3.11)"
-      , "Laplace Transform \$\\mathscr{L}\$; \$\\mathscr{L}\$ and initial value problems (§ 5.2, 5.3)"
+      , "Laplace transform \$\\mathscr{L}\$; \$\\mathscr{L}\$ and initial value problems (§ 5.2, 5.3)"
       , "**[no recitation]**"
-      , "properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; functions defined in pieces; convolution (§ 5.4, 5.5, 5.6, 5.7)"
+      , "Properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; piecewise functions; convolution (§ 5.4, 5.5, 5.6, 5.7)"
       ]
 
 let recitationFriTopics =
-      [ "Differential equations via integration (§ 1.1)"
-      , "separation of variables & linear ODEs (§ 1.2, 1.3)"
+      [ "Introduction; Differential equations via integration (§ 1.1)"
+      , "Separation of variables; linear ODEs (§ 1.2, 1.3)"
       , "Exist & unique; linear ODEs; Wronskian (§ 1.6, 1.7, 2.2, 2.3)"
-      , "Linear Independence, const coeff linear ODES (Real Roots) (§ 2.4, 2.5)"
-      , "const coeff linear ODES (Complex Roots) (§ 2.6)"
+      , "Linear Independence, const coeff linear ODEs (real roots) (§ 2.4, 2.5)"
+      , "Const coeff linear ODEs (complex roots) (§ 2.6)"
       , "**[no recitation]**"
-      , "Non-homogeneous ODES; linear systems & independence (§ 2.7, 2.8, 3.2, 3.3, 3.4)"
+      , "Non-homogeneous ODEs; linear sys & indep (§ 2.7, 2.8, 3.2, 3.3, 3.4)"
       , "Eigenvalues, eigenvectors; row reduction (§ 3.5, 3.6)"
       , "Homogeneous Linear Systems (real and complex roots) (§ 3.7, 3.8)"
       , "Homogeneous Linear Systems (double and multiple roots) (§ 3.9, 3.10)"
       , "Non-homogeneous systems (§ 3.11)"
-      , "Laplace Transform \$\\mathscr{L}\$ and initial value problems (§ 5.2, 5.3)"
-      , "properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; functions defined in pieces; convolution (§ 5.4, 5.5, 5.6, 5.7)"
+      , "Laplace transform \$\\mathscr{L}\$ and initial value problems (§ 5.2, 5.3)"
+      , "Properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; piecewise functions; convolution (§ 5.4, 5.5, 5.6, 5.7)"
       ]
 
 let exams =
@@ -153,7 +153,7 @@ let recitations =
               }
             ]
           , topics = recitationThuTopics
-          , instructor = "Hasselblatt, McNinch, Tu, [TA]"
+          , instructor = "Hasselblatt, McNinch, Tu, Chandler Smith"
           }
       , ComponentSpec.Recitation
           { compDesc = "Friday Recitation"
@@ -164,7 +164,7 @@ let recitations =
               }
             ]
           , topics = recitationFriTopics
-          , instructor = "Hasselblatt, McNinch, Tu, [TA]"
+          , instructor = "Hasselblatt, McNinch, Tu, Chandler Smith"
           }
       ]
 
@@ -174,10 +174,10 @@ in  [ { courseAY = "AY2021-2022"
       , sections = [ "01" ]
       , courseDescription = "Differential Equations"
       , chair = "George McNinch"
-      , instructors = [ "Boris Hasselblatt", "Loring Tu", "[TA]" ]
+      , instructors = [ "Boris Hasselblatt", "Loring Tu", "Chandler Smith" ]
       , target =
         { dir = "/home/george/Classes/math51-spring2022/pacing"
-        , base = "Math-051--2022-Spring"
+        , base = "Math51"
         }
       , courseComponents =
           concat
