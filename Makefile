@@ -8,8 +8,8 @@ CSS_PANDOC="/home/george/Classes/math51-spring2022/assets/pandoc.css"
 
 VPATH = .:pacing:resources:problem-sets:lectures:exams
 
-targets_resources = $(patsubst %.md,%.html,$(wildcard resources/*.md)) \
-                    $(patsubst %.md,%.pdf,$(wildcard resources/*.md)) \
+resources = $(patsubst %.md,%.html,$(wildcard resources/*.md)) \
+            $(patsubst %.md,%.pdf,$(wildcard resources/*.md)) \
 
 pacing_md   = $(wildcard pacing/*.md)
 
@@ -40,22 +40,20 @@ MJ=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js
 
 RP=.:problem-sets:lectures:exams
 
-
 pacing/%.md: Math051-AY2022.dhall
-	$(CMD) $<
+	$(CMD) $<	
 
 pacing/%.html resources/%.html: %.md
 	$(PD) $<  --standalone --css=$(CSS_DEFAULT) --mathjax=$(MJ) --to html  -o $@
 
 pacing/%.pdf resources/%.pdf: %.md
-	$(PD) --self-contained --css=$(CSS_DEFAULT) --pdf-engine=wkhtmltopdf --pdf-engine-opt=--enable-local-file-access $<  -o $@
+	$(PD) --self-contained --pdf-engine-opt=--enable-local-file-access $<  -o $@
+#	$(PD) --self-contained --css=$(CSS_DEFAULT) --pdf-engine=wkhtmltopdf --pdf-engine-opt=--enable-local-file-access $<  -o $@
+
 
 
 problem-sets/%.pdf lectures/%.pdf exams/%.pdf: %.md
 	$(PD)  --number-sections --citeproc --self-contained --pdf-engine=xelatex --resource-path=$(RP) -t latex $<  -o $@
-
-
-# 
 
 exams/%.html problem-sets/%.html lectures/%-reg.html resources/%.html: %.md
 	$(PD) $<  --number-sections --citeproc  --standalone --css=$(CSS_DEFAULT) --mathjax=$(MJ) --to html  -o $@
@@ -74,9 +72,11 @@ clean_pacing:
 	-rm -f $(pacing_html) $(pacing_pdf)
 
 clean_psets:
-	-rm -f $(targets_psets)
+	-rm -f $(psets)
 
 clean_lectures:
-	-rm -f $(targets_lectures)
+	-rm -f $(lectures)
 
+clean_exams:
+	-rm -f $(exams)
 
