@@ -27,7 +27,7 @@ exams = $(patsubst %.md,%.html,$(wildcard exams/*.md)) \
         $(patsubst %.md,%.pdf,$(wildcard exams/*.md))
 
 
-all: md pacing resources lectures psets exams
+all: pacing resources lectures psets exams
 
 pacing: $(pacing_md) $(pacing_html) $(pacing_pdf)
 resources: $(resources)
