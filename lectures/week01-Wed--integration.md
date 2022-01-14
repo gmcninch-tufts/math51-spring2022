@@ -17,13 +17,13 @@ header-includes: |
 
 ::: incremental
 
-- **Glib answer**: “an equation involving an unknown function $x$ and
+- **Glib answer**: “an equation involving an *unknown function* $x=x(t)$ and
   its derivatives.”
 
 - Let us set up some *standard notations*.
 
 - $x$ is to be viewed as a function of the *independent variable*
-  $t$. To express this, we might write $x = x(t)$.
+  $t$. To express this, we sometimes write $x = x(t)$.
 
 - We then write $x' = \dfrac{dx}{dt}$, or more precisely, $x'(t) =
   \dfrac{dx}{dt}(t).$
@@ -46,7 +46,7 @@ header-includes: |
 - Then an *ordinary differential equation* is an equation involving
   the expressions $$t,x,x',x'',\cdots,x^{(n)}, \cdots.$$
 
-- Example:  $t \cdot x^{(3)}  + \dfrac{x \cdot x^{(2)}}{t} =e^t$
+- Example:  $(t^5 + 1) \cdot x^{(3)}  + \dfrac{x^2 \cdot x^{(2)}}{t} =e^t$
 
 - The equation is to be interpreted as an equality of *functions of
   $t$*. Thus, a function $x = \phi(t)$ is said to be a **solution** to
@@ -128,6 +128,32 @@ learning to solve a simple type of ordinary differential equation.
 
 :::
 
+--------
+
+
+- writing all of the integrals at once is perhaps a bit overwhelming,
+  so we can also think about the solution as follows:
+  
+  Since $x^{(3)} = 1$, we have
+  
+  $$x^{(2)} = \int x^{(3)}dt = \int 1 dt = t + C$$
+
+
+. . .
+  
+  and then
+  
+  $$x^{(1)} = \int x^{(2)}dt = \int (t+C) dt = \dfrac{t^2}{2} + Ct + B$$
+
+. . .
+ 
+  and finally
+  
+  $$x = \int x^{(1)} dt = \int \left(\dfrac{t^2}{2} + Ct + B\right)dt
+  = \dfrac{t^3}{6} + \dfrac{C}{2}t^2 + B t + A$$
+
+
+
 ------------
 
 - we will ultimately be interested in finding the **general solution** 
@@ -144,6 +170,31 @@ learning to solve a simple type of ordinary differential equation.
 
 - in other words, given *any* solution $x = \phi(t)$ to the o.d.e.,
   you can find values of the constants $A,B,C$ for which $\phi$ is given by $(\clubsuit)$.
+
+# Acceleration due to gravity
+
+  Consider an object moving vertically. Recall that near the Earth's
+  surface, acceleration due to gravity is given by $g=-9.8
+  \operatorname{m}/\operatorname{sec}^2$
+  
+  So if $x = x(t)$ is the vertical position of the object, then $x'' = -9.8$.
+  
+  . . .
+  
+  Then we see that
+  $$x' = \int x'' dt = -9.8 \int dt = -9.8t + A$$
+  
+  and that
+  $$x = \int x' dt = \int (-9.8t + A)dt = \dfrac{-9.8}{2}t^2 + At + B.$$
+  
+  Since $x'(0) = A$, the constant $A = v_0$ represents the *initial
+  velocity* of the object.
+  
+  And since $x(0) = B$, the constant $B = x_0$ represents the *initial
+  position* of the object.
+  
+  $$x = \dfrac{-9.8}{2}t^2 + v_0t + x_0.$$
+
 
 # Newton’s second law
 
@@ -168,11 +219,20 @@ In physics, [Newton's *second law of motion*](https://en.wikipedia.org/wiki/Newt
 
 -----------
 
+::: incremental
+
 - important idea here: 
 
-> "...in many physical situations, the relation between rates of
->  change of observable quantities is simpler than the relation
->  between the quantities themselves." 
+  > "...in many physical situations, the relation between rates of
+  >  change of observable quantities is simpler than the relation
+  >  between the quantities themselves." 
+
+- The force due to gravity on an object of mass $m$
+  $\operatorname{kg}$ is just $F = mg = -9.8m \operatorname{kg} \cdot
+  \operatorname{m}/\operatorname{sec}^2$.
+  
+
+:::
 
 # Population models
 
@@ -202,17 +262,23 @@ model](https://en.wikipedia.org/wiki/Malthusian_growth_model).
 
 ----------
 
-- it turns out (we'll justify this assertion later) that the general solution
-  to 
-  $$(\diamondsuit) \quad \dfrac{dx}{dt} = \lambda x$$
-  is given by
-  $$x = ke^{\lambda t}.$$
-  where $k$ is an arbitrary constant.
-  
 ::: incremental
 
-- observe in this case that the constant $k = x(0)$ represents the
-  population at time $t=0$.
+- the general solution to $$(\diamondsuit) \quad \dfrac{dx}{dt} =
+  \lambda x$$ is given by $$x = ke^{\lambda t}.$$ where $k$ is an
+  arbitrary constant.
+ 
+- Well, at least we can argue that $x = ke^{\lambda t}$ is a solution
+  to $(\diamondsuit)$ for each $k$; indeed, we have:
+  
+  $$\dfrac{d}{dt}[x] = \dfrac{d}{dt}\left [ ke^{\lambda t}\right ] =
+  \lambda k e^{\lambda t} = \lambda x.$$  
+
+- we'll see *later on* that $x = ke^{\lambda t}$ is the general
+  solution (i.e. that there are no further solutions).
+
+- observe that the constant $k = x(0)$ represents the population at
+  time $t=0$.
 
 :::
 
@@ -229,28 +295,54 @@ $x^{(n)}$ of $x$.
   the general solution $x = ke^{\lambda t}$ involves one arbitrary
   constant, namely $k$. 
 
+:::
+
+------
+
 - the o.d.e. $x'' = -x$ is *second order*.
 
-  You know two solutions to this o.d.e.! Namely, $x = \cos(t)$ and $x
-  = \sin(t)$.
-  
-  Indeed, $\dfrac{d^2}{dt^2}[ \cos(t) ] = - \cos(t)$ 
-  and  $\dfrac{d^2}{dt^2}[ \sin(t) ] = - \sin(t)$ 
-  
-  More generally, for any constants $A,B$, 
-  
-  $$\dfrac{d^2}{dt^2}[ A \sin(t) + B \cos(t) ] = - (A \sin(t) + B \cos(t))$$
-  
-  so $x(t) = A \sin(t) + B \cos(t)$ is a solution to $x'' = -x$ for all
-  constants $A,B$.
-  
-  In fact, we'll see later that the *general solution* to $x'' = -x$ is given by 
-  $$x = A \sin(t) + B \cos(t).$$
+::: incremental
 
-  In particular, the general solution involves two arbitrary
-  constants.
+  - You know two solutions to this o.d.e.! Namely, $x = \cos(t)$ and $x
+    = \sin(t)$.
+
+  - Indeed, $\dfrac{d^2}{dt^2}[ \cos(t) ] = - \cos(t)$ 
+    and  $\dfrac{d^2}{dt^2}[ \sin(t) ] = - \sin(t)$ 
+  
+  - More generally, for any constants $A,B$, 
+  
+    $$\dfrac{d^2}{dt^2}[ A \sin(t) + B \cos(t) ] = - (A \sin(t) + B \cos(t))$$
+  
+    so $x(t) = A \sin(t) + B \cos(t)$ is a solution to $x'' = -x$ for all
+    constants $A,B$.
+  
+
+  - In fact, we'll see later that the *general solution* to $x'' = -x$ is given by 
+    $$x = A \sin(t) + B \cos(t).$$
+
+  - In particular, the general solution involves two arbitrary
+    constants.
 
 :::
+
+--------
+
+- The ODE $x'' = -9.8$ describing the position function of an object
+  undergoing acceleration due to gravity is second order
+
+::: incremental
+
+  - we argued that its general solution was
+  
+    $$x = \dfrac{-9.8}{2} t^2 + v_0t + x_0$$.
+
+  - thus the general solution depends on the two constants
+    $v_0$ (initial velocity) and $x_0$ (initial position).
+
+
+:::
+
+
 
 --------
 
