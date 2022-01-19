@@ -47,7 +47,7 @@ pacing/%.html resources/%.html: %.md
 	$(PD) $<  --standalone --css=$(CSS_DEFAULT) --mathjax=$(MJ) --to html  -o $@
 
 pacing/%.pdf resources/%.pdf: %.md
-	$(PD) --self-contained --pdf-engine-opt=--enable-local-file-access $<  -o $@
+	$(PD) --self-contained  $<  -o $@
 #	$(PD) --self-contained --css=$(CSS_DEFAULT) --pdf-engine=wkhtmltopdf --pdf-engine-opt=--enable-local-file-access $<  -o $@
 
 
@@ -63,7 +63,7 @@ lectures/%-slides.html: %.md
 
 .PHONY = clean
 
-clean: clean_pdf clean_admin clean_psets clean_lectures
+clean: clean_pdf clean_resources clean_psets clean_lectures
 
 clean_pdf:
 	-rm -f $(targets_pdf)
@@ -80,3 +80,5 @@ clean_lectures:
 clean_exams:
 	-rm -f $(exams)
 
+clean_resources:
+	-rm -f $(resources)

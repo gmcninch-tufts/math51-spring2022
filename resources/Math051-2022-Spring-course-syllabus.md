@@ -59,9 +59,9 @@ from **homework**, **recitation work**, and **exams**.
   semester your total score will be determined as the average of your
   homework scores.
 
-  Late problem sets can be submitted for an additional 2 days
-  following the posted due date, subject to a 10% point reduction. Of
-  course, if there are extenuating circumstances, *let us know*.
+  Late problem sets can be submitted by the end of the next day
+  following the posted due date, subject to a 10% point reduction. *If
+  there are extenuating circumstances, let us know*.
 
   Please see the `Course Resources` documents for more information on
   [gradescope].

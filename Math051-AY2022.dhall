@@ -1,4 +1,4 @@
--- Time-stamp: <2022-01-11 Tue 20:07 EST - george@valhalla>
+-- Time-stamp: <2022-01-18 Tue 08:59 EST - george@podkayne>
 let Dow = < Mon | Tue | Wed | Thu | Fri | Sat | Sun >
 
 let concat = https://prelude.dhall-lang.org/List/concat
@@ -44,7 +44,7 @@ let homework =
           { compDesc = "Homework collection"
           , sched =
             [ { sd = DD.DowA Dow.Sun
-              , stime = "11:59 PM"
+              , stime = "05:00 PM"
               , location = "gradescope"
               }
             ]

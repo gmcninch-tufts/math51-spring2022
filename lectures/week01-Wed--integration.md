@@ -13,6 +13,9 @@ header-includes: |
   \usepackage{palatino,mathpazo}
 ---
 
+This lecture follows [@gutermanNitecki, sec. 1.1].
+
+
 # What is a differential equation?
 
 ::: incremental
@@ -362,3 +365,7 @@ $x^{(n)}$ of $x$.
 
 :::
 
+## Bibliography {.unnumbered}
+
+::: {.refs}
+:::
