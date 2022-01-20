@@ -109,9 +109,9 @@ from **homework**, **recitation work**, and **exams**.
 
 ## Resources and policies
 
-Please [follow this
-link](https://tufts.box.com/s/f0lkvuqvlz9m2yez0hsz96f06fpus966) to
-find information on
+Please follow this link
+[https://tufts.box.com/s/f0lkvuqvlz9m2yez0hsz96f06fpus966](https://tufts.box.com/s/f0lkvuqvlz9m2yez0hsz96f06fpus966)
+to find information on
 
 - In-person classroom health and safety policy at Tufts
 - Mental Health Support
