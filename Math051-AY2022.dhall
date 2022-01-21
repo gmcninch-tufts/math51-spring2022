@@ -1,4 +1,4 @@
--- Time-stamp: <2022-01-18 Tue 08:59 EST - george@podkayne>
+-- Time-stamp: <2022-01-21 Fri 16:12 EST - george@podkayne>
 let Dow = < Mon | Tue | Wed | Thu | Fri | Sat | Sun >
 
 let concat = https://prelude.dhall-lang.org/List/concat
@@ -21,6 +21,8 @@ let ComponentSpec =
       | Assignment :
           { sched : ComponentSched, compDesc : Text, assignments : List Text }
       | Exam : { sched : ComponentSched, compDesc : Text }
+      | TaskRep : { desc : Text, repDeadline : Dow, taskStaffList : List Text }
+      | TaskSin : { desc : Text, deadline : Text, taskStaff : Text }
       >
 
 let assignments =
@@ -39,18 +41,77 @@ let assignments =
       , "PS12: Properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; piecewise functions; convolution (§ 5.4, 5.5, 5.6)"
       ]
 
-let homework =
-        ComponentSpec.Assignment
-          { compDesc = "Homework collection"
-          , sched =
-            [ { sd = DD.DowA Dow.Sun
-              , stime = "05:00 PM"
-              , location = "gradescope"
-              }
-            ]
-          , assignments
+let problemSetStaff =
+      [ "PS01 - George McNinch"
+      , "PS02 - Loring Tu"
+      , "PS03 - Boris Hassleblatt"
+      , "PS04 - George McNinch"
+      , "PS05 - Loring Tu"
+      , "PS06 - Boris Hasselblatt"
+      , "PS07 - George McNinch"
+      , "PS08 - Loring Tu"
+      , "PS09 - Boris Hasselblatt"
+      , "PS10 - George McNinch"
+      , "PS11 - Loring Tu"
+      , ""
+      , "PS12 - Boris Hasselblatt"
+      ]
+
+let recWorksheetStaff =
+      [ "rec01 - Loring Tu"
+      , "rec02 - Boris Hasselblatt"
+      , "rec03 - Chandler Smith"
+      , "rec04 - George McNinch"
+      , "rec05 - Loring Tu"
+      , "rec06 - Boris Hasselblatt"
+      , "rec07 - Chandler Smith"
+      , "rec08 - George McNinch"
+      , "rec09 - Loring Tu"
+      , "rec10 - Boris Hasselblatt"
+      , "rec11 - Chandler Smith"
+      , ""
+      , "rec12 - George McNinch"
+      ]
+
+let tasks =
+      [ ComponentSpec.TaskRep
+          { desc = "Write problem sets and solutions"
+          , repDeadline = Dow.Sun
+          , taskStaffList = problemSetStaff
           }
-      : ComponentSpec
+      , ComponentSpec.TaskRep
+          { desc = "Write worksheet / suggest content for recitation"
+          , repDeadline = Dow.Tue
+          , taskStaffList = recWorksheetStaff
+          }
+      , ComponentSpec.TaskSin
+          { desc = "Write and vet Midterm 1"
+          , deadline = "2022-02-02"
+          , taskStaff = "McNinch, Tu, Smith (as beta-tester)"
+          }
+      , ComponentSpec.TaskSin
+          { desc = "Write and vet Midterm 2"
+          , deadline = "2022-04-04"
+          , taskStaff = "Tu, Hasselblatt, Smith (as beta-tester)"
+          }
+      , ComponentSpec.TaskSin
+          { desc = "Write and vet Final Exam"
+          , deadline = "2022-04-27"
+          , taskStaff = "McNinch, Hasselblatt, Smith (as beta-tester)"
+          }
+      ]
+
+let homework =
+      ComponentSpec.Assignment
+        { compDesc = "Homework collection"
+        , sched =
+          [ { sd = DD.DowA Dow.Sun
+            , stime = "05:00 PM"
+            , location = "gradescope"
+            }
+          ]
+        , assignments
+        }
 
 let lectureTopics =
       [ "Differential equations via integration (§ 1.1)"
@@ -201,6 +262,7 @@ in  [ { courseAY = "AY2021-2022"
               ]
             , exams
             , recitations
+            , tasks
             ]
       }
     ]
