@@ -1,4 +1,4 @@
--- Time-stamp: <2022-01-21 Fri 16:12 EST - george@podkayne>
+-- Time-stamp: <2022-01-22 Sat 15:18 EST - george@podkayne>
 let Dow = < Mon | Tue | Wed | Thu | Fri | Sat | Sun >
 
 let concat = https://prelude.dhall-lang.org/List/concat
@@ -21,8 +21,12 @@ let ComponentSpec =
       | Assignment :
           { sched : ComponentSched, compDesc : Text, assignments : List Text }
       | Exam : { sched : ComponentSched, compDesc : Text }
-      | TaskRep : { desc : Text, repDeadline : Dow, taskStaffList : List Text }
+      >
+
+let TaskSpec =
+      < TaskRep : { desc : Text, repDeadline : Dow, taskStaffList : List Text }
       | TaskSin : { desc : Text, deadline : Text, taskStaff : Text }
+      | Meeting : { desc : Text, details : Text, meetingDow : Dow }
       >
 
 let assignments =
@@ -42,62 +46,68 @@ let assignments =
       ]
 
 let problemSetStaff =
-      [ "PS01 - George McNinch"
-      , "PS02 - Loring Tu"
+      [ "PS02 - Loring Tu"
       , "PS03 - Boris Hassleblatt"
       , "PS04 - George McNinch"
-      , "PS05 - Loring Tu"
-      , "PS06 - Boris Hasselblatt"
-      , "PS07 - George McNinch"
-      , "PS08 - Loring Tu"
-      , "PS09 - Boris Hasselblatt"
-      , "PS10 - George McNinch"
-      , "PS11 - Loring Tu"
+      , "PS05 - Chandler Smith"
+      , "PS06 - Loring Tu"
+      , "PS07 - Boris Hasselblatt"
+      , "PS08 - George McNinch"
+      , "PS09 - Chandler Smith"
       , ""
-      , "PS12 - Boris Hasselblatt"
+      , ""
+      , "PS10 - Loring Tu"
+      , "PS11 - Boris Hasselblatt"
+      , "PS12 - George McNinch"
       ]
 
 let recWorksheetStaff =
-      [ "rec01 - Loring Tu"
-      , "rec02 - Boris Hasselblatt"
+      [ "rec02 - George McNinch"
       , "rec03 - Chandler Smith"
-      , "rec04 - George McNinch"
+      , "rec04 - Boris Hasselblatt"
       , "rec05 - Loring Tu"
-      , "rec06 - Boris Hasselblatt"
-      , "rec07 - Chandler Smith"
-      , "rec08 - George McNinch"
-      , "rec09 - Loring Tu"
-      , "rec10 - Boris Hasselblatt"
-      , "rec11 - Chandler Smith"
       , ""
-      , "rec12 - George McNinch"
+      , "rec06 - George McNinch"
+      , "rec07 - Chandler Smith"
+      , "rec08 - Boris Hasselblatt"
+      , ""
+      , "rec09 - Loring Tu"
+      , "rec10 - George McNinch"
+      , "rec11 - Chandler Smith"
+      , "rec12 - Boris Hasselblatt"
+      , "rec13 - Loring Tu"
       ]
 
 let tasks =
-      [ ComponentSpec.TaskRep
+      [ TaskSpec.TaskRep
           { desc = "Write problem sets and solutions"
           , repDeadline = Dow.Sun
           , taskStaffList = problemSetStaff
           }
-      , ComponentSpec.TaskRep
+      , TaskSpec.TaskRep
           { desc = "Write worksheet / suggest content for recitation"
           , repDeadline = Dow.Tue
           , taskStaffList = recWorksheetStaff
           }
-      , ComponentSpec.TaskSin
+      , TaskSpec.TaskSin
           { desc = "Write and vet Midterm 1"
           , deadline = "2022-02-02"
-          , taskStaff = "McNinch, Tu, Smith (as beta-tester)"
+          , taskStaff = "McNinch, Tu (beta-tester: Smith)"
           }
-      , ComponentSpec.TaskSin
+      , TaskSpec.TaskSin
           { desc = "Write and vet Midterm 2"
           , deadline = "2022-04-04"
-          , taskStaff = "Tu, Hasselblatt, Smith (as beta-tester)"
+          , taskStaff = "Tu, Hasselblatt (beta-tester: Smith)"
           }
-      , ComponentSpec.TaskSin
+      , TaskSpec.TaskSin
           { desc = "Write and vet Final Exam"
           , deadline = "2022-04-27"
-          , taskStaff = "McNinch, Hasselblatt, Smith (as beta-tester)"
+          , taskStaff = "McNinch, Hasselblatt (beta-test: Smith)"
+          }
+      , TaskSpec.Meeting
+          { desc = "Math 51 Staff Meeting"
+          , details = "Rm 510, 15:00"
+          , meetingDow = Dow.Wed
           }
       ]
 
@@ -262,7 +272,7 @@ in  [ { courseAY = "AY2021-2022"
               ]
             , exams
             , recitations
-            , tasks
             ]
+      , courseTasks = tasks
       }
     ]
