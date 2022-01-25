@@ -9,3 +9,7 @@ pacing/*.html
 pacing/*.md
 problem-sets/*.pdf
 problem-sets/*.html
+*.dvi
+*.log
+*.out
+*.aux

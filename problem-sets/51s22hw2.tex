@@ -1,0 +1,497 @@
+
+\documentclass[12pt]{amsart}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{epstopdf}
+\usepackage{nicefrac}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{color}
+%\usepackage{pst-all}
+\usepackage{graphicx}        % standard LaTeX graphics tool
+%\usepackage{pst-grad,pst-plot,pst-coil}
+%\usepackage{pstricks}
+\usepackage{multicol}
+
+
+\usepackage[margin=1in]{geometry}
+\usepackage{palatino}
+\usepackage{mathpazo}
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+
+
+%\parskip = 6pt
+%\parindent = 0.0in
+
+%\hoffset=-.7in
+%\voffset=-.7in
+%\setlength{\textwidth}{6in}
+%\setlength{\textheight}{8.5in}
+
+\newtheorem{theorem}{THEOREM}[section]
+\newtheorem{thm}{THEOREM}[section]
+\newtheorem{conj}[thm]{CONJECTURE}
+\newtheorem{cor}[thm]{COROLLARY}
+\newtheorem{definition}[thm]{DEFINITION}
+\newtheorem{defn}[thm]{DEFINITION}
+\newtheorem{ex}[thm]{EXAMPLE}
+\newtheorem{hyp}[thm]{HYPOTHESES}
+\newtheorem{lemma}[thm]{LEMMA}
+\newtheorem{prob}[thm]{PROBLEM}
+\newtheorem{prop}[thm]{PROPOSITION}
+\newtheorem{quest}[thm]{QUESTION}
+\newtheorem{remark}[thm]{REMARK}
+\newtheorem{const}[thm]{CONSTRUCTION}
+
+% math notation shortcuts
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\sop}{{\bf Proof:} } % replaced by command \proof
+\newcommand{\eop}{\;\;\; \Box} % replaced by command \endproof - still used inside theorem environment
+
+\newcommand{\F}{{\mathcal F}} % our favorite foliation
+\newcommand{\wtF}{{\widetilde{\mathcal F}}} % some lift of our favorite foliation
+\newcommand{\wF}{{\widehat{\F}}} % some modification of our favorite foliation - not used so far
+\newcommand{\G}{\Gamma}
+\newcommand{\g}{\gamma}
+\newcommand{\D}{{{\mathbb D}^q}}
+
+\newcommand{\wL}{\widetilde{L}} % covering of leaf L
+\newcommand{\e}{{\varepsilon}} % some choice
+\newcommand{\eF}{{\varepsilon_{\mathcal F}}} % convex diameter defined in Lemma~\ref{lem-conhull}
+\newcommand{\eU}{{\varepsilon_{\cU}}} % Lebesgue number for given covering.
+\newcommand{\eFU}{{\varepsilon^{\F}_{\cU}}} % leafwise Lebesgue number defined in equation~\ref{eq-leafdiam}
+\newcommand{\eTU}{{\varepsilon^{\cT}_{\cU}}} % transverse Lebesgue number defined in equation~\ref{eq-transdiam}
+
+\newcommand{\ve}{\varepsilon}
+
+\newcommand{\adj}{\text{\bf adj}}
+
+\newcommand{\dF}{d_{\F}} % leafwise metric
+\newcommand{\dFU}{\delta^{\F}_{\cU}} % leafwise radius defined by Equation~\ref{eq-Fdelta}
+\newcommand{\dTU}{\delta^{\cT}_{\cU}} % equicontinuous uniform domain size defined in Proposition~\ref{prop-uniformdom}
+\newcommand{\dT}{\delta^{\cT}} % some transverse modulus
+
+\newcommand{\kF}{{\kappa_{\mathcal F}}} % minimal net distance defined in equation~\ref{eq-kF}
+\newcommand{\kL}{{\kappa_{L}}} % minimal net distance defined in leaf L
+\newcommand{\lF}{{\lambda_{\mathcal F}}} % leafwise convexity diameter defined in Lemma~\ref{lem-stronglyconvex}
+\newcommand{\lU}{{\lambda_{\mathcal U}}} % not used so far
+\newcommand{\rp}{\rho_{\pi}} % modulus of continuity function for projections defined in equation~\ref{eq-modpi}
+\newcommand{\rt}{\rho_{\tau}} % modulus of continuity function for sections defined in equation~\ref{eq-modtau}
+\newcommand{\rF}{{\lambda_{\mathcal F}^*}} % leafwise radius for good geometry \ref{eq-convex}
+
+\newcommand{\cBF}{\cB(\F)} % denotes Borel Sigma algebra for F - not used so far
+\newcommand{\cGF}{\cG_{\F}} % denotes the pseudogroup of F
+\newcommand{\cRF}{\cR_{\F}} % denotes the equivalence relation of F - not used so far
+\newcommand{\cNF}{{\mathcal{N}_{\F}}} % who knows?
+\newcommand{\GF}{\Gamma_{\F}} % denotes the groupoid of F - not used so far
+
+\newcommand{\PF}{{\rm Pen}_{\F}} % denotes the penumbra of a set in a leaf of \F
+\newcommand{\wtPF}{{\rm Pen}_{\wtF}} % denotes the penumbra of a set in a leaf of \wtF
+\newcommand{\PR}{{\rm Pen}_{\mR^n}} % denotes the penumbra of a set in \mR^n
+
+\newcommand{\wtdF}{d_{\wtF}} % leafwise metric
+\newcommand{\dM}{d_{\fM}} % leafwise metric
+\newcommand{\eM}{{\varepsilon_{\fM}}} % convex diameter defined in Lemma~\ref{lem-conhull}
+
+
+% we next have groupings of useful shortcuts as needed frequently
+
+% primed letters
+
+\newcommand{\wtdp}{{\widetilde{d}\hspace{.8pt}'}}
+\newcommand{\wtgp}{{\widetilde{g}\hspace{.8pt}'}}
+\newcommand{\wtxp}{{\widetilde{x}\hspace{.5pt}'}}
+\newcommand{\wtzp}{{\widetilde{z}\hspace{.5pt}'}}
+\newcommand{\wtyp}{{\widetilde{y}\hspace{.8pt}'}}
+\newcommand{\whup}{{\widehat{u}\hspace{.5pt}'}}
+\newcommand{\whvp}{{\widehat{v}\hspace{.5pt}'}}
+\newcommand{\whwp}{{\widehat{w}\hspace{.5pt}'}}
+
+\newcommand{\vzpj}{{\vec{z}_j\hspace{-2.6pt}'}}
+\newcommand{\vzpk}{{\vec{z}_k\hspace{-2.6pt}'}}
+
+\newcommand{\vwpj}{{\vec{w}_j\hspace{-2.6pt}'}}
+\newcommand{\vwpk}{{\vec{w}_k\hspace{-2.6pt}'}}
+
+\newcommand{\vop}{{\vec{\omega}\hspace{.5pt}'}}
+\newcommand{\vopj}{{\vec{\omega}_j\hspace{-2.6pt}'}}
+\newcommand{\vopk}{{\vec{\omega}_k\hspace{-2.6pt}'}}
+
+\newcommand{\whrho}{{\widehat{\rho}}}
+\newcommand{\whrhop}{\widehat{\rho}\hspace{1.8pt}'}
+\newcommand{\wtrho}{{\widetilde{\rho}}}
+\newcommand{\wtl}{{\widetilde{\lambda}}}
+\newcommand{\whl}{{\widehat{\lambda}}}
+\newcommand{\whphi}{{\widehat{\phi}}}
+\newcommand{\wtrhop}{\widetilde{\rho}\hspace{1.8pt}'}
+
+\newcommand{\whvarp}{{\widehat \varphi}}
+\newcommand{\wtvarp}{{\widetilde \varphi}}
+\newcommand{\wtPhi}{{\widetilde \Phi}}
+
+\newcommand{\oo}{{\overline{\omega}}}
+\newcommand{\who}{{\widehat{\omega}}}
+
+\newcommand{\whpsi}{{\widehat \psi}}
+
+% widetilde lowercase letters
+\newcommand{\wtd}{{\widetilde{d}}}
+\newcommand{\wte}{{\widetilde{e}}}
+\newcommand{\wtf}{{\widetilde{f}}}
+\newcommand{\wtg}{{\widetilde{g}}}
+\newcommand{\wth}{{\widetilde{h}}}
+\newcommand{\wtq}{{\widetilde{q}}}
+\newcommand{\wtu}{{\widetilde{u}}}
+\newcommand{\wtv}{{\widetilde{v}}}
+\newcommand{\wtw}{{\widetilde{w}}}
+\newcommand{\wtx}{{\widetilde{x}}}
+\newcommand{\wtz}{{\widetilde{z}}}
+\newcommand{\wty}{{\widetilde{y}}}
+
+% widetilde uppercase letters
+\newcommand{\wtB}{\widetilde{B}}
+\newcommand{\wtD}{\widetilde{D}}
+\newcommand{\wtK}{\widetilde{K}}
+\newcommand{\wtL}{{\widetilde L}}
+\newcommand{\wtM}{\widetilde{M}}
+\newcommand{\wtN}{\widetilde{N}}
+\newcommand{\wtR}{\widetilde{R}}
+\newcommand{\wtS}{\widetilde{S}}
+\newcommand{\wtT}{\widetilde{T}}
+\newcommand{\wtU}{{\widetilde U}}
+\newcommand{\wtV}{\widetilde{V}}
+\newcommand{\wtX}{\widetilde{X}}
+
+% widetilde misc letters
+\newcommand{\wtomega}{{\widetilde{\omega}}}
+\newcommand{\wtpi}{{\widetilde{\pi}}}
+\newcommand{\wtnu}{{\widetilde{\nu}}}
+\newcommand{\wtiota}{{\widetilde{\iota}}}
+\newcommand{\wttau}{{\widetilde{\tau}}}
+\newcommand{\wtvp}{{\widetilde{\varphi}}}
+\newcommand{\wtgamma}{{\widetilde{\gamma}}}
+\newcommand{\wtlambda}{{\widetilde{\lambda}}}
+\newcommand{\wtLambda}{{\widetilde{\Lambda}}}
+\newcommand{\wtDelta}{{\widetilde{\Delta}}}
+\newcommand{\wtGamma}{{\widetilde{\Gamma}}}
+\newcommand{\wtPsi}{{\widetilde{\Psi}}}
+\newcommand{\wtsigma}{{\widetilde{\sigma}}}
+\newcommand{\wtxi}{{\widetilde{\xi}}}
+\newcommand{\wtXi}{{\widetilde{\Xi}}}
+\newcommand{\wtcN}{{\widetilde{\mathcal N}}}
+\newcommand{\wtcP}{{\widetilde{\mathcal P}}}
+\newcommand{\wtfN}{\widetilde{\mathfrak{N}}}
+\newcommand{\wtfT}{\widetilde{\mathfrak{T}}}
+\newcommand{\wtfU}{\widetilde{\mathfrak{U}}}
+\newcommand{\wtfS}{\widetilde{\mathfrak{S}}}
+\newcommand{\wtcM}{\widetilde{\mathcal M}}
+\newcommand{\wtexp}{\widetilde{\exp}}
+\newcommand{\wtphi}{\widetilde{\phi}}
+\newcommand{\wtpsi}{\widetilde{\psi}}
+
+% widehat lowercase letters
+\newcommand{\whd}{{\widehat d}}
+\newcommand{\whe}{{\widehat e}}
+\newcommand{\whf}{{\widehat f}}
+\newcommand{\whp}{{\widehat p}}
+\newcommand{\whu}{{\widehat u}}
+\newcommand{\whv}{{\widehat v}}
+\newcommand{\whw}{{\widehat w}}
+
+% widehat uppercase letters
+\newcommand{\whK}{{\widehat K}}
+\newcommand{\whL}{{\widehat L}}
+\newcommand{\whN}{{\widehat N}}
+\newcommand{\whU}{{\widehat U}}
+\newcommand{\whV}{{\widehat V}}
+
+\newcommand{\whcN}{{\widehat{\mathcal N}}}
+\newcommand{\whcP}{{\widehat{\mathcal P}}}
+\newcommand{\whcX}{{\widehat{\mathcal X}}}
+\newcommand{\whcZ}{{\widehat{\mathcal Z}}}
+
+\newcommand{\whXi}{{\widehat{\Xi}}}
+\newcommand{\wtwhXi}{\widetilde{\widehat{\Xi}}}
+\newcommand{\whdelta}{\widehat{\delta}}
+\newcommand{\whmu}{\widehat{\mu}}
+
+\newcommand{\vl}{{\vec{\lambda}}}
+
+
+% overline letters
+\newcommand{\oU}{{\overline{U}}}
+\newcommand{\oV}{{\overline{V}}}
+\newcommand{\oW}{{\overline{W}}}
+
+% bolds
+\newcommand{\bA}{{\bf A}}
+\newcommand{\bB}{{\bf B}}
+\newcommand{\bC}{{\bf C}}
+\newcommand{\bE}{{\bf E}}
+\newcommand{\bQ}{{\bf Q}}
+\newcommand{\bU}{{\bf U}}
+\newcommand{\bV}{{\bf V}}
+\newcommand{\bW}{{\bf W}}
+\newcommand{\bX}{{\bf X}}
+\newcommand{\bY}{{\bf Y}}
+\newcommand{\bZ}{{\bf Z}}
+
+
+% the rest of these are shortcuts for standard text formats
+
+% blackboard bolds
+\newcommand{\mB}{{\mathbb B}}
+\newcommand{\mC}{{\mathbb C}}
+\newcommand{\mD}{{\mathbb D}}
+\newcommand{\mE}{{\mathbb E}}
+\newcommand{\mF}{{\mathbb F}}
+\newcommand{\mG}{{\mathbb G}}
+\newcommand{\mK}{{\mathbb K}}
+\newcommand{\mN}{{\mathbb N}}
+\newcommand{\mQ}{{\mathbb Q}}
+\newcommand{\mR}{{\mathbb R}}
+\newcommand{\mS}{{\mathbb S}}
+\newcommand{\mT}{{\mathbb T}}
+\newcommand{\mV}{{\mathbb V}}
+\newcommand{\mZ}{{\mathbb Z}}
+
+% cal script letters
+\newcommand{\cA}{{\mathcal A}}
+\newcommand{\cB}{{\mathcal B}}
+\newcommand{\cC}{{\mathcal C}}
+\newcommand{\cD}{{\mathcal D}}
+\newcommand{\cE}{{\mathcal E}}
+\newcommand{\cG}{{\mathcal G}}
+\newcommand{\cH}{{\mathcal H}}
+\newcommand{\cI}{{\mathcal I}}
+\newcommand{\cJ}{{\mathcal J}}
+\newcommand{\cK}{{\mathcal K}}
+\newcommand{\cL}{{\mathcal L}}
+\newcommand{\cM}{{\mathcal M}}
+\newcommand{\cN}{{\mathcal N}}
+\newcommand{\cO}{{\mathcal O}}
+\newcommand{\cP}{{\mathcal P}}
+\newcommand{\cQ}{{\mathcal Q}}
+\newcommand{\cS}{{\mathcal S}}
+\newcommand{\cT}{{\mathcal T}}
+\newcommand{\cU}{{\mathcal U}}
+\newcommand{\cV}{{\mathcal V}}
+\newcommand{\cW}{{\mathcal W}}
+\newcommand{\cX}{{\mathcal X}}
+\newcommand{\cZ}{{\mathcal Z}}
+
+% fraktur letters
+
+\newcommand{\fA}{{\mathfrak{A}}}
+\newcommand{\fB}{{\mathfrak{B}}}
+\newcommand{\fC}{{\mathfrak{C}}}
+\newcommand{\fD}{{\mathfrak{D}}}
+\newcommand{\fG}{\mathfrak{G}}
+\newcommand{\fH}{\mathfrak{H}}
+\newcommand{\fK}{{\mathfrak{K}}}
+\newcommand{\fL}{{\mathfrak{L}}}
+\newcommand{\fM}{{\mathfrak{M}}}
+\newcommand{\fN}{{\mathfrak{N}}}
+\newcommand{\fO}{{\mathfrak{O}}}
+\newcommand{\fP}{{\mathfrak{P}}}
+\newcommand{\fQ}{{\mathfrak{Q}}}
+\newcommand{\fS}{{\mathfrak{S}}}
+\newcommand{\fT}{{\mathfrak{T}}}
+\newcommand{\fU}{{\mathfrak{U}}}
+\newcommand{\fV}{{\mathfrak{V}}}
+\newcommand{\fX}{{\mathfrak{X}}}
+\newcommand{\fY}{{\mathfrak{Y}}}
+\newcommand{\fZ}{{\mathfrak{Z}}}
+
+\newcommand{\bu}{{\bf u}}
+\newcommand{\bv}{{\bf v}}
+\newcommand{\bw}{{\bf w}}
+\newcommand{\ba}{{\bf a}}
+\newcommand{\bb}{{\bf b}}
+\newcommand{\bh}{{\bf h}}
+\newcommand{\bx}{{\bf x}}
+\newcommand{\bo}{{\bf 0}}
+\newcommand{\bp}{{\bf p}}
+\newcommand{\br}{{\bf r}}
+\newcommand{\bF}{{\bf F}}
+\newcommand{\bn}{{\bf n}}
+\newcommand{\bT}{{\bf T}}
+\newcommand{\bk}{{\bf k}}
+
+% Greek letters
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gc}{\gamma}
+
+
+\newcommand{\bs}{\boldsymbol}
+%\newcommand{\cyan{}}{{\textcolor{cyan}{{\sc}}}} (didn't work)
+
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\scal}{scal}
+
+\input xy
+\xyoption {all}
+
+% greek letters
+
+\newcommand{\vp}{{\varphi}}
+
+\usepackage{tikz}
+\usepackage{color}
+\newcommand{\tred}[1]{{\color{red}{#1}}}
+
+\parindent=0pt
+
+\begin{document}
+
+\thispagestyle{empty}
+\noindent
+\textbf{Math 51 \hfill Homework 2 \hfill Spring 2022}
+
+\bigskip
+\bigskip
+
+\centerline{\textbf{Readings for the Week of January 24, 2022}}
+
+\medskip
+    \begin{description}
+    \item[\S 1.2] Separation of Variables
+    \item[\S 1.3] First-Order Linear Equations
+    \end{description}
+
+ \bigskip
+\noindent
+\centerline{\textbf{Problem Set 2}}
+\centerline{(Due Sunday, January 30, 2022, at 5 p.m.)}
+
+\medskip
+
+\noindent
+For a 10\% penalty on your grade, you may hand in the problem set late, until January 31, 2022, 11 p.m.
+
+
+\begin{enumerate}[1.]
+\setlength{\itemsep}{5mm}
+
+% \S 1.2, p. 17, #18.
+\item  \textbf{First-order nonlinear equation}\\
+  Find the particular solution that satisfies the initial condition:
+  \[
+    x^2 \frac{dx}{dt} = t^2, \quad x(1) =2.
+    \]
+    
+
+ 
+\item  \textbf{First-order nonlinear equation} \\
+  Find the general solution of
+  \[
+    \frac{dx}{dt} = x^2 -1, \quad x \ge 1.
+  \]
+  (\textit{Hint}.  Use partial fraction decomposition.  Also remember
+  that you cannot divide by 0.)
+  
+
+      %\S 1.1, p.~9, \#18; \S1.2, p.~17, \#24. 
+  \item  \textbf{Compound interest} \\
+    When interest is compouned continuously, the rate of change of the
+    principal is proportional to the principal.
+    The constant of proportionality is called the \textit{interest
+      rate}.
+    \begin{enumerate}
+      \item[(a)] Set up a differential equation to model the principal
+        $x=x(t)$ in an account accruing interest at 8\% per year,
+        compounded continuously.
+      \item[(b)] Solve the differential equation.
+        \item[(c)] Calculate the percentage increase in such a deposit over one
+          year. (This is called the \textit{effective annual rate}.)
+          \end{enumerate}
+
+    % \medskip
+    % \rightline{(\textit{Continued on next page})}
+
+    % \vfill\eject
+
+        \item  \textbf{Classification of ode's}\\
+          In this problem, no work needs to be shown.  Only the
+          answers will be graded.  
+          \medskip
+          
+          \begin{enumerate}[(a)]
+     \item   For each part, write down the order of the differential equation.
+    \begin{enumerate}[(i)]
+        \item $\displaystyle r^4\frac{d^3x}{dt^3} + t\frac{dx}{dt} - x = t^7$
+        \item $\displaystyle \left (\frac{dx}{dt} \right)^5 + \frac{d^4x}{dt^4} -t^3x^7 + t^7 = 0$
+        \item $\displaystyle x^8\frac{dx}{dt} + \frac{d^7x}{dt^7} = x + t^9$
+        \item $\displaystyle \left ( x^{\prime} \right )^2x^{\prime\prime\prime} = x^4x^{\prime\prime} + t^5x^{\prime}$
+        \end{enumerate}
+
+        \medskip
+
+        \item For each of the following o.d.e.'s, decide whether it is
+          linear. If it is linear, is it homogeneous? In this problem,
+          take $x$ to be the dependent variable; $x^\prime = dx/dt$.
+          Set up three columns, the first column for the equation
+          number (i), (ii), (iii), \ldots, the second column for
+         ``linear,'' and the third for ``homogeneous.''  In each entry,
+          answer the question by writing ``Y'' or ``N'' for ``Yes'' or
+          ``No.''
+          If the question does not apply to an equation, leave the
+          entry blank. 
+\begin{multicols}{2}
+    \begin{enumerate}[(i)]
+        \item $x^\prime + x + t = 0$
+        \item $x^\prime + xt = 0$
+        \item $x^\prime t + x = 0$
+        \item $x^\prime x + t = 0$
+        \item $x^\prime + x + t^2 = 0$
+        \item $(x^\prime)^2 + x + t = 0$
+        \item $x^\prime + x^2 + t = 0$
+        \item $x^\prime t + xt^2 + 1 = 0$
+    \end{enumerate}
+  \end{multicols}
+
+  \medskip
+
+  \item For each of the following linear differential equations,
+    decide whether it is normal on $0 < t <
+    2$.  Answer ``Yes'' or ``No.'' 
+    \begin{enumerate}[(i)]
+        \item $\displaystyle (t-1) \frac{dx}{dt} - 5x = 3t$
+        \item $\displaystyle t \frac{dx}{dt} - e^t x = \sin t$
+    \end{enumerate}
+
+\end{enumerate}
+
+
+            % Similar to \S 1.3, p. 26, #7.
+    \item  \textbf{First-order equation}. \\
+      Find the general solution of $x' + 3x = e^{-3t}\cos 2t$ on $(-\infty, \infty)$.
+     
+
+    % \S 1.3, p.~27, \#30.
+  \item \textbf{Variation of parameter}.\\
+    Try variation of parameters on the differential equation $x' + x^2
+    = t$ as follows.
+    \begin{enumerate}
+      \item[(a)] Find the general solution of $x' + x^2 = 0$ by
+        separating variables. There will be a parameter in the
+        solution representing a constant.
+        \item[(b)] Let the parameter vary and substitute the solution
+          back into the original nonhomogeneous equation. What
+            goes wrong?  What can you conclude about the method of
+            variation of parameter?
+    \end{enumerate}
+  
+      
+    
+\end{enumerate}
+
+\bigskip
+
+\centering{(End of Homework 2)}
+
+\end{document}

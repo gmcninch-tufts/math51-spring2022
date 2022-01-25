@@ -3,6 +3,8 @@ CMD=/home/george/.local/bin/course report
 
 PD=pandoc --from markdown 
 
+TEX=pdflatex
+
 CSS_DEFAULT="/home/george/Classes/math51-spring2022/assets/default.css"
 CSS_PANDOC="/home/george/Classes/math51-spring2022/assets/pandoc.css"
 
@@ -21,10 +23,12 @@ lectures = $(patsubst %.md,%-reg.html, $(wildcard lectures/*.md)) \
            $(patsubst %.md,%.pdf, $(wildcard lectures/*.md))
 
 psets = $(patsubst %.md,%.html,$(wildcard problem-sets/*.md)) \
-        $(patsubst %.md,%.pdf, $(wildcard problem-sets/*.md))
+        $(patsubst %.md,%.pdf, $(wildcard problem-sets/*.md)) \
+        $(patsubst %.tex,%.pdf, $(wildcard problem-sets/*.tex))
 
 recitation = $(patsubst %.md,%.html,$(wildcard recitation/*.md)) \
-             $(patsubst %.md,%.pdf, $(wildcard recitation/*.md))
+             $(patsubst %.md,%.pdf, $(wildcard recitation/*.md)) \
+             $(patsubst %.tex,%.pdf, $(wildcard recitation/*.tex))
 
 exams = $(patsubst %.md,%.html,$(wildcard exams/*.md)) \
         $(patsubst %.md,%.pdf,$(wildcard exams/*.md))
@@ -58,6 +62,13 @@ pacing/%.pdf resources/%.pdf: %.md
 
 problem-sets/%.pdf lectures/%.pdf exams/%.pdf recitation/%.pdf: %.md
 	$(PD)  --number-sections --citeproc --self-contained --pdf-engine=xelatex --resource-path=$(RP) -t latex $<  -o $@
+
+problem-sets/%.pdf: %.tex
+	$(TEX) -output-directory=problem-sets $<
+
+recitation/%.pdf: %.tex
+	$(TEX) -output-directory=recitation $<
+
 
 exams/%.html problem-sets/%.html lectures/%-reg.html resources/%.html recitation/%.html: %.md
 	$(PD) $<  --number-sections --citeproc  --standalone --css=$(CSS_DEFAULT) --mathjax=$(MJ) --to html  -o $@
