@@ -1,4 +1,4 @@
--- Time-stamp: <2022-01-22 Sat 15:18 EST - george@podkayne>
+-- Time-stamp: <2022-01-27 Thu 13:26 EST - george@valhalla>
 let Dow = < Mon | Tue | Wed | Thu | Fri | Sat | Sun >
 
 let concat = https://prelude.dhall-lang.org/List/concat
