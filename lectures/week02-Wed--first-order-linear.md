@@ -55,6 +55,9 @@ To solve this ODE, we proceed as follows:
   form $x(t) = k(t)e^{-t}$, where $k$ is a function depending on
   $t$ (rather than a constant)
 
+- choosing $k=k(t)$ as a function of $t$ is often referred to as
+  *variation of parameters*.
+
 - "explanation" for our guess: remember we are solving $(\diamondsuit)
   \quad x' + x = t+1$.  Over a very short interval of time $\Delta
   t$, we can view the quantity $t+1$ as essentially constant. On a

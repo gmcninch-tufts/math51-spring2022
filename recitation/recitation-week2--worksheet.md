@@ -47,7 +47,7 @@ header-includes: |
 \newpage
 
 
-#. Consider $x' + x/t = t^2$. 
+1. Consider $x' + x/t = t^2$. 
 
    a. Solve this equation  using variation of parameters, and
    
@@ -59,7 +59,7 @@ header-includes: |
    
 \newpage
 
-#. A pail of water at 20 degrees C is placed outside where the temperature is
+2. A pail of water at 20 degrees C is placed outside where the temperature is
    10 degrees C.
    
    The water loses heat according to Newton's law of cooling, with
