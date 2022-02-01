@@ -18,14 +18,14 @@ This lecture covers material from [@gutermanNitecki, sec. 1.6 and 2.2].
 ## Existence and Uniqueness Theorem
 
 Consider the initial value problem 
-$$(\clubsuit) \quad x' = f(t,x), \quad x(t_2) = x_2$$
+$$(\clubsuit) \quad x' = f(t,x), \quad x(t_0) = x_0$$
 for the indicated first-order ODE.
 
 . . .
 
 Assume that there is a rectangle
-$$R = \{(t,x) \mid t_0 < t < t_1, \quad  x_0 < x < x_1\}$$
-containing the point $(t_2,x_2)$ with the property that
+$$R = \{(t,x) \mid t_1 < t < t_2, \quad  x_1 < x < x_2\}$$
+containing the point $(t_0,x_0)$ with the property that
 $f$ and $\dfrac{\partial f}{\partial x}$ are continuous on $R$.
 
 Under these assumptions, we have:
@@ -320,8 +320,6 @@ x(t_0) &= \alpha_0 \\
  \vdots  \\
  x^{(n-1)}(t_0) &= \alpha_{n-1}.
 \end{align*}
-
-
 
 
 ## Bibliography {.unnumbered}

@@ -108,22 +108,6 @@ following two conditions:
   
 :::
 
-## Homogeneous linear ODEs
-
-A linear ODE is *homogeneous* if it has the form $Lx = 0$.
-
-If $Lx = E(t)$ is a linear ODE, the related homogeneous equation is
-$Lx = 0$.
-
-For example:
-
-::: incremental
-- The equation $$(D^3 + D + t)x = t^2 + 1$$ has related homogeneous equation
-  $$(D^3 + D + t)x = 0.$$ 
-  
-- The equation $$(D^5 + D^3)x + x = (D^4 + tD^2)x$$ is already homogeneous.
-
-:::
 
 ## General properties of solutions to linear ODEs.
 
