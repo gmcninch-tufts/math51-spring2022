@@ -271,12 +271,12 @@ $\dfrac{dx}{dt} + r(t)x = Q(t).$
 - conclude that
   \begin{align}
   k'(t) &= \dfrac{1}{h(t)} Q(t) \\
-        &= e^{R(T)} Q(t)
+        &= e^{R(t)} Q(t)
   \end{align}
 
 - we now find $k(t)$ by anti-differentiation
 
-  $$k(t) = \int k'(t) dt = \int  e^{R(T)} Q(t) dt$$
+  $$k(t) = \int k'(t) dt = \int  e^{R(t)} Q(t) dt$$
 
 - We have now showed that the general solution to our first order ODE
   is given by $$x(t) = k(t) h(t) = k(t) e^{-R(t)}.$$

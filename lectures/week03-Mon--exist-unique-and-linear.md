@@ -18,14 +18,14 @@ This lecture covers material from [@gutermanNitecki, sec. 1.6 and 2.2].
 ## Existence and Uniqueness Theorem
 
 Consider the initial value problem 
-$$(\clubsuit) \quad x' = f(t,x), \quad x(t_2) = x_2$$
+$$(\clubsuit) \quad x' = f(t,x), \quad x(t_0) = x_0$$
 for the indicated first-order ODE.
 
 . . .
 
 Assume that there is a rectangle
-$$R = \{(t,x) \mid t_0 < t < t_1, \quad  x_0 < x < x_1\}$$
-containing the point $(t_2,x_2)$ with the property that
+$$R = \{(t,x) \mid t_1 < t < t_2, \quad  x_1 < x < x_2\}$$
+containing the point $(t_0,x_0)$ with the property that
 $f$ and $\dfrac{\partial f}{\partial x}$ are continuous on $R$.
 
 Under these assumptions, we have:
@@ -389,6 +389,23 @@ Consider for instance $L = D^2 + tD + 1$:
 - $L$ is a *second order* linear differential operator.
 
 - and $L[e^{2t}] = 4e^{2t} + 2te^{2t} + e^{2t}$.
+
+:::
+
+## Homogeneous linear ODEs
+
+A linear ODE is *homogeneous* if it has the form $Lx = 0$.
+
+If $Lx = E(t)$ is a linear ODE, the related homogeneous equation is
+$Lx = 0$.
+
+For example:
+
+::: incremental
+- The equation $$(D^3 + D + t)x = t^2 + 1$$ has related homogeneous equation
+  $$(D^3 + D + t)x = 0.$$ 
+  
+- The equation $$(D^5 + D^3)x + x = (D^4 + tD^2)x$$ is already homogeneous.
 
 :::
 
