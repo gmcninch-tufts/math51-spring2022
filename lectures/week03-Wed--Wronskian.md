@@ -17,6 +17,79 @@ This lecture covers material from [@gutermanNitecki, sec. 2.2 and 2.3].
 
 # Linear ordinary differential equations
 
+## Differential Operators: some new notation
+
+::: incremental
+
+- We write $D = \dfrac{d}{dt}$ for the *operator* of differentiation.
+  Thus $Dx = \dfrac{dx}{dt} = x'.$
+
+- Similarly, for $n \ge 1$ we write $D^n = \dfrac{d^n}{dt^n}$. Thus
+  $D^nx = \dfrac{d^nx}{dt^n} = x^{(n)}.$
+
+
+:::
+
+------
+
+(continued: notation)
+
+::: incremental
+
+- a *linear differential operator* is an expression of the form
+  $$a_n(t)D^n + a_{n-1}D^{n-1} + \cdots + a_1(t)D + a_0$$
+  and it can be applied to the function $x = x(t)$:
+  \begin{align*}
+  &(a_n(t)D^n + a_{n-1}(t)D^{n-1} + \cdots + a_1(t)D + a_0)[x] \\
+  = &  a_n(t)D^nx + a_{n-1}(t)D^{n-1}x + \cdots + a_1(t)Dx + a_0x \\
+  = & a_n(t)\dfrac{d^nx}{dt^n} + a_{n-1}(t)\dfrac{d^{n-1}x}{dt^{n-1}} + \cdots + a_1(t)\dfrac{dx}{dt} + a_0x 
+  \end{align*}
+
+
+- With this notation, typical linear ODE has the form
+
+  $$(a_n(t)D^n + a_{n-1}(t)D^{n-1} + \cdots + a_1(t)D + a_0)x = E(t).$$
+  
+:::
+
+-----
+
+(continued: notation)
+
+::: incremental
+
+
+- We can even write $$L = a_n(t)D^n + a_{n-1}(t)D^{n-1} + \cdots +
+  a_1(t)D + a_0$$
+  
+
+- when we apply $L$ to a function $x = x(t)$, the result is a function
+  $L[x] = L[x(t)]$ of $t$.
+
+- the linear ODE may be written simply $$L x = E(t) \quad \text{or} \quad L[x] = E(t).$$
+
+- the *order* of $L$ is $n$ provided that $a_n(t) \ne 0$.
+
+:::
+
+## Example
+
+
+
+Consider for instance $L = D^2 + tD + 1$:
+
+::: incremental
+
+- then $L [ \sin(t) ] = -\sin(t) + t\cos(t) +  \sin(t)$.
+
+- $L$ is a *second order* linear differential operator.
+
+- and $L[e^{2t}] = 4e^{2t} + 2te^{2t} + e^{2t}$.
+
+:::
+
+
+
 ## Linear differential operators
 
 Consider a general linear differential operator $$L = a_n(t)D^n +
