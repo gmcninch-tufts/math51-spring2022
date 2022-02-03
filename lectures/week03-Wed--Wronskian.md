@@ -41,52 +41,53 @@ This lecture covers material from [@gutermanNitecki, sec. 2.2 and 2.3].
   and it can be applied to the function $x = x(t)$:
   \begin{align*}
   &(a_n(t)D^n + a_{n-1}(t)D^{n-1} + \cdots + a_1(t)D + a_0)[x] \\
-  = &  a_n(t)D^nx + a_{n-1}(t)D^{n-1}x + \cdots + a_1(t)Dx + a_0x \\
   = & a_n(t)\dfrac{d^nx}{dt^n} + a_{n-1}(t)\dfrac{d^{n-1}x}{dt^{n-1}} + \cdots + a_1(t)\dfrac{dx}{dt} + a_0x 
   \end{align*}
 
 
-- With this notation, typical linear ODE has the form
-
-  $$(a_n(t)D^n + a_{n-1}(t)D^{n-1} + \cdots + a_1(t)D + a_0)x = E(t).$$
-  
-:::
-
------
-
-(continued: notation)
-
-::: incremental
-
-
-- We can even write $$L = a_n(t)D^n + a_{n-1}(t)D^{n-1} + \cdots +
-  a_1(t)D + a_0$$
-  
+- We can write $$L = a_n(t)D^n + a_{n-1}(t)D^{n-1} + \cdots +
+  a_1(t)D + a_0$$ for a differential operator.
 
 - when we apply $L$ to a function $x = x(t)$, the result is a function
   $L[x] = L[x(t)]$ of $t$.
-
-- the linear ODE may be written simply $$L x = E(t) \quad \text{or} \quad L[x] = E(t).$$
-
+  
 - the *order* of $L$ is $n$ provided that $a_n(t) \ne 0$.
+  
 
 :::
 
 ## Example
 
-
-
 Consider for instance $L = D^2 + tD + 1$:
 
 ::: incremental
+- $L$ is a *second order* linear differential operator.
 
 - then $L [ \sin(t) ] = -\sin(t) + t\cos(t) +  \sin(t)$.
-
-- $L$ is a *second order* linear differential operator.
 
 - and $L[e^{2t}] = 4e^{2t} + 2te^{2t} + e^{2t}$.
 
 :::
+
+
+## Linear ODEs
+
+::: incremental
+
+- With this notation, typical linear ODE has the form
+
+  $$(a_n(t)D^n + a_{n-1}(t)D^{n-1} + \cdots + a_1(t)D + a_0)x = E(t).$$
+
+
+- e.g. if $L = D^2 + tD + 1$ then $Lx = 1$ is shorthand for the differential equation
+  $$\dfrac{d^2x}{dt^2} + t \dfrac{dx}{dt} + x = 1$$
+  
+
+- a linear ODE may be written simply $$L x = E(t) \quad \text{or} \quad L[x] = E(t)$$
+  for an operator $L$
+  
+:::
+
 
 
 
@@ -115,8 +116,8 @@ following two conditions:
 
 - Consider a linear ODE $\quad (\clubsuit) \quad Lx = E(t)$.
 
-- S'pose we have a formula $H(t)$ for the sol to  corresp.
-  homog eqn $Lx = 0$.
+- S'pose we have a formula $H(t)$ for the geneal solution to the corresponding
+  homogeneous equation $Lx = 0$.
   
 - And suppose that $p(t)$ is any solution to $Lx = E(t)$.
 
@@ -263,7 +264,7 @@ To solve the system $(\clubsuit)$ means to find $\mathbf{u}$ making all of the e
 
 1. $\det B \ne 0$.
 2. for a fixed vector $\mathbf{c}$, the system of equations $(\clubsuit)$ has a unique solution $\mathbf{u}$.
-3. the system of equations $(\clubsuit)$ has at least one a solution
+3. the system of equations $(\clubsuit)$ has at least one solution
    $\mathbf{u}$ for every vector $\mathbf{c}$.
 
 Moreover, when $\det B \ne 0$, the entries 
@@ -451,7 +452,7 @@ $c_1,\dots,c_n$.
 ## Applications of Wronskian test
 
 Consider the 3rd order eqn $(D^3 + D^2)x = 0$. Notice $h_1 = 1$, $h_2
-= t$ and $h_3 = 2t+3$ are sols.
+= t$ and $h_3 = 2t+3$ are solutions.
 
 . . .
 
