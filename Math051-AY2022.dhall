@@ -1,4 +1,4 @@
--- Time-stamp: <2022-01-27 Thu 13:26 EST - george@valhalla>
+-- Time-stamp: <2022-02-03 Thu 08:13 EST - george@valhalla>
 let Dow = < Mon | Tue | Wed | Thu | Fri | Sat | Sun >
 
 let concat = https://prelude.dhall-lang.org/List/concat
@@ -81,7 +81,7 @@ let recWorksheetStaff =
 let tasks =
       [ TaskSpec.TaskRep
           { desc = "Write problem sets and solutions"
-          , repDeadline = Dow.Sun
+          , repDeadline = Dow.Mon
           , taskStaffList = problemSetStaff
           }
       , TaskSpec.TaskRep
@@ -115,8 +115,8 @@ let homework =
       ComponentSpec.Assignment
         { compDesc = "Homework collection"
         , sched =
-          [ { sd = DD.DowA Dow.Sun
-            , stime = "05:00 PM"
+          [ { sd = DD.DowA Dow.Mon
+            , stime = "11:00 PM"
             , location = "gradescope"
             }
           ]
