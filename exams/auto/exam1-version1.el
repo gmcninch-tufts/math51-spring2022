@@ -1,0 +1,54 @@
+(TeX-add-style-hook
+ "exam1-version1"
+ (lambda ()
+   (TeX-add-to-alist 'LaTeX-provided-package-options
+                     '(("geometry" "margin=2cm")))
+   (TeX-run-style-hooks
+    "latex2e"
+    "article"
+    "art10"
+    "amssymb"
+    "amsmath"
+    "geometry")
+   (TeX-add-symbols
+    "bs"
+    "cc"
+    "rrm"
+    "V"
+    "ii"
+    "qq"
+    "x"
+    "y"
+    "zero"
+    "xoyo"
+    "dsp"
+    "rr"
+    "R"
+    "rone"
+    "rtwo"
+    "rn"
+    "rm"
+    "nn"
+    "zz"
+    "Q"
+    "rar"
+    "st"
+    "eps"
+    "acc"
+    "sup"
+    "inf"
+    "intt"
+    "bd"
+    "cl"
+    "intab"
+    "gap"
+    "vx"
+    "vy"
+    "vL"
+    "vM"
+    "ms"
+    "ss"
+    "bfu"
+    "bfv"))
+ :latex)
+

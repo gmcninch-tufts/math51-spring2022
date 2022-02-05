@@ -1,0 +1,327 @@
+\documentclass{article} 
+
+\usepackage{amssymb,amsmath}
+\usepackage[margin=2cm]{geometry}
+
+\newcommand\ms {\medskip}
+\newcommand\bs {\bigskip}
+\newcommand\dsp{\displaystyle}
+\newcommand\cc{{\mathcal{C}}}
+\newcommand\rr{{\mathbb{R}}}
+\newcommand\rone{{\mathbb{R}}}
+\newcommand\rtwo{{\mathbb{ R}^2}}
+\newcommand\rn{{\mathbb{R}^n}}
+\newcommand\rrm{{\mathbb{R}^m}}
+\newcommand\V{\mathcal{V}}
+
+\newcommand\nn{{\mathbb{N}}}
+\renewcommand\ss{{\mathbb{S}}}
+
+%\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\bd}{\operatorname{bd}}
+\newcommand\zz{{\mathbb{Z}}}
+\newcommand\ii{{\mathbb{I}}}
+\newcommand\qq{{\mathbb{Q}}}
+\newcommand\eps{{\epsilon}}
+\newcommand\rar{\rightarrow}
+\newcommand\st{\hspace{0.4mm}\big|\hspace{0.4mm}}
+\newcommand\x{\mathbf{x}}
+\newcommand\y{\mathbf{y}}
+\newcommand\zero{\mathbf{0}}
+\newcommand\xoyo{(x_0,y_0)}
+
+\def\dsp{\displaystyle}
+\def\rr{{\mathbb R}}
+\def\R{{\mathbb R}}
+\def\rone{{\mathbb R}}
+\def\rtwo{{\mathbb R^2}}
+\def\rn{{\mathbb R^n}}
+\def\rm{{\mathbb R^m}}
+\def\nn{{\mathbb N}}
+\def\zz{{\mathbb Z}}
+\def\Q{{\mathbb Q}}
+\def\rar{\rightarrow}
+\def\st{\,\big|\,}
+\def\eps{\epsilon}
+\def\acc{\operatorname{acc}}
+\def\sup{\operatorname{sup}}
+\def\inf{\operatorname{inf}}
+\def\intt{\operatorname{int}}
+\def\bd{\operatorname{bd}}
+\def\cl{\operatorname{cl}}
+\def\intab{\int_a^b}
+\def\gap{\operatorname{gap}}
+\def\vx{\vec {\mathbf{x}}}
+\def\vy{\vec {\mathbf{y}}}
+\def\vL{\vec {\mathbf{L}}}
+\def\vM{\vec {\mathbf{M}}}
+\def\ms{\medskip}
+\def\ss{\smallskip}
+\def\bfu{\mathbf u}
+\def\bfv{\mathbf v}
+
+\setlength\parindent{25pt}
+
+
+
+\begin{document}
+
+
+\noindent
+PRINT your name:  \framebox(230,30){}\\
+
+\smallskip
+\noindent
+Practicum Instructor: \framebox(100,30){} (Choose from Hasselblatt, McNinch, Smith, Tu)
+
+
+\begin{center}
+Math 51 \hfill Differential Equations \hfill February 14, 2022\\
+\hfill Exam 1 (100 points) \hfill noon--1:20 p.m.
+\end{center}
+
+\medskip
+
+This is a closed-book exam.  No books, notes, or calculators are
+permitted.  At the end of the exam, scan your exam as a single pdf
+file and upload them to Gradescope.
+
+We will scan your exam submission and upload it to \emph{Gradescope} for
+marking -- \emph{you do not need to scan your exam}. You should write
+your name at the top of each page, as indicated (\emph{especially} if you
+remove the staples from your exam booklet).
+
+For the partial credit problems, always \emph{show your work}. Try to
+fit this work in the \emph{available space} if possible.  There is a
+blank page at the back of your exam for use as scratch paper. If you
+need more space for a solution, please write clearly \emph{in the
+  indicated space} that your solution continues later.
+
+At the end of the exam you are required to sign your exam. With your
+signature, you pledge that you have neither given nor received
+assistance on this exam.
+
+Students found violating the pledge will be reported to
+the Dean of Student Affairs.
+
+You must show your work in all the questions that require
+calculations, explanations, or proofs.  Simplify all answers.
+
+
+
+
+
+
+%\setcounter{page}{1}
+
+
+\newpage
+
+\begin{enumerate}
+ \setlength{\itemsep}{5mm}
+
+ % 1.  
+
+\item (20 points) Short-answer questions.  No work needs to be shown, as only the answer will be graded.
+
+  \begin{enumerate}
+    \setlength{\itemsep}{5mm}
+
+
+    \item Consider the differential equation
+      \[
+        (t-3)^2 x'' + \frac{1}{t-2} x' + 2x = 0.
+        \]
+        Find the largest open interval containing $t=0$ on which the
+        o.d.e.\ is normal.
+        
+        \hfill \framebox(250,30){}
+
+        \item  True or False.  Let $h_1, h_2, h_3$ be solutions of a normal
+          third-order linear differential equation on an open
+      interval $I$.  Then the Wronskian $W[h_1, h_2, h_3](t_0) = 0$
+      at one point $t_0 \in I$ if and only if $W[h_1, h_2, h_3](t)
+      =0$ at every point $t \in I$.
+
+      \hfill \framebox(250,30){}
+
+      \item True or False.  Let $h_1, h_2, h_3$ be arbitrary infinitely differentiable
+        functions on an open interval $I$.  Then the Wronskian $W[h_1, h_2, h_3](t_0) = 0$
+      at one point $t_0 \in I$ if and only if $h_1, h_2, h_3$
+      are linearly dependent on $I$.
+
+      \hfill \framebox(250,30){}
+
+    \item The order of the o.d.e. $t^3 (x'')^3 + 3x' +tx^4 = 0$ is
+
+      \hfill \framebox(250,30){}
+
+        \item True or False.  The linear o.d.e $t^3 x'' + 3x' + x + t
+          = 0$ is homogeneous.
+
+          \hfill \framebox(250,30){}
+\end{enumerate}
+    
+\newpage
+  
+\item (15 points) Find the general solution of
+  \[
+    t^2 \frac{dx}{dt} + 2tx = e^{2t}, \quad t >0.
+  \]
+
+  \item (10 points) Determine whether each collection of functions is linearly
+    independent or dependent on the interval $-\infty < t < \infty$.
+    Justify your answer.
+    \begin{enumerate}
+    \item $f_1(t) = e^t, \quad f_2(t) = t e^t, \quad f_3(t) = 1$.
+    \item $g_1(t) = t^2, \quad g_2(t) = - t^2$.
+      \end{enumerate}
+
+\item (20 points)  Write the general solution for each differential
+  equation below.
+  \begin{enumerate}
+  \item $D(D^2 -9) (D^2 -2D-1) x = 0$.
+  \item $(D^2 -2D + 10)^2 x = 0$.
+  \end{enumerate}
+
+\item (10 points) Find a minimal annihilator for the function
+    $5 e^{3t} + 4 e^{-2t} + 3 e^{-5}\cos 3t$ or state why there isn't
+    one.
+  \item (10 points) Evaluate $(D+5)^3 (t^3 - 4t^2 + 2t -4) e^{-5t}$.
+  
+  \item (15 points) Consider the equation $t^2 x'' - t x' + x =0$ on
+    the interval $(0, \infty)$.
+    \begin{enumerate}
+      \item Show that $h_1(t) = t$ and $h_2(t) = t \ln t$ are
+        solutions on this interval.
+        \item Show that these two solutions do or do not generate the
+          general solution.
+        \end{enumerate}
+
+      \end{enumerate}
+
+      \end{document}
+ 
+
+
+
+
+
+  
+% \item[(c)]  ( pts)  Calculate
+%   \[
+%     \det \begin{bmatrix}
+%       4 & 0 &2 \\
+%       1 & 1 & 0 \\
+%       2 & -1 & 1
+%     \end{bmatrix}.
+%     \]
+ 
+          
+  0.4pt depth 0pt width 1 true in .
+      \end{enumerate}
+
+      \item[(d)] (3 pts) Suppose
+          \begin{align*}
+            u_1 + 2 u_2 + 3 u_3 &= a,\\
+            4u_1 + 5 u_2 + 6 u_3 &= b,\\
+            u_1 - \phantom{5} u_2 + \phantom{6} u_3 &= c,
+          \end{align*}
+          where it is given that the determinant of the coefficient matrix is nonzero.
+          Write down the formula for $u_3$ in terms of determinants.
+          Do not evaluate the determinants.
+  
+         \vfill\eject
+
+          \item[(e)] (4 pts) Determine the largest interval containing 2 on
+            which the differential equation below is normal:
+            \[
+              (t^2 -1) \frac{d^2 x}{dt^2} - 3 \frac{dx}{dt} + x = t.
+            \]
+
+            \vspace*{2in}
+
+             \item[(f)] (4 pts)  The atoms of a radioactive substance tend to decompose into
+      atoms of a more stable substance at a rate proportional to the
+      number $x = x(t)$ of unstable substance present.  Set up a
+      differential equation for $x = x(t)$; in your differential equation, indicate whether the constant is positive or negative.
+
+      \vspace*{2in}
+
+    \item[(g)] (5 pts) Find a rational root of the polynomial $P(D) = 2 D^3 -5D^2 + 1$.
+
+      \vspace*{1.5in}
+
+        \end{enumerate}
+
+        \newpage
+
+        
+       
+
+    \item (6 points)  Find the general solution of
+      \[
+        ( D^2 + 2D + 2 ) x = 0.
+      \]
+
+      \newpage
+
+  \item (7 points)  Make a \textit{simplified} guess for a particular solution of
+    the differential equation
+    \[
+      (D+2)^7 (D^2+1)^6 x = t e^{-2t} + \cos t.
+    \]
+    Do not solve for the coefficients.
+
+    \newpage
+
+   
+    \item (15 points) Solve the initial-value problem
+      \[
+        t x' - x = t^3, \quad x(1) = 0,
+      \]
+      on the interval $(0,\infty)$.
+
+      \newpage
+
+      \item (10 points) Using the definition of linear independence, show that
+        $\cos t, \sin t, \sin 2t$ are linearly independent.
+
+        \newpage
+
+        \item (10 points) Use the exponential shift formula to compute the
+          following expressions:
+          \begin{enumerate}
+          \item[(a)] (5 pts) $(D^2 -6D - 1)[e^{3t} \cos t]$
+
+            \vspace*{2.8in}
+            
+          \item[(b)] (5 pts) $(D-3)^4 [ t^4 e^{3t} ]$
+
+            \vspace*{2.8in}
+          \end{enumerate}
+
+
+\end{enumerate}
+
+
+
+\vfill
+\noindent
+\tred{STOP!  Have you submitted the Quiz portion of the exam on Canvas?}
+
+\bigskip
+\bigskip
+
+\noindent
+PLEDGE:  I pledge that during this exam I have neither given nor received assistance or cheated in any other way.
+
+\bigskip
+\noindent
+Signature: \framebox(250,30){}
+
+\begin{center}
+(End of Exam)
+\end{center}
+
+\end{document}
