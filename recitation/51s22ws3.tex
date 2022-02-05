@@ -1,0 +1,78 @@
+\documentclass[12pt]{article} 
+\usepackage{amsmath,amssymb,amscd} 
+%\usepackage{pstricks}
+%\usepackage[pdftex]{graphicx}
+%\thispagestyle{empty}
+
+\usepackage[margin=.9in]{geometry}
+
+%\addtolength{\textwidth}{1in}
+%\addtolength{\oddsidemargin}{-.5in}
+%\addtolength{\evensidemargin}{-.5in}
+%\addtolength{\textheight}{1in}
+%\addtolength{\topmargin}{-.5in}
+
+% \usepackage{mathptmx}
+% \renewcommand{\rmdefault}{ptm}		% set Times as the default text font
+ \usepackage{palatino}
+ \usepackage{mathpazo}
+
+ %\input manifoldsmacros
+ 
+%\thispagestyle{empty}
+
+\usepackage{color}
+\newcommand{\tred}[1]{{\color{red}{#1}}}
+
+
+\begin{document}
+
+%\setcounter{page}{4}
+
+\noindent
+Math 51~~~~~~~~~~~~~~~~~~~ \hfill Differential Equations \hfill February 3--4, 2022 
+ \centerline{Worksheet 2}
+
+\begin{enumerate}
+\item[1.] The following example shows that in some physical situations,
+  nonuniqueness is natural and obvious, not pathological.\footnote{See
+  Steven H. Strogatz: Nonlinear Dynamics and Chaos: With Applications to Physics, Biology, Chemistry, and Engineering}
+
+  Consider a water bucket with a hole in the bottom. If you see an empty bucket with a puddle beneath it, can you figure out when the bucket was full? No, of course not! It could have finished emptying a minute ago, ten minutes ago, or whatever. The solution to the corresponding differential equation must be nonunique when integrated backwards in time.
+
+Here's a crude model of the situation. Let \(h(t)=\)height of the water
+remaining in the bucket at time \(t\); \(a =\)area of the hole; \(A
+=\)cross-sectional area of the bucket (assumed constant); \(v(t)
+=\)velocity of the water passing through the hole.
+\begin{enumerate}
+\item Show that \(av(t) = Ah(t)\). What physical law are you invoking?
+\item To derive an additional equation, use conservation of energy. First, find the
+change in potential energy in the system, assuming that the height of the
+water in the bucket decreases by an amount \(\Delta h\) and that the water has density \(\rho\) . Then find the kinetic energy transported out of the bucket by the escaping water. Finally, assuming all the potential energy is converted into kinetic energy, derive the equation \(v^2 = 2gh\).
+\item Combining the previous two items, show that \(\dot h=-C\sqrt h\),  where \(C=\sqrt{2g}\dfrac aA\) and \(\dot h=\frac{d}{dt}h\).
+\item Given \(h(O) =0\) (bucket empty at \(t =0\) ), show that the solution for \(h(t)\) is nonunique in backwards time, i.e., for \(t < 0\).
+\end{enumerate}
+\newpage
+\item[2.] 
+Consider the ODE   
+\[
+x''+x'-6x=3t+2.
+\]
+\begin{enumerate}
+\item Find all linear solutions.
+\item Find all linear solutions of the associated homogeneous equation.
+\item Find all solutions of the associated homogeneous equation that are of
+  the form \(\sin at\) or \(\cos bt\).
+\item Find all solutions of the associated homogeneous equation that are of
+  the form \(e^{ct}\).
+\item Use the Wronskian test to check whether the solutions from the
+  previous three items generate the general solution.
+\item Find the general solution of  \(x''+x'-6x=3t+2\).
+\end{enumerate}
+\end{enumerate}\end{document}
+
+
+
+
+
+\end{document}
