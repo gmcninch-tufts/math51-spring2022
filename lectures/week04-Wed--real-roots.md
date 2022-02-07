@@ -234,6 +234,34 @@ for $1 \le j \le d$ and $0 \le i$ are linearly independent.
 
 :::
 
+## Exponential Shift Formula
+
+::: incremental
+
+- in the preceding discussion, we wrote down what is known as the
+  *exponential shift formula*.
+  
+- Let's highlight its statement
+
+- if $L = P(D)$ is a constant coefficient differential operator, and
+  if $y=y(t)$ is any (sufficiently differentiable) function of $t$, we
+  have:
+
+  $$P(D)[e^{\lambda t}y] = P(D+\lambda)[y].$$
+  
+- For example,
+
+  \begin{align*}
+  (D+3)^2[e^{2t} \cos(t)] &= e^{2t} (D+2+3)^2[\cos(t)]  \\
+  &= e^{2t} (D+5)^2[\cos(t)] \\
+  &= e^{2t} (D^2 + 10D + 25)[\cos(t)] \\
+  &= e^{2t} [ -\cos(t) -10\sin(t) + 25 \cos(t)] \\
+  &= e^{2t} [ 24\cos(t) - 10\sin(t)]
+  \end{align*}
+
+
+:::
+
 ## Springs, revisited
 
 Let's recall our *damped spring model*:
