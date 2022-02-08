@@ -31,21 +31,6 @@ You should review the *problem sets* PS1, PS2, PS3, PS4.
 ## Here are some further review problems: {.unnumbered}
 
 
-#. (multiple-choice) A drug is absorbed by the body at a rate proportional to
-   the amount of the drug present in the bloodstream after $t$ hours. If
-   there are $x(t)$ mg of the drug present in the bloodstream at time $t$,
-   assume that the drug is absorbed at a rate of $0.5 x(t)$ /hour.
-   If a patient receives the drug intravenously at a constant rate of
-   3 mg/hour, to which of the following ODEs is $x(t)$ a solution?
-
-   a. $x'(t) = -0.5x(t) + 3$
-   
-   b. $x'(t) = -0.5x(t); \quad x(0) = 3$
-   
-   c. $x'(t) = 0.5x(0) + 3$
-   
-   d. $x'(t) = .5x(t) - 3$
-
 #. (multiple-choice) Which of the following represents a *linear* ODE?
 
    a. $x\cdot x'' + x + 1 = \sin(t)$
@@ -62,8 +47,8 @@ You should review the *problem sets* PS1, PS2, PS3, PS4.
    \qquad f_3(t) = \ln(1+t).$$ Which of the following statements is
    *most correct*?
 
-   a. The Wronskian is given by $W(t) = 1/(1+t)^2$; since $W(1)
-      = 1/4$ is *non-zero*, the functions are linearly independent on
+   a. The Wronskian is given by $W(t) = -1/(1+t)^2$; since $W(1)
+      = -1/4$ is *non-zero*, the functions are linearly independent on
       the interval $(-1,\infty)$.
    
    b. Since $W(1) = 0$, the functions are linearly dependent on $(-1,\infty)$.
@@ -102,8 +87,6 @@ You should review the *problem sets* PS1, PS2, PS3, PS4.
    
     c. What is the largest interval containing $t_0 = 0$ on which this
       solution is defined?
-
-#. Find the general solution to the ODE $e^{-t}x' + 2t = 0.$
 
 #. Consider the differential equation
    $$(\clubsuit) \quad (t+2)\dfrac{dx}{dt} + 2x = t+1.$$
@@ -181,8 +164,6 @@ You should review the *problem sets* PS1, PS2, PS3, PS4.
    a. $P(D) = D^2 +D -6$ and $f = t^2 e^{2t}$.
    
    b. $P(D) = D^2 + 3$ and $f = e^t \cos(3t)$.
-
-   c.  $P(D) = (D+3)(D-1)^2$ and $f = t^2e^t$.
 
 
 #. Find the general solution to the differential equation
