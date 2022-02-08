@@ -1,0 +1,254 @@
+\documentclass[12pt]{article} 
+\usepackage{amssymb,amsmath}
+\usepackage[margin=.9in]{geometry}
+
+\setlength\parindent{25pt}
+
+%\usepackage{color}
+%\newcommand{\tred}[1]{{\color{red}{#1}}}
+
+
+\begin{document}
+
+
+\noindent
+Practicum Session: \framebox(30,30){} \quad PRINT your name:  \framebox(230,30){}\\
+
+\smallskip
+\noindent
+Section Instructor: \framebox(100,30){} (Choose from Hasselblatt, McNinch, Smith, Tu)
+
+
+\begin{center}
+Math 51 \hfill Differential Equations \hfill February 14, 2022\\
+\hfill ~~~~~~~~~Exam 1 (100 points) \hfill noon--1:20 p.m.
+\end{center}
+
+\medskip
+
+This is a closed-book exam.  No books, notes, or calculators are permitted.
+% At the
+% end of the exam, scan your exam as a single pdf file
+% and upload them to Gradescope.
+
+At the end of the exam you are required to sign a pledge that you have not
+cheated.  
+Students found violating the pledge will be reported to the Dean of Student Affairs.
+
+You must show your work in all the questions that require
+calculations, explanations, 
+or proofs.  Simplify all answers.
+
+
+
+%\newpage
+
+\begin{enumerate}
+ \setlength{\itemsep}{5mm}
+
+ % 1.  
+
+\item (21 points) Short-answer questions.  Two points per question
+  except in (a).  No work needs to be shown, as only the answer will be graded.
+
+  \begin{enumerate}
+    \setlength{\itemsep}{5mm}
+
+
+    \item (3 points) Consider the differential equation
+      \[
+        (t-3)^2 x'' + \frac{1}{t-2} x' + 2x = 0.
+        \]
+        Find the largest open interval containing $t=0$ on which the
+        o.d.e.\ is normal.
+        
+        \hfill \framebox(180,30){}
+
+         \item The order of the o.d.e. $t^3 (x'')^3 + 3x' +tx^4 = 0$ is
+
+      \hfill \framebox(60,30){}
+
+
+        \item  True or False.  Let $h_1, h_2, h_3$ be solutions of a normal
+          third-order linear differential equation on an open
+      interval $I$.  Then the Wronskian $W[h_1, h_2, h_3](t_0) = 0$
+      at one point $t_0 \in I$ if and only if $W[h_1, h_2, h_3](t)
+      =0$ at every point $t \in I$.
+
+      \hfill \framebox(60,30){}
+
+      \item True or False.  Let $h_1, h_2, h_3$ be arbitrary infinitely differentiable
+        functions on an open interval $I$.  Then the Wronskian $W[h_1, h_2, h_3](t_0) = 0$
+      at one point $t_0 \in I$ if and only if $h_1, h_2, h_3$
+      are linearly dependent on $I$.
+
+      \hfill \framebox(60,30){}
+
+           \item True or False.  The linear o.d.e $t^3 x'' + 3x' + x + t
+          = 0$ is homogeneous.
+
+          \hfill \framebox(60,30){}
+
+          
+
+
+            \item True or False.  If $h_1(t), h_2(t), h_3(t)$ are
+              three solutions of the differential equation $x'' + x +
+              1 = 0$ on an interval $I$, then they cannot be
+              linearly independent on $I$.
+
+              \hfill \framebox(60,30){}
+
+            \item True or False.  Let $P(r), Q(r)$ be two polynomials
+              and $F(r) = P(r) Q(r)$.   If $x= h(t)$ is a solution of
+              the differential equation $P(D)x=0$, then it is necessarily a
+              solution of the differential equation $F(D) x = 0$.
+
+              \hfill \framebox(60,30){}
+
+              \item Yes or No.  Suppose $h_1(t)$ and $h_2(t)$ are any two
+            solutions of the differential equation $t^3 x'' + tx' +
+            (t^2-1)x = 1$.  Is $h_1(t) + h_2(t)$ necessarily a solution of
+            this differential equation?
+
+            \hfill \framebox(60,30){}
+
+            \item Yes or No.  Suppose $h_1(t)$ and $h_2(t)$ are two any
+            solutions of the differential equation $t^3 x'' + x' +
+            x^2 = 0$.  Is $h_1(t) + h_2(t)$  necessarily a solution of
+            this differential equation?
+
+            \hfill \framebox(60,30){}
+
+
+              \item Multiple-Choice.  Let $L(x) = x''' - 3x' +x =0$.  Suppose $h_1(t),
+                h_2(t), h_3(t)$ are solutions of $L(x)=0$ on $(-\infty,
+                \infty)$ and the
+                Wronskian $W[h_1, h_2, h_3](1) \ne 0$.
+                Which of the following statements is true?
+                \smallskip
+                \begin{enumerate}
+                  \item[I.] $h_1(t), h_2(t), h_3(t)$ generate the
+                    general solution of $L(x)=0$ on $(-\infty,\infty)$.
+                    \item[II.] $h_2(t), h_2(t), h_3(t)$ are linearly
+                      independent on $(-\infty,\infty)$.
+                    \end{enumerate}
+
+                    \medskip
+                    Write one of A, B, C, D, or E in the box.
+
+                    \medskip
+
+                    \begin{enumerate}
+                  \item[A.]  Only I is true.
+                  \item[B.] Only II is true.
+                  \item[C.] Both I and II are true.
+                  \item[D.] Neither I nor II is true.
+                    \item[E.] It is not possible to determine the
+                      truth or falsity of I or II from the given information.
+                  \end{enumerate}
+                  
+
+            \hfill \framebox(60,30){}
+
+            
+\end{enumerate}
+    
+\newpage
+  
+
+  \item (12 points) Determine whether each collection of functions is linearly
+    independent or dependent on the interval $-\infty < t < \infty$.
+    Justify your answer.
+    \begin{enumerate}
+    \item $f_1(t) = e^t, \quad f_2(t) = t e^t, \quad f_3(t) = 1$.
+    \item $g_1(t) = t^2, \quad g_2(t) = - t^2$.
+      \end{enumerate}
+
+      %\newpage
+
+\item (20 points)  Write the general solution for each differential
+  equation below.
+  \begin{enumerate}
+  \item $D(D^2 -9) (D^2 -2D-1) x = 0$.
+  \item $(D^2 -2D -15)^2 x = 0$.
+  \end{enumerate}
+
+  %\newpage
+
+\item (6 points)
+\begin{enumerate}
+\item[(a)]  (3 pts)  Calculate
+  \[
+    \det \begin{bmatrix}
+      3 & 0 &2 \\
+      5 & 1 & 0 \\
+      2 & -1 & 1
+    \end{bmatrix}.
+    \]
+
+      \item[(b)] (3 pts) Suppose
+          \begin{align*}
+            u_1 + 2 u_2 + 3 u_3 &= a,\\
+            3u_1 + 2 u_2 + 1 u_3 &= b,\\
+            5 u_1 - 2 u_2 + 2 u_3 &= c.
+          \end{align*}
+          where it is given that the determinant of the coefficient matrix is nonzero.
+          Write down the formula for $u_3$ in terms of determinants.
+          Do not evaluate the determinants.
+
+          % \item[(c)] (5 pts) Find a rational root of the polynomial
+          %   $P(D) = 2 D^3 +3 D^2 - 1$.
+
+        \end{enumerate}
+        
+%\newpage
+
+          \item (16 points) Use variation of parameters to find the general solution of
+  \[
+     \frac{dx}{dt} + \frac{2}{t} x = \frac{e^{2t}}{t^2}, \quad t >0.
+  \]
+  (If you use a different method, you will get at most 10 points.)
+
+  %\newpage
+
+  \item (10 points) Using the exponential shift formula $P(D)[e^{\lambda t}y] = e^{\lambda t} [P(D+\lambda) y]$, evaluate $(D+5)^3 \big[(t^3 - 4t^2 + 2t -4) e^{-5t}\big]$.
+
+    %\newpage
+
+  \item (15 points) Consider the equation $t^2 x'' - t x' + x =0$ on
+    the interval $(0, \infty)$.
+    \begin{enumerate}
+      \item Show that $h_1(t) = t$ and $h_2(t) = t \ln t$ are
+        solutions on this interval.
+        \item Do these two solutions generate the
+          general solution?  Explain your reasoning.
+        \end{enumerate}
+
+      \end{enumerate}
+
+      \vfill
+
+\noindent
+PLEDGE:  I pledge that during this exam I have neither given nor received assistance or cheated in any other way.
+
+\bigskip
+\noindent
+Signature: \framebox(250,30){}
+
+\begin{center}
+(End of Exam)
+\end{center}
+
+      \end{document}
+ 
+
+
+% Find a minimal annihilator for the function
+%     $5 e^{3t} + 4 e^{-2t} + 3 e^{-5}\cos 3t$ or state why there isn't
+%     one.
+
+
+  
+ 
+  

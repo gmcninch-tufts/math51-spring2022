@@ -1,7 +1,7 @@
 ---
 author: George McNinch
 title: |
-  Math 51 Fall 2021 - Week 4 Wed \
+  Math 51 Spring 2022 - Week 4 Wed \
   Constant Coefficient ODEs -- Real Roots
 date: 2022-02-09
 bibliography:

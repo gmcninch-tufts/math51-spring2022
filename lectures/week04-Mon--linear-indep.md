@@ -1,7 +1,7 @@
 ---
 author: George McNinch
 title: |
-  Math 51 Fall 2021 - Week 4 Mon \
+  Math 51 Spring 2022 - Week 4 Mon \
   Linear Independence of Functions
 date: 2022-02-07
 bibliography:
@@ -220,10 +220,23 @@ the linear independence is the crucial property.
 
 - Consider for example $f_1(t) = t$, $f_2(t) = t^2$ and $f_3(t) = t^3$:
   
-  - Then $W(t) = W(t,t^2,t^3)(t) = \det \begin{bmatrix} t & t^2 &
-    t^3 \\ 1 & 2t & 3t^2 \\ 0 & 0 & 6t \end{bmatrix} = 12t^3$ 
+  - Then computing the determinant by column-expansion on the first
+    column, we find that
+  
+    \begin{align*}
+	W(t) &= W(t,t^2,t^3)(t) \\
+	&= \det \begin{bmatrix} t & t^2 &
+    t^3 \\ 1 & 2t & 3t^2 \\ 0 & 2 & 6t \end{bmatrix} \\
+	&= t \det \begin{bmatrix} 2t & 3t^2 \\
+	2 & 6t \end{bmatrix} - \det \begin{bmatrix}
+	t^2 & t^3 \\ 
+	2 & 6t 
+	\end{bmatrix} \\
+	&= t(12t^2 - 6t^2) - (6t^3 - 2t^3) \\
+	&= 6t^3 - 6t^3 + 2t^3 = 2t^3
+	\end{align*}
 	
-  - thus $W(1) = 12$ while $W(0) = 0$.  
+  - thus $W(1) = 2$ while $W(0) = 0$.  
 	
   - The functions $t,t^2,t^3$ are linearly independent (e.g. since $W(1) = 12$).
 
@@ -240,7 +253,7 @@ the linear independence is the crucial property.
 
 - we've seem that if $W(h_1,h_2,h_3)(t_0)$ is non-zero for some $t_0$
   in $I$, the general solution to $(\clubsuit)$ is given by $$x(t) =
-  c_1h_1(t) + c_2h_2(t) + c_3h_3(t0).$$
+  c_1h_1(t) + c_2h_2(t) + c_3h_3(t).$$
   
 - But more is true! $(\diamondsuit)$ If $W(h_1,h_2,h_3)(t_0) \ne 0$
   for *some* $t_0$ in $I$, then $W(h_1,h_2,h_3)(t_1) \ne 0$ for
