@@ -30,7 +30,7 @@ class diffeq():
                  n,
                  isoclines=[],
                  labeledPoints=[],
-                 inits=[0],
+                 inits=[(0,0)],
                  title="untitled.png"):
         self.f = f
         self.n = n
@@ -148,76 +148,20 @@ E1 = diffeq(h,
             inits=[(-2,4),(-2,-4)])
 E1.draw()
 
-# E2 = diffeq(h,
-#             t_bounds=bounds(-2,2),
-#             x_bounds=bounds(-4,4),
-#             n=30,
-#             title="xt-sols-iso.png",
-#             isoclines=[ [ graph(hi(0),bounds(-2,2),30),
-#                           vertical(bounds(-4,4),30)
-#                          ],
-#                         [ graph(hi(1),bounds(-2,-.2),30),
-#                           graph(hi(1),bounds(.25,2),30)
-#                         ],
-#                         [ graph(hi(-1),bounds(-2,-.2),30),
-#                           graph(hi(-1),bounds(.25,2),30)
-#                         ],
-#                        ],            
-#             inits=[4,-4])
-# E2.draw()
 
+def g(t,x):
+    return x - .3*(t-2)*(t+1)
 
-# def g(t,x):
-#     return x - .3*(t-2)*(t+1)
+def q(t):
+    return (-1)*g(t,0)
 
-# def q(t):
-#     return (-1)*g(t,0)
-
-# D1 = diffeq(g,
-#             t_bounds = bounds(-3.0,3.5),
-#             x_bounds = bounds(-3.0,5.0),
-#             n=30,
-#             title="quad-sols-iso.png",
-#             isoclines=[
-#                 [ graph(q,bounds(-3.0,3.5),n=30),]
-#             ],
-#             inits=[1.6,1.5,1.46])
-# D1.draw()
-
-# def h(t,x):
-#     return x - .3*(t-2)*(t+2)*t
-
-# def hi(t):
-#     return (-1)*h(t,0)
-
-# D2 = diffeq(h,
-#             bounds(-3.0,3.0),
-#             bounds(-5.0,8.0),
-#             n=30,
-#             title="cubic-sols-iso.png",
-#             inits=[-1.0,-1.26,-1.5],
-#             isoclines = [
-#                 [graph(hi,bounds(-3,3),n=30)]
-#             ]
-# #            slopes=[1,0]
-#             )
-# D2.draw()
-
-
-# def k(t,x):
-#     return x - .3*t
-
-# def ki(t):
-#     return (-1)*k(t,0)
-
-# D3 = diffeq(k,
-#             t_bounds=bounds(-2.0,2.0),
-#             x_bounds=bounds(-2.0,4.0),
-#             n=40,
-#             title="linear-sols-iso.png",
-#             inits=[-.25,-.35,-.5,],
-#             isoclines=[
-#                 [graph(ki,bounds(-2,2),n=30)]
-#                 ]
-#             )
-# D3.draw()
+D1 = diffeq(g,
+            t_bounds = bounds(-3.0,3.5),
+            x_bounds = bounds(-3.0,5.0),
+            n=30,
+            title="quad-sols-iso.png",
+            isoclines=[
+                [ graph(q,bounds(-3.0,3.5),n=30),]
+            ],
+            inits=[(-3,1.6),(-3,1.5),(-3,1.46)])
+D1.draw()
