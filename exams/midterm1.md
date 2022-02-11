@@ -14,6 +14,7 @@ header-includes: |
 
 \newcommand{\mybox}[2]{\framebox{\begin{minipage}[b][#1][t]{#2} \, \end{minipage}}}
 
+There are **6 problems** on the exam.
 
 You may not use *calculators*, *books* or *notes* during the exam. All
 electronic devices (including your phones) must be *silenced* and *put
@@ -81,19 +82,19 @@ that your solution continues later.
 	  Find the largest open interval containing $t=0$ on which this
       o.d.e. is normal.  
 	  
-	  \hfill \mybox{15mm}{2cm}
+	  \hfill \mybox{15mm}{4cm}
 	  \vfill
 
-   #. The order of the o.d.e. $t^3 (x'')^3 + 3x' +tx^4 = 0$ is
+   #. The order of the differential equation $t^3 (x'')^3 + 3x' +tx^4 = 0$ is
    
    	  \hfill \mybox{10mm}{20mm}
 	  \vfill
 
    #. True or False.  Let $h_1, h_2, h_3$ be solutions of a normal
       third-order linear differential equation on $(-\infty,\infty)$.
-      Then the Wronskian satifies $W[h_1, h_2, h_3](t_0) = 0$ at one
-      point $t_0$ in $(-\infty,\infty)$ if and only if it satisfies $W[h_1, h_2,
-      h_3](t) = 0$ for every real number $t$.
+      If the Wronskian satisfies $W[h_1, h_2, h_3](t_0) = 0$ at one
+      real number $t_0$ then it satisfies $W[h_1, h_2,
+      h_3](t) = 0$ for *every* real number $t$.
 
    	  \hfill \mybox{10mm}{20mm}
 	  \vfill
@@ -213,7 +214,7 @@ that your solution continues later.
       Use the Wronskian test to confirm that these functions generate
       the general solution to this ODE.
 	   
-      \vfill
+      \vspace{8cm}
 
    #. Decide whether the functions $g_1(t) = \dfrac{t^2}{2}, \quad g_2(t) = -
       t^2$ are *linearly independent*.
@@ -261,14 +262,15 @@ that your solution continues later.
    the amount of the drug present in the bloodstream after $t$
    hours. If there are $x(t)$ mg of the drug present in the
    bloodstream at time $t$, assume that the drug is absorbed at a rate
-   of $0.5 x(t)$ /hour.
+   of $0.5 x(t)$ mg/hour.
    
-   Also assume that a drug is administered intravenously into a
+   Also assume that the drug is administered intravenously into a
    patients bloodstream at a constant rate of 3 mg/hour.
    
    #. $x(t)$ is a solution to a differential equation of the form
-      $\dfrac{dx}{dt} = \lambda x + r$.  Find $\lambda$ and $r$ and
-      give the differential equation to which $x(t)$ is a solution.
+      $\dfrac{dx}{dt} = \lambda x + r$.  Indicate the values of
+      $\lambda$ and $r$, and give the differential equation to which
+      $x(t)$ is a solution.
    
       \vspace{35mm}
 	  
