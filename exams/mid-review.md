@@ -165,6 +165,7 @@ You should review the *problem sets* PS1, PS2, PS3, PS4.
    
    b. $P(D) = D^2 + 3$ and $f = e^t \cos(3t)$.
 
+   c. $P(D) = (D+3)(D-1)^2$ and $f  t^2 e^t$.
 
 #. Find the general solution to the differential equation
    $$(t+1)x' = \dfrac{x}{t-1}, \quad t>1.$$

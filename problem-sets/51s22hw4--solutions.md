@@ -332,8 +332,9 @@ These problems cover [@gutermanNitecki, secs. 2.4, 2.5]
 	  &= e^{2t} (D+1)(D^2 + 4D + 4 + (D+2) + 1)[t] \\
 	  &= e^{2t} (D+1)(D^2 + 5D + 7)[t] 	\\
 	  &= e^{2t} (D+1)[5 + 7t] 	\\	  
-	  &= e^{2t} [7 + (5+7t)] = e^{2t}[ 11 + 7t].
+	  &= e^{2t} [7 + (5+7t)] = e^{2t}[ 12 + 7t]
 	  \end{align*}
+	  
 
       -----
       

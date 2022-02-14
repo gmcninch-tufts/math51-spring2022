@@ -372,7 +372,7 @@ header-includes: |
 
    :::{.solution}
    \color{red}
-   **Solution:** a.
+   **Solution:** a. and c.
 
    -----
       
@@ -505,7 +505,19 @@ header-includes: |
       :::{.solution}
       \color{red}
       **Solution:**
-      
+
+	  \begin{align*}
+	  (D^2 + 3)[e^t \cos(3t) &=
+	  e^t ((D+1)^2 + 3)[\cos(3t) \\
+	  &=e^t (D^2 + 2D + 1 + 3)[\cos(3t)] \\
+	  &=e^t (D^2 + 2D + 4)[\cos(3t)] \\
+	  &= e^t ( -9\cos(3t) - 6\sin(3t) + 4\cos(3t) ) \\
+	  &= e^t ( -5\cos(3t) - 6\sin(3t))
+	  \end{align*}
+
+      (I originally used the wrong expression for $P(D)$; here is that
+      calculation for comparison
+
 	  \begin{align*}
 	  (D^2 + D)[e^t \cos(3t) &=
 	  e^t ((D+1)^2 + (D+1))[\cos(3t) \\
@@ -514,13 +526,23 @@ header-includes: |
 	  &= e^t ( -9\cos(3t) - 9\sin(3t) + 2\cos(3t) ) \\
 	  &= e^t ( -7\cos(3t) - 9\sin(3t))
 	  \end{align*}
+ 
+      )
 
       -----
       
       \color{black}
       :::
 
-
+   c. $P(D) = (D+3)(D-1)^2$ and $f = t^2 e^t$.
+      
+	  \begin{align*}
+	  (D+3)(D-1)^2[t^2 e^t] &= e^t (D+1 + 3)(D+1-1)^2[t^2] \\
+	  &= e^t (D+4)D^2[t^2] \\
+	  &= e^t (D+4)[2] \\
+	  &= 8e^t
+	  \end{align*}
+      
 
 #. Find the general solution to the differential equation
    $$(t+1)x' = \dfrac{x}{t-1}, \quad t>1.$$
@@ -528,6 +550,47 @@ header-includes: |
    :::{.solution}
    \color{red}
    **Solution:**
+
+      
+   Separating variables, we are led to the integrals
+   
+   $$(\clubsuit) \quad \int \dfrac{1}{x} dx = \int\dfrac{1}{(t+1)(t-1)}dt$$
+	  
+   To find the integral on the right, use the method of *partial
+   fractions.* We must solve
+   
+   $$\dfrac{1}{(t+1)(t-1)}  = \dfrac{A}{t+1} + \dfrac{B}{t-1} = \dfrac{A(t-1) + B(t+1)}{(t+1)(t-1)}.$$
+   
+   Thus, we require that
+   
+   $$0t + 1 = 1 = A(t-1) + B(t+1) = (A+B)t + (B-A).$$
+   
+   Comparing coefficients, we find that 
+   
+   \begin{align*}
+   0 =& A+B \\
+   1 =& -A + B
+   \end{align*}
+   
+   Adding the two equations, we find that $2B=1$ so that $B=1/2$ and
+   then $A = -1/2$.  Thus,
+   
+   $$\dfrac{1}{(t+1)(t-1)} = \dfrac{-1}{2(t+1)} + \dfrac{1}{2(t-1)} =
+   \dfrac{1}{2}\left(\dfrac{1}{t-1} - \dfrac{1}{t+1}\right).$$
+   
+   Returning now to the integrals $(\clubsuit)$, we find that
+   \begin{align*}
+   \ln|x| &= \dfrac{1}{2} \int \left( \dfrac{1}{t-1} - \dfrac{1}{t+1} \right) dt \\
+   &=\dfrac{1}{2}\left(\ln(t-1) - \ln(t+1)\right) + C \\
+   &=\ln(\sqrt{t-1}) - \ln(\sqrt{t+1}) + C
+   \end{align*}
+   
+   After taking the  exponential of each side, we find that
+   
+   $$x = k\sqrt{\dfrac{t-1}{t+1}}$$
+   for an arbitrary constant $k$.
+   
+
 
    -----
       
@@ -591,13 +654,40 @@ header-includes: |
    \color{red}
    **Solution:**
 
+   The characteristic polynomial factors as
+   $$4r^2 + 4r -3 = (2r + 3)(2r - 1)$$
+   and thus has roots $\dfrac{-3}{2}$ and $\dfrac{1}{2}$.
+   
+   It follows that the general solution to the indicated ODE  is given by
+   $$x(t) = c_1 e^{-3t/2} + c_2 e^{t/2}$$
+
+   Note that
+   
+   $$x'(t) = \dfrac{-3c_1}{2} e^{-3t/2} + \dfrac{c_2}{2} e^{t/2}.$$
+
+   We now require that
+   
+   \begin{align*}
+   0 &= x(0) = c_1 + c_2 \\
+   1 & = c'(0) = \dfrac{-3c_1}{2} + \dfrac{c_2}{2}
+   \end{align*}
+
+   i.e.
+   \begin{align*}
+   0 &=  c_1 + c_2 \\
+   2 &= -3c_1 + c_2
+   \end{align*}
+   
+   Subtracting the first equation from the second gives $2 = -4c_1$ so
+   that $c_1 = -1/2$, and then the first equation shows that $c_2 = -c_1 = 
+   1/2.$
+   
+   Thus the solution to the IVP is
+   $$x(t) = \dfrac{-e^{-3t/2}}{2} + \dfrac{e^{t/2}}{2}$$
+
+
    -----
       
    \color{black}
    :::
 
-
-## Bibliography {.unnumbered}
-
-:::{#refs}
-:::
