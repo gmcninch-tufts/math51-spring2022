@@ -169,7 +169,7 @@ that your solution continues later.
       Wronskian satisfies $W[h_1, h_2, h_3](1) \ne 0$.  Which of the
       following statements is true?  \smallskip \begin{enumerate}
       \item[I.]  $h_1(t), h_2(t), h_3(t)$ generate the general
-      solution of $L(x)=0$ on $(-\infty,\infty)$.  \item[II.] $h_2(t),
+      solution of $L(x)=0$ on $(-\infty,\infty)$.  \item[II.] $h_1(t),
       h_2(t), h_3(t)$ are linearly independent on $(-\infty,\infty)$.
       \end{enumerate}
 
