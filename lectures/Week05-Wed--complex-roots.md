@@ -24,17 +24,26 @@ homogeneous equation $$P(D)x = 0$$ using the roots of the
 characteristic polynomial $P(r)$, *in the case where all roots of
 $P(r)$ are real numbers*.
 
----------
+## Factoring
 
-For example, we saw that the general solution to 
-$$(D^3 - 4D^2 + 5D - 2)x = 0$$
-can be obtained by noting that $r^3 - 4r^2 +5r - 2 = (r-2)(r-1)^2$
-which has roots $\lambda = 2$ and $1$, where $1$ has multiplicty 2.
+::: incremental
 
-. . .
+- Consider $(\clubsuit) \quad (D^3 - 4D^2 + 5D - 2)x = 0$ with
+  characteristic polynomial $p(r) = r^3 - 4r^2 +5r - 2$.
 
-Thus the general solution is
-$$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
+- Since $p(1) = 1 - 4 + 5 - 2 = 0$, we see that $1$ is a root and
+  hence $r-1$ is a *factor* of $p(r)$.
+  
+- using *long-division* we find that $p(r) = (r-1)(r^2 - 3r + 2)$.
+
+- finally, we can factor the quadratic $r^2 - 3r + 2 = (r-2)(r-1)$.
+
+- summing up, we find that $p(r) = r^3 - 4r^2 +5r - 2 = (r-2)(r-1)^2$
+
+- thus the general solution to $(\clubsuit)$ is 
+  $$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
+
+:::
 
 ## Complex numbers
 
@@ -70,7 +79,10 @@ $$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
 - If the polynomial $P(r)$ has *real numbers* as coefficients, and if
   $z = a+bi$ is a root of $P$, then $\overline{z} = a-bi$ is also a
   root of $P$
-  
+
+- We saw this already for $r^2 + 2r +2 = (r-z)(r-\overline{z})$ where
+  $z = -1 + i$.
+
 - Of course, if $z = a + 0i = a$ is a real number then $\overline{z} = z$.
 
 :::
@@ -79,18 +91,38 @@ $$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
 
 ::: incremental
 
-- let $z = a+bi$ and consider the polynomial
-  $$P(r) = (r-z)(r-\overline{z}) = (r-(a+bi))(r-(a-bi))$$
+- Every complex number $z = a+bi$ is the root of a polynomial $P(r)$
+  with real coefficients.
+
+- if $b=0$ -- i.e. if $z$ is actually a real number -- then $z = a$ is
+  a root of the linear polynomial $P(r) = r-a$.
+
+- if $b \ne 0$, consider
+  \begin{align*}
+  P(r) &= (r-z)(r-\overline{z}) \\
+  &= r^2 - zr - \overline{z}r + z\cdot \overline{z} \\
+  &= r^2 - (z + \overline{z})r + z\cdot\overline{z}
+  \end{align*}
   whose roots are $z$ and $\overline{z}$.
-  Then
-  $$P(r) = r^2-2ar + (a^2 + b^2).$$
-  In particular, $P(r)$ has *real coefficients*.
+
+- Since $z + \overline{z} = 2a$ and $z\cdot \overline{z} = a^2 + b^2$
+  we have $$P(r) = r^2-2ar + (a^2 + b^2).$$ In particular, $P(r)$ has
+  *real coefficients*.
   
-  
+:::
+
+-----
+
+::: incremental
+
 - for example, if $z = 2+3i$, then 
-  $$P(r) = (r-z)(r-\overline{z}) = r^2 - 4r + 12.$$
+  $$P(r) = (r-z)(r-\overline{z}) = r^2 - 4r + 13.$$
+
+- if $z = -3 + 2i$ then
+  $$P(r) = (r-z)(r-\overline{z}) = r^2 + 6r + 13.$$
 
 :::
+
 
 ## Complex roots, redux
 
@@ -135,12 +167,14 @@ $$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
 - And a result known as [Euler's Formula]{.smallcaps} tells us that
   $$e^{it} = \cos(t) + i \sin(t).$$
   
-- In particular, $e^{bti} = \cos(bt) + i \sin(bt)$. Thus, we find solutions
+- so $e^{bti} = \cos(bt) + i \sin(bt)$. Thus, we find solutions
+  to $(\spadesuit)$:
   \begin{align*}
   e^{zt} &= e^{at} \cdot \left(\cos(bt) + i\sin(bt)\right) \\
   e^{\overline{z}t} &= e^{at} \cdot \left(\cos(bt) - i\sin(bt)\right) 
   \end{align*} 
   
+
 - finally, we make *real valued* solutions from complex linear
   combinations of these solutions as follows:
 
@@ -159,14 +193,31 @@ $$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
   confirm that $$(D^2 - 2aD + (a^2 +b^2))[h_i(t)] = 0$$ for $i=1,2$
   where $h_1(t) = e^{at} \cos(bt)$ and $h_2(t) = e^{at} \sin(bt)$.
   
-- for example, consider $$(D^2  -4D + 12)x = 0.$$ We saw earlier that
-  $P(r) = r^2 - 4r + 12$ has roots $2 + 3i$ and $2-3i$. This *pair of roots*
+:::
+
+----
+
+::: incremental
+  
+- for example, consider $$(D^2  -4D + 13)x = 0.$$ 
+
+- We saw earlier that
+  $P(r) = r^2 - 4r + 13$ has roots $2 + 3i$ and $2-3i.$ This *pair of roots*
   corresponds to the *pair of solutions* $$e^{2t} \cdot \cos(3t) \quad
   \text{and} \quad e^{2t} \sin(3t).$$ 
   
-- In particular, the general solution
-  to $(D^2 -4D + 12)x = 0$ is $$x = c_1 e^{2t} \cos(3t) + c_2 e^{2t}
-  \sin(3t).$$
+- let's *check* e.g. that $e^{2t} \cos(3t)$ is a solution using exponential shift formula:
+
+  \begin{align*}
+  (D^2  -4D + 13)[e^{2t} \cos(3t)] &= 
+  e^{2t} ((D+2)^2  -4(D+2) + 13)[\cos(3t)] \\
+  &= e^{2t} (D^2 + 4D + 4 - 4D -8 + 13)[\cos(3t)] \\
+  &= e^{2t} (D^2 + 9)[\cos(3t)] \\
+  &= e^{2t} (-9 \cos(3t) + 9\cos(3t)) = 0.
+  \end{align*}
+  
+- the general solution to $(D^2 -4D + 13)x = 0$ is $$x
+  = c_1 e^{2t} \cos(3t) + c_2 e^{2t} \sin(3t).$$
 
 :::
 
@@ -182,6 +233,13 @@ $$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
   
   Of course, it also has the *conjugate root* $z=-i\sqrt{2}$ with mult 2.
 
+- If $z = a + bi$ is a root of $P(r)$, write $I(r) = r^2 -2ar + (a^2 +
+  b^2)$. 
+  
+- the root $z$ of $P(r)$ has multiplicity $k$ means that $P(r) =
+  I(r)^k \cdot Q(r)$ where $z$ is not a root of $Q(r)$.
+
+
 :::
 
 -------
@@ -190,17 +248,17 @@ $$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
 
 - recall that in the real root case, a root $\lambda$ of multiplicity
   $k$ gives rise to solutions to the ODE $P(D)x = 0$ as follows:
-  $$e^{\lambda t}, te^{\lambda t}, t^2 e^{\lambda t}, \dots, t^{k-1}
+  $$e^{\lambda t} \quad , \quad te^{\lambda t} \quad , \quad t^2 e^{\lambda t} \quad \dots \quad t^{k-1}
   e^{\lambda t}.$$
 
 - for a root $z = a+ bi$ of $P(r)$ of multiplicity $k$, when $b \ne 0$
   we get $2k$ solutions to the ODE $P(D)x = 0$  as follows:
   
   \begin{align*}
-  & e^{a t} \cos(bt), e^{a t} \sin(bt), \\
-  & te^{a t} \cos(bt), te^{a t} \sin(bt), \\
+  & e^{a t} \cos(bt) \quad , \quad e^{a t} \sin(bt), \\
+  & te^{a t} \cos(bt) \quad , \quad  te^{a t} \sin(bt), \\
   & \vdots \\
-  & t^{k-1}e^{a t} \cos(bt), t^{k-1}e^{a t} \sin(bt), \\
+  & t^{k-1}e^{a t} \cos(bt) \quad , \quad  t^{k-1}e^{a t} \sin(bt), \\
   \end{align*}
 
 :::
@@ -214,7 +272,9 @@ $$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
 
 - the functions 
 
-  $$\cos(\sqrt{2}t), \sin(\sqrt{2}t), t\cos(\sqrt{2}t), t\sin(\sqrt{2}t), e^{3t}$$
+  $$\cos(\sqrt{2}t) \quad , \quad \sin(\sqrt{2}t) \quad , \quad
+  t\cos(\sqrt{2}t) \quad , \quad t\sin(\sqrt{2}t) \quad , \quad
+  e^{3t}$$
 
   generate the general solution to $(D^2+2)^2(D-3)x=0$.
   
@@ -225,7 +285,10 @@ $$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
   t\cos(\sqrt{2}t) + c_4 t\sin(\sqrt{2}t) + c_5 e^{3t}$$
   
 - note that $z = 0 + bi$ gives rise to solutions
-  $e^{0t} \cos(bt), e^{0t} \sin(bt), \dots = \cos(bt), \sin(bt), \dots$
+  \begin{align*}
+  &e^{0t} \cos(bt) &\quad , \quad & e^{0t} \sin(bt) &\quad , \quad  \dots \\
+  = \quad & \cos(bt) &\quad , \quad &  \sin(bt) & \quad , \quad  \dots
+  \end{align*}
 
 :::
 
@@ -234,19 +297,20 @@ $$x = c_1 e^{2t} + c_2 e^t + c_3 te^t.$$
 ::: incremental
 
 - consider
-  $$(D^2 + 1)(D^2 -4D + 12)^2 x = 0$$
+  $$(D^2 + 1)(D^2 -4D + 13)^2 x = 0$$
 
-- The characteristic polynomial $(r^2+1)(r^2 -4r + 12)^2$
+- The characteristic polynomial $(r^2+1)(r^2 -4r + 13)^2$
   has roots $\pm i$ each with multiplicity 1, and $2\pm 3i$ each with multiplicity 2.
 
 - so the general solution has the form
 
-  $$x(t) = c_1 \cos(t) + c_2 \sin(t) + c_3e^{2t}\cos(3t) + c_4e^{2t}\sin(3t)
-   +c_5 te^{2t}\cos(3t) + c_6 te^{2t}\sin(3t).$$
+  \begin{align*}
+  x(t) = &c_1 \cos(t) + c_2 \sin(t) + c_3e^{2t}\cos(3t) + c_4e^{2t}\sin(3t) \\
+  &+c_5 te^{2t}\cos(3t) + c_6 te^{2t}\sin(3t).
+  \end{align*}
+
 
 :::
-
-
 
 ## Bibliography {.unnumbered}
 
