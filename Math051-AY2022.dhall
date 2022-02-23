@@ -1,4 +1,4 @@
--- Time-stamp: <2022-02-03 Thu 08:13 EST - george@valhalla>
+-- Time-stamp: <2022-02-23 Wed 13:13 EST - george@podkayne>
 let Dow = < Mon | Tue | Wed | Thu | Fri | Sat | Sun >
 
 let concat = https://prelude.dhall-lang.org/List/concat
@@ -48,9 +48,9 @@ let assignments =
 let problemSetStaff =
       [ "PS02 - Loring Tu"
       , "PS03 - Boris Hassleblatt"
-      , "PS04 - George McNinch"
+      , "PS04 - Loring Tu"
       , "PS05 - Chandler Smith"
-      , "PS06 - Loring Tu"
+      , "PS06 - George McNinch"
       , "PS07 - Boris Hasselblatt"
       , "PS08 - George McNinch"
       , "PS09 - Chandler Smith"

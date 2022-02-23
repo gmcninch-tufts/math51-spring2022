@@ -318,7 +318,7 @@ Having chosen $A(D)$ for which $A(D)[E(t)] = 0$
   $$q(t) = k_1 e^{-t} + k_2 \sin(t) + k_3 \cos(t) + k_4 t\sin(t) + k_4 t\cos(t).$$
 
 - simplified guess
-  $$q(t) = \ell_1 e^{-t} + \ell_2 t\sin(2t) + \ell_3 t\cos(2t).$$
+  $$q(t) = \ell_1 e^{-t} + \ell_2 t\sin(t) + \ell_3 t\cos(t).$$
 
 :::
 

@@ -61,7 +61,7 @@ pacing/%.pdf resources/%.pdf: %.md
 
 
 problem-sets/%.pdf lectures/%.pdf exams/%.pdf recitation/%.pdf: %.md
-	$(PD)  --number-sections --citeproc --self-contained --pdf-engine=xelatex --resource-path=$(RP) -t latex $<  -o $@
+	$(PD)   --citeproc --self-contained --pdf-engine=xelatex --resource-path=$(RP) -t latex $<  -o $@
 
 problem-sets/%.pdf: %.tex
 	$(TEX) -output-directory=problem-sets $<
