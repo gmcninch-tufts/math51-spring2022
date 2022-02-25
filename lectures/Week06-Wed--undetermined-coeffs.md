@@ -3,7 +3,7 @@ author: George McNinch
 title: |
   Math 51 Spring 2022 - Week 5 Wed \
   Non-homogeneous linear equations -- undetermined coefficients 
-date: 2022-02-16
+date: 2022-02-23
 bibliography:
  - /home/george/Prof-Math/assets/math-bibliography.bib
  - /home/george/Prof-Math/assets/teaching.bib 
