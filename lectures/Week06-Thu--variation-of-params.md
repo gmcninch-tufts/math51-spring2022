@@ -1,9 +1,9 @@
 ---
 author: George McNinch
 title: |
-  Math 51 Spring 2022 - Week 5 Wed \
-  Non-homogeneous linear equations -- undetermined coefficients 
-date: 2022-02-16
+  Math 51 Spring 2022 - Week 5 Thu \
+  Non-homogeneous linear equations -- variation of parameters 
+date: 2022-02-24
 bibliography:
  - /home/george/Prof-Math/assets/math-bibliography.bib
  - /home/george/Prof-Math/assets/teaching.bib 
@@ -21,8 +21,8 @@ This lecture covers material from [@gutermanNitecki, sec. 2.7].
 
 ::: incremental 
 
-- given an $n \times m$ matrix $A$, and a vector $\mathbf{x}$ in $\mathbb{R}^n$, we can 
-  form the vector $A \cdot \mathbf{x}$ in $\mathbb{R}^m$.
+- given an $n \times m$ matrix $A$, and a vector $\mathbf{x}$ in $\mathbb{R}^m$, we can 
+  form the vector $A \cdot \mathbf{x}$ in $\mathbb{R}^n$.
 
 - $$\begin{bmatrix}
   a_{11} & a_{12} & a_{13} \\
