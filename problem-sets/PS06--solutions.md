@@ -21,14 +21,14 @@ header-includes: |
    \color{red}
    **Solution:**
 
-   The term $te^t\cos(t)$ is made 0 by an operator whose characteristic polynomial
+   The term $te^{-t}\cos(2t)$ is made 0 by an operator whose characteristic polynomial
    has $1 + i$ as a root with multiplicity two. That characteristic polynomial
-   must be $[(r - (1+i))(r - (1-i))]^2 = (r^2 - 2r + 2)^2$; thus the operator
-   is $(D^2 - 2D + 2)^2$.
+   must be $[(r - (1+2i))(r - (1-2i))]^2 = (r^2 - 2r + 5)^2$; thus the operator
+   is $(D^2 - 2D + 5)^2$.
 
    The term $2e^{3t}$  is  made zero by the operator $D-3$
    
-   Thus $A(D) = (D^2 - 2D + 2)^2\cdot(D-3)$.
+   Thus $A(D) = (D^2 - 2D + 5)^2\cdot(D-3)$.
    
    \color{black}
    :::
