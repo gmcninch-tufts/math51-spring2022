@@ -1,4 +1,4 @@
--- Time-stamp: <2022-02-23 Wed 13:13 EST - george@podkayne>
+-- Time-stamp: <2022-03-03 Thu 12:34 EST - george@valhalla>
 let Dow = < Mon | Tue | Wed | Thu | Fri | Sat | Sun >
 
 let concat = https://prelude.dhall-lang.org/List/concat
@@ -38,56 +38,36 @@ let assignments =
       , "PS06: Non-homog ODES (§ 2.7, 2.8)"
       , "PS07: Lin sys & indep (§ 3.2, 3.3, 3.4)"
       , "PS08: Eigenvalues, eigenvectors; row reduction (§ 3.5, 3.6)"
-      , "PS09: Homog linear sys (§ 3.7, 3.8, 3.9, 3.10)"
-      , "PS10: Non-homogeneous systems (§ 3.11)"
-      , "PS11: Laplace transform \$\\mathscr{L}\$ and initial value problems (§ 5.2, 5.3)"
-      , " [ no assignment collected this week ] "
-      , "PS12: Properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; piecewise functions; convolution (§ 5.4, 5.5, 5.6)"
+      , ""
+      , "PS09: Homog linear sys (§ 3.7, 3.8)"
+      , "PS10: Homog linear systems -- multiple roots (§ 3.9, 3.10)"
+      , "PS11: Non-homogeneous systems (§ 3.11)"
+      , "PS12: Laplace transform \$\\mathscr{L}\$ and initial value problems (§ 5.2, 5.3)"
+      , "no assignment collected"
+      , "PS13: Properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; piecewise functions (§ 5.4, 5.5)"
       ]
 
-let problemSetStaff =
-      [ "PS02 - Loring Tu"
-      , "PS03 - Boris Hassleblatt"
-      , "PS04 - Loring Tu"
-      , "PS05 - Chandler Smith"
-      , "PS06 - George McNinch"
-      , "PS07 - Boris Hasselblatt"
-      , "PS08 - George McNinch"
-      , "PS09 - Chandler Smith"
-      , ""
-      , ""
-      , "PS10 - Loring Tu"
-      , "PS11 - Boris Hasselblatt"
-      , "PS12 - George McNinch"
-      ]
-
-let recWorksheetStaff =
-      [ "rec02 - George McNinch"
-      , "rec03 - Chandler Smith"
-      , "rec04 - Boris Hasselblatt"
-      , "rec05 - Loring Tu"
-      , ""
-      , "rec06 - George McNinch"
-      , "rec07 - Chandler Smith"
-      , "rec08 - Boris Hasselblatt"
-      , ""
-      , "rec09 - Loring Tu"
-      , "rec10 - George McNinch"
-      , "rec11 - Chandler Smith"
-      , "rec12 - Boris Hasselblatt"
-      , "rec13 - Loring Tu"
+let weeklyMaterialStaff =
+      [ "week 02"
+      , "week 03"
+      , "week 04"
+      , "week 05"
+      , "week 06"
+      , "week 07"
+      , "week 08 - Loring Tu"
+      , "week 09 - Chandler Smith"
+      , "spring break"
+      , "week 10 - Boris Hasselblatt"
+      , "week 11 - George McNinch"
+      , "week 12 - Loring Tu"
+      , "week 13 - Chandler Smith"
       ]
 
 let tasks =
       [ TaskSpec.TaskRep
-          { desc = "Write problem sets and solutions"
+          { desc = "Write problem sets, solutions, practicum material"
           , repDeadline = Dow.Mon
-          , taskStaffList = problemSetStaff
-          }
-      , TaskSpec.TaskRep
-          { desc = "Write worksheet / suggest content for recitation"
-          , repDeadline = Dow.Tue
-          , taskStaffList = recWorksheetStaff
+          , taskStaffList = weeklyMaterialStaff
           }
       , TaskSpec.TaskSin
           { desc = "Write and vet Midterm 1"
