@@ -2,7 +2,7 @@
 author: George McNinch
 title: |
   Math 51 Spring 2022 - Week 7 Mon \
-  Linear ODEs
+  Linear ODEs & independence
 date: 2022-02-28
 bibliography:
  - /home/george/Prof-Math/assets/math-bibliography.bib
@@ -13,7 +13,7 @@ header-includes: |
   \usepackage{palatino,mathpazo}
 ---
 
-This lecture covers material from [@gutermanNitecki, sec. 3.2, 3.3].
+This lecture covers material from [@gutermanNitecki, sec. 3.4].
 
 # Linear systems and linear independence
 
