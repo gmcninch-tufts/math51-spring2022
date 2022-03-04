@@ -1,0 +1,106 @@
+\documentclass[12pt]{article} 
+\usepackage{amsmath,amssymb,amscd,enumerate,mathtools} 
+%\usepackage{pstricks}
+%\usepackage[pdftex]{graphicx}
+%\thispagestyle{empty}
+
+\usepackage[margin=.9in]{geometry}
+
+%\addtolength{\textwidth}{1in}
+%\addtolength{\oddsidemargin}{-.5in}
+%\addtolength{\evensidemargin}{-.5in}
+%\addtolength{\textheight}{1in}
+%\addtolength{\topmargin}{-.5in}
+
+% \usepackage{mathptmx}
+% \renewcommand{\rmdefault}{ptm}		% set Times as the default text font
+ \usepackage{palatino}
+ \usepackage{mathpazo}
+
+ %\input manifoldsmacros
+ 
+%\thispagestyle{empty}
+
+\usepackage{color}
+\newcommand{\tred}[1]{{\color{red}{#1}}}
+
+
+\begin{document}
+
+%\setcounter{page}{4}
+
+\noindent
+Math 51~~~~~~~~~~~~~~~~~~~ \hfill Differential Equations \hfill March 3--4, 2022 
+ \centerline{Worksheet Week 7}
+
+% \begin{enumerate}[1. ]
+% \item The vector-valued function \(\displaystyle\vec
+%   x=\begin{bmatrix}e^{-3t}\\e^{3t}\end{bmatrix}\) determines a parametrized
+%   curve. Sketch the curve and indicate with an arrow the direction in which
+%   the point \(\vec x(t)\) moves along the curve as \(t\) increases.
+% \item Find the solution of the initial-value problem
+%   \[D\vec x=\begin{bmatrix}1&0\\0&2\end{bmatrix}\vec x\qquad\vec x(0)=\begin{bmatrix}1\\1\end{bmatrix}
+%   \]
+%   The solution determines a parametrized
+%   curve. Sketch the curve and indicate with an arrow the direction in which
+%   the point \(\vec x(t)\) moves along the curve as \(t\) increases.
+% \newpage
+\begin{enumerate}[1.]
+\item Consider the system of ordinary differential equations
+\[
+  \begin{bmatrix}x_1'\\x_2'\\x_3'\end{bmatrix}
+    =
+  \begin{bmatrix*}[r]5&-3&0\\3&-5&0\\0&1&2\end{bmatrix*}
+  \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+      +
+      \begin{bmatrix}0\\0\\4\end{bmatrix}.
+    \]
+
+Consider the solutions:    
+\(\left \{.\begin{aligned} 
+x_1&=&(6c_1+6c_3)&e^{4t}+&(-2c_2+2c_3)&e^{-4t}\\
+x_2&=&(2c_1+2c_3)&e^{4t}+&(-6c_2+6c_3)&e^{-4t}\\
+x_3&=&(c_1+c_3)  &e^{4t}+&(c_2-c_3)   &e^{-4t}-2\\
+\end{aligned} \right.\)
+    
+\begin{itemize}
+\item Describe these solutions in the form \(\mathbf{p} + c_1\mathbf{h}_1 + c_2 \mathbf{h}_2 + c_3 \mathbf{h}_3\)
+  \vfill
+\item Check directly that \(\mathbf{p}\)   and \(\mathbf{h}_1\) are actually solutions.
+  \vfill
+\item Decide whether this collection of solutions is \emph{complete.}
+  \vfill
+\end{itemize}
+
+\newpage
+\item For each of the following scenarios for vectors \emph{in the plane} either draw a picture of such a scenario or explain why this can't be done.
+\begin{enumerate}
+\item One linearly independent vector
+\vfill    
+\item One linearly dependent vector
+\vfill    
+\item Two linearly independent vectors
+\vfill    
+\item Two linearly dependent vectors
+\vfill    
+\item Three linearly independent vectors
+\vfill    
+\item Three linearly dependent vectors
+\vfill  
+\end{enumerate}
+\newpage
+\item Consider vectors \(\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3,\mathbf{v}_4\).
+
+  \begin{itemize}
+  \item   Show that if \(\mathbf{v}_1 = \mathbf{v}_4\), then \(\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3,\mathbf{v}_4\) is linearly dependent.
+    \vfill
+  \item Show that if \(\mathbf{v}_3 = \mathbf{0}\)\),  then \(\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3,\mathbf{v}_4\) is linearly dependent.
+    \vfill
+  \end{itemize}
+\eject\end{enumerate} 
+
+
+
+
+
+\end{document}
