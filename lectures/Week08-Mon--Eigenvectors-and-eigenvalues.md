@@ -17,7 +17,7 @@ This lecture covers material from [@gutermanNitecki, sec. 3.5].
 
 # Eigenvectors & eigenvalues
 
-## Homogeneous systems of ODEs
+## Overview: Homogeneous systems of ODEs
 
 ::: incremental
 
@@ -142,10 +142,11 @@ an *eigenvalue* of $A$.
 - a scalar $\lambda$ is a *root* of the characteristic polynomial
   $p(\lambda)$ precisely when $\lambda$ is an eigenvalue of $A$.
 
-- in particular, there are $n$ complex numbers $\lambda$ which are
-  eigenvalues of $A$ (when counted with multiplicities). 
+- Since the characteristic poly of an $n \times n$ matrix $A$ has
+  degree $n$, there are $n$ complex numbers $\lambda$ which are
+  eigenvalues of $A$ (when counted with multiplicities).
 
-- In particular, $A$ always has $\le n$ distinct eigenvalues.
+- thus $A$ always has $\le n$ distinct eigenvalues.
 
 :::
 
@@ -261,6 +262,12 @@ $$\lambda=1 \quad \text{with multiplicity 2, and} \quad \lambda = -2 \quad \text
   
   - replace a row by the sum of itself and a multiple of another row
 
+:::
+
+----
+
+::: incremental
+
 
 - matrix $B'$ is said to be *row equivalent* to $B$ if $B'$ is
   obtained from $B$ by a sequence of row operations.
@@ -268,10 +275,13 @@ $$\lambda=1 \quad \text{with multiplicity 2, and} \quad \lambda = -2 \quad \text
 - **key fact:** if $B$ and $B'$ are row equivalent, the equations $B
   \mathbf{x} = \mathbf{0}$ and $B' \mathbf{x} = \mathbf{0}$ have the
   same solution space.
+  
+  The crucial point is that *row operations don't change the solution
+  space*.
 
 :::
 
------
+## Echelon form 
 
 ::: incremental
 
@@ -400,6 +410,25 @@ But $\begin{bmatrix} 1 & 0 & 1 & 0 & 2 \\
 
 :::
 
+## Summary: Solving homogeneous matrix equations by row operations
+
+::: incremental
+
+- Given an $m \times n$ matrix $B$, to solve the matrix equation $B \mathbf{x} = \mathbf{0}$ for
+$\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n\end{bmatrix}$, proceed as follows:
+
+- use row operations to find a matrix $B'$ in echelon form which is
+  row equivalent to $B$: $B \sim B'$.
+
+- find the *free variables* for $B' \mathbf{x} = \mathbf{0}$.
+
+  - each free variable determines a solution to $B \mathbf{x} = \mathbf{0}$ (*as above*)
+  
+  - the solutions found in this way are *linearly independent*
+  
+  - each solution $\mathbf{x}$ is a *linear combination* of the solutions just found
+
+:::
 
 ## Bibliography {.unnumbered}
 

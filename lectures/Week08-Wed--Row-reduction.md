@@ -13,7 +13,7 @@ header-includes: |
   \usepackage{palatino,mathpazo}
 ---
 
-This lecture covers material from [@gutermanNitecki, sec. 3.5].
+This lecture covers material from [@gutermanNitecki, sec. 3.6].
 
 
 # Row operations and eigenvectors
@@ -324,6 +324,20 @@ Let $A$ be an $n \times n$ matrix.
   \end{align*}
   which shows that $\beta = 0$.
   
+
+:::
+
+## Solving non-homogeneous matrix equations via row operations
+
+::: incremental
+
+- let $B$ be an $m \times n$ matrix, and let $\mathbf{v} =
+  \begin{bmatrix} v_1 \\ \vdots \\ v_m \end{bmatrix}$ in
+  $\mathbb{R}^m$.
+  
+- we want to solve the matrix equation 
+  $$B \mathbf{x} = \mathbf{v}$$
+  for $\mathbf{x} = \begin{bmatrix} x_1 \\ \vdots \\ x_n \end{bmatrix}$ in $\mathbb{R}^n$
 
 :::
 
