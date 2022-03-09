@@ -15,8 +15,98 @@ header-includes: |
 
 This lecture covers material from [@gutermanNitecki, sec. 3.6].
 
+# Solving homogeneous matrix equations
+
+## $B\mathbf{x} = \mathbf{0}$ for $B$ in echelon form.
+
+::: incremental
+
+- Example: $B=\begin{bmatrix} 1 & 0 & 0 & 1 & 2 \\ 0 & 0 & 2 & 2 & 6 \\ 0 &
+  0 & 0 & 0 & 0 \\ \end{bmatrix}$ then $x_2, x_4, x_5$ are *free
+  variables* and $x_1,x_3$ are *pivot variables*.
+
+- we want to find solutions $\mathbf{x} = \begin{bmatrix} x_1 \\ x_2
+  \\ x_3 \\ x_4 \\ x_5 \end{bmatrix}$ to $B \mathbf{x} = \mathbf{0}$.
+
+- of course, $B \mathbf{x} = \begin{bmatrix}
+  x_1 + x_3 + 2x_5 \\
+  2x_3 + 2x_4 + 6x_5 \\
+  0  
+  \end{bmatrix}$
+
+
+:::
+
+----
+
+::: incremental
+
+- so the equation $$B \mathbf{x} = \begin{bmatrix}
+  x_1 + x_3 + 2x_5 \\
+  2x_3 + 2x_4 + 6x_5 \\
+  0  
+  \end{bmatrix} = \begin{bmatrix}
+  0 \\ 0 \\ \end{bmatrix}$$
+  leads to equations
+  \begin{align*}
+  x_3 & = -x_4 - 3x_5 \\
+  x_1 & = -x_3 - 2x_5 = - (-x_4 - 3x_5) - 2x_5 = x_4 -x_5
+  \end{align*}
+  
+- **FACT** each free variable determines a solution. Choose a free
+  variable, set it equal to 1, set the remaining free variables to 0,
+  and use the equations to determine the values of the pivot
+  variables.
+  
+:::
+
+-----
+
+::: incremental
+
+  
+- in the example, the free variables are $x_2,x_4,x_5.$
+
+- recall the equations
+  \begin{align*}
+  x_3 & = -x_4 - 3x_5 \\
+  x_1 & = x_4 -x_5
+  \end{align*}
+
+- we find the solutions
+
+  $$\mathbf{v_2} = \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}
+  , \quad 
+  \mathbf{v_4} = \begin{bmatrix} 1 \\ 0 \\ -1 \\ 1 \\ 0 \end{bmatrix}
+  , \quad
+  \mathbf{v_5} = \begin{bmatrix}  -3 \\ 0 \\ -1 \\ 0 \\ 1 \end{bmatrix}.$$
+
+:::
+
+## Summary: Solving homogeneous matrix equations by row operations
+
+::: incremental
+
+- Given an $m \times n$ matrix $B$, to solve the matrix equation $B \mathbf{x} = \mathbf{0}$ for
+$\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ \vdots \\ x_n\end{bmatrix}$, proceed as follows:
+
+- use row operations to find a matrix $B'$ in echelon form which is
+  row equivalent to $B$: $B \sim B'$.
+
+- find the *free variables* for $B' \mathbf{x} = \mathbf{0}$.
+
+  - each free variable determines a solution to $B \mathbf{x} = \mathbf{0}$ (*as above*)
+  
+  - the solutions found in this way are *linearly independent*
+  
+  - each solution $\mathbf{x}$ is a *linear combination* of the solutions just found
+
+:::
+
 
 # Row operations and eigenvectors
+
+
 
 ## Finding eigenvectors: Example 1
 
@@ -339,8 +429,106 @@ Let $A$ be an $n \times n$ matrix.
   $$B \mathbf{x} = \mathbf{v}$$
   for $\mathbf{x} = \begin{bmatrix} x_1 \\ \vdots \\ x_n \end{bmatrix}$ in $\mathbb{R}^n$
 
+- we find the solution by performing row operations on the *augmented matrix*
+  $$\left [\begin{array}{l|l}
+  B & \mathbf{v}
+  \end{array} \right ]$$
+
 :::
 
+## Example
+
+::: incremental
+
+- Consider $\begin{bmatrix} 1 & -1 & 0 & 0 \\
+  1 & 0 & 2 & 0 \\
+  0 & 1 & 0 & 2 \end{bmatrix} \begin{bmatrix} x \\ y \\ z \\ w \end{bmatrix} = 
+  \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}$.
+
+- form the *augmented matrix*, and perform row operations to put this matrix in *echelon form*:
+  \begin{align*}
+  \left[\begin{array}{l|l}
+  \begin{matrix} 1 & -1 & 0 & 0 \\
+  1 & 0 & 2 & 0 \\
+  0 & 1 & 0 & 2 \end{matrix} & 
+  \begin{matrix} 1 \\ 0 \\ 1 \end{matrix}
+  \end{array}
+  \right] & \sim 
+  \left[\begin{array}{l|l}
+  \begin{matrix} 1 & -1 & 0 & 0 \\
+  0 & 1 & 2 & 0 \\
+  0 & 1 & 0 & 2 \end{matrix} & 
+  \begin{matrix} 1 \\ -1 \\ 1 \end{matrix}
+  \end{array}
+  \right] \\ & \sim 
+  \left[\begin{array}{l|l}
+  \begin{matrix} 1 & -1 & 0 & 0 \\
+  0 & 1 & 2 & 0 \\
+  0 & 0 & -2 & 2 \end{matrix} & 
+  \begin{matrix} 1 \\ -1 \\ 2 \end{matrix}
+  \end{array}
+  \right]
+  \sim 
+  \left[\begin{array}{l|l}
+  \begin{matrix} 1 & -1 & 0 & 0 \\
+  0 & 1 & 2 & 0 \\
+  0 & 0 & 1 & -1 \end{matrix} & 
+  \begin{matrix} 1 \\ -1 \\ -1 \end{matrix}
+  \end{array}
+  \right] \\
+  & \sim 
+  \left[\begin{array}{l|l}
+  \begin{matrix} 1 & -1 & 0 & 0 \\
+  0 & 1 & 0 & 2 \\
+  0 & 0 & 1 & -1 \end{matrix} & 
+  \begin{matrix} 1 \\ 1 \\ -1 \end{matrix}
+  \end{array}
+  \right]
+  \sim 
+  \left[\begin{array}{l|l}
+  \begin{matrix} 1 & 0 & 0 & 2 \\
+  0 & 1 & 0 & 2 \\
+  0 & 0 & 1 & -1 \end{matrix} & 
+  \begin{matrix} 2 \\ 1 \\ -1 \end{matrix}
+  \end{array}
+  \right]
+  \end{align*}
+  
+:::
+
+-----
+
+::: incremental
+
+- from the row equivalent echelon matrix
+  $$\left[\begin{array}{l|l}
+  \begin{matrix} 1 & 0 & 0 & 2 \\
+  0 & 1 & 0 & 2 \\
+  0 & 0 & 1 & -1 \end{matrix} & 
+  \begin{matrix} 2 \\ 1 \\ -1 \end{matrix}
+  \end{array}
+  \right]
+  $$
+  we can now read off the solutions
+  
+- $x_4$ is the only free variable, and we have equations
+  $$\begin{matrix}{}
+  x_1 & = & -2x_4 + 2 \\
+  x_2 & = & -2x_4 + 1 \\
+  x_3 & = & x_4 - 1
+  \end{matrix}$$
+  
+- so the solutions are
+  $$\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix} = 
+  \begin{bmatrix}
+  -2x_4 + 2 \\ -2x_4 + 1 \\ x_4 -1 \\ x_4 \end{bmatrix}
+  = \begin{bmatrix}
+  2 \\ 1 \\ -1 \\ 0
+  \end{bmatrix} +
+  x_4 \begin{bmatrix}-2 \\ -2 \\ 1 \\ 1
+  \end{bmatrix}$$
+
+:::
 
 ## Bibliography {.unnumbered}
 
