@@ -13,11 +13,12 @@ header-includes: |
   \usepackage{palatino,mathpazo}
 ---
 
-This lecture covers material from [@gutermanNitecki, sec. 3.7].
+
+
 
 # Homogeneous systems: real roots
 
-## Some terminology
+This lecture covers material from [@gutermanNitecki, sec. 3.7].
 
 Given an $n \times n$ matrix $A$ and an eigenvalue $\lambda$ of $A$,
 we are going to refer to the *solution space* of the homogeneous
@@ -28,20 +29,22 @@ The non-zero vectors in this solution space are precisely the
 $\lambda$-eigenvectors of $A$.
 
 
-## Solutions from eigenvalues/eigenvectors
+# Solutions from eigenvalues/eigenvectors
 
-Consider a homogeneous system of linear ODEs *with constant coefficients*
-$$(\clubsuit) \quad D \mathbf{x} = A \mathbf{x}$$
-where $A$ is an $n\times n$ matrix.
+::: incremental
 
-. . .
+- Consider a homogeneous system of linear ODEs *with constant coefficients*
+  $$(\clubsuit) \quad D \mathbf{x} = A \mathbf{x}$$
+  where $A$ is an $n\times n$ matrix.
 
-If the *real number* $\lambda$ is an eigenvalue of $A$ and if
-$\mathbf{v}$ is a corresponding eigenvector, then the vector-valued
-function $$\mathbf{h}(t) = e^{\lambda t} \mathbf{v}$$ is a *solution*
-to $(\clubsuit)$.
+- If the *real number* $\lambda$ is an eigenvalue of $A$ and if
+  $\mathbf{v}$ is a corresponding eigenvector, then the vector-valued
+  function $$\mathbf{h}(t) = e^{\lambda t} \mathbf{v}$$ is a
+  *solution* to $(\clubsuit)$.
 
-##
+::: 
+
+#
 
 Indeed, e.g. $\mathbf{h}(t) = e^{\lambda
 t}\mathbf{v} = e^{\lambda t} \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\  v_n
@@ -59,7 +62,7 @@ While the fact that $\mathbf{v}$ is an eigenvector gives
 $A \mathbf{h}(t) = e^{\lambda t} A \mathbf{v} = \lambda e^{\lambda t}
 \mathbf{v}.$
 
-## Towards the general solution
+# Towards the general solution
 
 Supose that there are $n$ *linearly independent* eigenvectors
 $\mathbf{v_1},\mathbf{v_2}, \cdots, \mathbf{v_n}$ for the matrix $A$.
@@ -85,7 +88,7 @@ $$\mathbf{x}(t) = c_1 \mathbf{h_1}(t) + c_2 \mathbf{h_2}(t) + \cdots + c_n \math
 - So a natural first question is this: under what conditions does an
   $n\times n$ matrix $A$ have $n$ linearly independent eigenvectors?
 
-## Matrices with $n$ distinct eigenvalues.
+# Matrices with $n$ distinct eigenvalues.
 
 Let $A$ be an $n \times n$ matrix.
 
@@ -101,7 +104,7 @@ Let $A$ be an $n \times n$ matrix.
 :::
 
 
-## The distinct eigenvalues of a square matrix
+# The distinct eigenvalues of a square matrix
 
 ::: incremental
 
@@ -128,7 +131,7 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
-## Example
+# Example
 
 ::: incremental
 
@@ -153,7 +156,7 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
-##
+#
 
 ::: incremental
 
@@ -172,7 +175,7 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
-## Example
+# Example
 
 ::: incremental
 
@@ -194,7 +197,7 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
-##
+#
 
 ::: incremental
 
@@ -215,7 +218,7 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
-##
+#
 
 ::: incremental
 
@@ -233,7 +236,7 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
-## An example we can't yet solve
+# An example we can't yet solve
 
 ::: incremental
 
@@ -252,7 +255,7 @@ Let $A$ be an $n \times n$ matrix.
 :::
 
 
-## Bibliography {.unnumbered}
+# Bibliography {.unnumbered}
 
 ::: {.refs}
 :::

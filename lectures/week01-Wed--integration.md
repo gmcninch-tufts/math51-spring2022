@@ -12,6 +12,8 @@ header-includes: |
   \usepackage{palatino,mathpazo}
 ---
 
+#
+
 This lecture follows [@gutermanNitecki, sec. 1.1].
 
 
@@ -34,16 +36,19 @@ This lecture follows [@gutermanNitecki, sec. 1.1].
   \quad \text{and} \quad x^{(3)} = x''' = \dfrac{d x^{(2)}}{dt} =
   \dfrac{d^3 x}{dt^3}.$$
 
-:::
-
-----------
-
 
 - More generally, for $n \ge 1$ 
 
   $$x^{(n)} = \dfrac{d x^{(n-1)}}{dt} = \dfrac{d^n x}{dt^n}$$
 
+
+:::
+
+
+#
+
 ::: incremental
+
 
 - Then an *ordinary differential equation* is an equation involving
   the expressions $$t,x,x',x'',\cdots,x^{(n)}, \cdots.$$
@@ -58,7 +63,7 @@ This lecture follows [@gutermanNitecki, sec. 1.1].
 
 :::
 
----------
+#
 
 
 - (**FWIW:** *ordinary* differential equations stand in contrast to
@@ -89,12 +94,13 @@ learning to solve a simple type of ordinary differential equation.
   
 :::
 
-------------
+#
+
+::: incremental
 
 -  More generally, for any constant $C$ (i.e. any fixed real
    number), $$x = F(t) + C$$ is a solution to $(\heartsuit)$.
 
-::: incremental
 
 - So for example, $x = \sin(t) + C$ is a solution to the differential
   equation $x' = \cos(t)$, since $$\int \cos(t) dt = \sin(t) + C.$$
@@ -110,7 +116,7 @@ learning to solve a simple type of ordinary differential equation.
 
 :::
 
------------
+#
 
 - For example, the differential equation $x^{(3)} = 1$ has solutions
   $$x(t) = \dfrac{t^3}{6} + A + B t + C t^2$$ for arbitrary constants
@@ -130,7 +136,7 @@ learning to solve a simple type of ordinary differential equation.
 
 :::
 
---------
+#
 
 
 - writing all of the integrals at once is perhaps a bit overwhelming,
@@ -156,7 +162,7 @@ learning to solve a simple type of ordinary differential equation.
 
 
 
-------------
+#
 
 - we will ultimately be interested in finding the **general solution** 
   to an o.d.e. In other words, we want a *formula* that describes *all* solutions
@@ -219,7 +225,7 @@ In physics, [Newton's *second law of motion*](https://en.wikipedia.org/wiki/Newt
 
 :::
 
------------
+#
 
 ::: incremental
 
@@ -262,7 +268,7 @@ model](https://en.wikipedia.org/wiki/Malthusian_growth_model).
 
 :::
 
-----------
+
 
 ::: incremental
 
@@ -299,7 +305,7 @@ $x^{(n)}$ of $x$.
 
 :::
 
-------
+#
 
 - the o.d.e. $x'' = -x$ is *second order*.
 
@@ -327,7 +333,7 @@ $x^{(n)}$ of $x$.
 
 :::
 
---------
+#
 
 - The ODE $x'' = -9.8$ describing the position function of an object
   undergoing acceleration due to gravity is second order
@@ -346,7 +352,7 @@ $x^{(n)}$ of $x$.
 
 
 
---------
+#
 
 - the o.d.e. $x^{(3)} = 1$ has order 3.
 
@@ -364,7 +370,10 @@ $x^{(n)}$ of $x$.
 
 :::
 
-## Bibliography {.unnumbered}
+
+
+
+# Bibliography {.unnumbered}
 
 ::: {.refs}
 :::

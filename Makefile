@@ -5,6 +5,8 @@ PD=pandoc --from markdown
 
 TEX=pdflatex
 
+SLIDEOUS=assets/slideous
+
 CSS_DEFAULT="/home/george/Classes/math51-spring2022/assets/default.css"
 CSS_PANDOC="/home/george/Classes/math51-spring2022/assets/pandoc.css"
 
@@ -20,8 +22,10 @@ pacing_pdf  = $(patsubst %.md,%.pdf,$(wildcard pacing/*.md))
 
 lectures = $(patsubst %.md,%-reg.html, $(wildcard lectures/*.md)) \
            $(patsubst %.md,%-slides.html, $(wildcard lectures/*.md)) \
-	   $(patsubst %.md,%-beamer.pdf, $(wildcard lectures/*.md)) \
-           $(patsubst %.md,%.pdf, $(wildcard lectures/*.md))
+           $(patsubst %.md,%-slideous.html, $(wildcard lectures/*.md)) \
+	   $(patsubst %.md,%.pdf, $(wildcard lectures/*.md))
+#	   $(patsubst %.md,%-beamer.pdf, $(wildcard lectures/*.md)) \
+          
 
 psets = $(patsubst %.md,%.html,$(wildcard problem-sets/*.md)) \
         $(patsubst %.md,%.pdf, $(wildcard problem-sets/*.md)) \
@@ -75,10 +79,13 @@ exams/%.html problem-sets/%.html lectures/%-reg.html resources/%.html recitation
 	$(PD) $<  --number-sections --citeproc  --standalone --css=$(CSS_DEFAULT) --mathjax=$(MJ) --to html  -o $@
 
 lectures/%-slides.html: %.md
-	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -t slidy --mathjax=$(MJ)  -o $@
+	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -V slideous-url=$(SLIDEOUS) -t slidy --mathjax=$(MJ)  -o $@
 
-lectures/%-beamer.pdf: %.md
-	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -t beamer --mathjax=$(MJ)  -o $@
+lectures/%-slideous.html: %.md
+	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -t slideous --mathjax=$(MJ)  -o $@
+
+# lectures/%-beamer.pdf: %.md
+# 	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -t beamer --mathjax=$(MJ)  -o $@
 
 
 .PHONY = clean
