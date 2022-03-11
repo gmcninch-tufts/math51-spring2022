@@ -21,7 +21,7 @@ This lecture covers material from [@gutermanNitecki, sec. 3.6].
 
 ::: incremental
 
-- Example: $B=\begin{bmatrix} 1 & 0 & 0 & 1 & 2 \\ 0 & 0 & 2 & 2 & 6 \\ 0 &
+- Example: $B=\begin{bmatrix} 1 & 0 & 1 & 0 & 2 \\ 0 & 0 & 2 & 2 & 6 \\ 0 &
   0 & 0 & 0 & 0 \\ \end{bmatrix}$ then $x_2, x_4, x_5$ are *free
   variables* and $x_1,x_3$ are *pivot variables*.
 
@@ -46,7 +46,7 @@ This lecture covers material from [@gutermanNitecki, sec. 3.6].
   2x_3 + 2x_4 + 6x_5 \\
   0  
   \end{bmatrix} = \begin{bmatrix}
-  0 \\ 0 \\ \end{bmatrix}$$
+  0 \\ 0 \\ 0 \end{bmatrix}$$
   leads to equations
   \begin{align*}
   x_3 & = -x_4 - 3x_5 \\
@@ -194,8 +194,9 @@ and this vector $\mathbf{w}$ is a $(1 - \sqrt{3})$-eigenvector for $A$.
 
 ## Finding eigenvectors: Example 2
 
-We saw earlier that the eigenvalues of $B = \begin{bmatrix} 0 & -2 & 2 \\ 
-1 & 3 & -2 \\ 2 & 4 & -3 \end{bmatrix}$ are
+We saw in the previous lecture that the eigenvalues of $B =
+\begin{bmatrix} 0 & -2 & 2 \\ 1 & 3 & -2 \\ 2 & 4 & -3 \end{bmatrix}$
+are
 
 $$\lambda=1 \quad \text{with multiplicity 2, and} \quad \lambda = -2 \quad \text{(with multiplicity 1)}.$$
 
