@@ -41,7 +41,7 @@ $\mathbf{v}$ is a corresponding eigenvector, then the vector-valued
 function $$\mathbf{h}(t) = e^{\lambda t} \mathbf{v}$$ is a *solution*
 to $(\clubsuit)$.
 
--------
+##
 
 Indeed, e.g. $\mathbf{h}(t) = e^{\lambda
 t}\mathbf{v} = e^{\lambda t} \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\  v_n
@@ -153,7 +153,7 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
-----
+##
 
 ::: incremental
 
@@ -194,7 +194,7 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
-------
+##
 
 ::: incremental
 
@@ -215,7 +215,7 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
------
+##
 
 ::: incremental
 

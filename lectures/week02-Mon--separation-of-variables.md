@@ -9,7 +9,6 @@ bibliography:
  - /home/george/Prof-Math/assets/teaching.bib 
 csl: assets/chicago-author-date.csl
 header-includes: |
-  \usepackage[top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}
   \usepackage{palatino,mathpazo}
 ---
 

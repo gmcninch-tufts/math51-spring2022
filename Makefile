@@ -20,6 +20,7 @@ pacing_pdf  = $(patsubst %.md,%.pdf,$(wildcard pacing/*.md))
 
 lectures = $(patsubst %.md,%-reg.html, $(wildcard lectures/*.md)) \
            $(patsubst %.md,%-slides.html, $(wildcard lectures/*.md)) \
+	   $(patsubst %.md,%-beamer.pdf, $(wildcard lectures/*.md)) \
            $(patsubst %.md,%.pdf, $(wildcard lectures/*.md))
 
 psets = $(patsubst %.md,%.html,$(wildcard problem-sets/*.md)) \
@@ -75,6 +76,10 @@ exams/%.html problem-sets/%.html lectures/%-reg.html resources/%.html recitation
 
 lectures/%-slides.html: %.md
 	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -t slidy --mathjax=$(MJ)  -o $@
+
+lectures/%-beamer.pdf: %.md
+	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -t beamer --mathjax=$(MJ)  -o $@
+
 
 .PHONY = clean
 
