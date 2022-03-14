@@ -254,7 +254,7 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
-## Initial-value problems in this context
+# Initial-value problems in this context
 
 ::: incremental
 
@@ -284,12 +284,12 @@ Let $A$ be an $n \times n$ matrix.
 - if $B$ denotes the $n \times n$ matrix whose columns are the vectors 
   $\mathbf{h}_1(t_0),\dots,\mathbf{h}_n(t_0)$, we can find the $c_i$ by solving the matrix
   equations
-  $$B \mathbf{c} = \mathbf{v}$$
-  for $\mathbf{c} = \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{bmatrix}$
+  $$B \mathbf{c} = \mathbf{v} \quad 
+  \text{for} \quad \mathbf{c} = \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{bmatrix}$$
 
 :::
 
-## Example
+# Example
 
 ::: incremental
 
