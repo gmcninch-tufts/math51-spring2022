@@ -251,6 +251,186 @@ Let $A$ be an $n \times n$ matrix.
 
 :::
 
+## Initial-value problems in this context
+
+::: incremental
+
+- Consider a homogeneous system $(\clubsuit) \quad D \mathbf{x} = A \mathbf{x}$
+  where $A$ is an $n \times n$ matrix.
+  
+- Recall that the *existence and uniqueness Theorem* says that for any
+  vector $\mathbf{v}$ in $\mathbb{R}^n$, there is a solution $\mathbf{}$ to $(\clubsuit)$
+  with $\mathbf{x}(t_0) = \mathbf{v}$.
+
+- to find this solution $\mathbf{x}$, first generators
+  $\mathbf{h}_1,\dots,\mathbf{h}_n$ for find the *general solution* to $(\clubsuit)$:
+  
+  $$c_1 \mathbf{h}_1 + c_2 \mathbf{h}_2 + \cdots + c_n \mathbf{h}_n$$
+
+- we now must find $c_1,\dots,c_n$ so that 
+
+  $$c_1 \mathbf{h}_1(t_0) + c_2 \mathbf{h}_2(t_0)+ \cdots + c_n
+  \mathbf{h}_n(t_0)$$
+  
+:::
+
+-----
+
+::: incremental 
+  
+- if $B$ denotes the $n \times n$ matrix whose columns are the vectors 
+  $\mathbf{h}_1(t_0),\dots,\mathbf{h}_n(t_0)$, we can find the $c_i$ by solving the matrix
+  equations
+  $$B \mathbf{c} = \mathbf{v}$$
+  for $\mathbf{c} = \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{bmatrix}$
+
+:::
+
+## Example
+
+::: incremental
+
+- Let $A = \begin{bmatrix} 1 & 1 & 2 \\ 0 & 2 & 0 \\ 0 & 0 & -1
+  \end{bmatrix} \mathbf{x}$ and solve the IVP $$D \mathbf{x} = A
+  \mathbf{x}, \quad \mathbf{x}(0) = \begin{bmatrix} 1\\ 1 \\ 1
+  \end{bmatrix}.$$
+
+- since the coefficient matrix $A$ is upper triangular, its
+  eigenvalues are the diagonal entries. So we need to find eigenvectors
+  for eigenvalues $\lambda = 1,2,-1$.
+
+- $\lambda = 1$. 
+  $$A - I = \begin{bmatrix} 1 & 1 & 2 \\ 0 & 2 & 0 \\ 0 & 0 & -1 \end{bmatrix} - 
+  \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+  =  \begin{bmatrix} 0 & 1 & 2 \\ 0 & 1 & 0 \\ 0 & 0 & -2 \end{bmatrix}
+  \sim \begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}$$
+
+:::
+
+----
+
+::: incremental
+
+- 
+  $$A - I \sim \begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}$$
+  
+  Thus an eigenvector for $\lambda = 1$ is $\mathbf{w}_1 =
+  \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$.
+
+- $\lambda = 2$: 
+  $$A-2I = \begin{bmatrix} -1 & 1 & 2 \\ 0 & 0 & 0 \\ 0 & 0 & -3 \end{bmatrix}
+  \sim \begin{bmatrix} 1 & -1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}$$
+
+  Thus an eigenvector for $\lambda = 2$ is $\mathbf{w}_2 = 
+  \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}.$
+
+:::
+
+----
+
+::: incremental
+
+- $\lambda = -1$:
+  $$A+I = \begin{bmatrix} 2 & 1 & 2 \\ 0 & 3 & 0 \\ 0 & 0 & 0 \end{bmatrix}
+  \sim \begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
+
+  Thus an eigenvector for $\lambda = -1$ is $\mathbf{w}_3 = 
+  \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}.$
+
+
+- we now find that the *general solution* to $D\mathbf{x} = A
+  \mathbf{x}$ is $$c_1 e^t \mathbf{w}_1 + c_2 e^{2t} \mathbf{w}_2 +
+  c_3 e^{-t} \mathbf{w}_3 = c_1 e^t \begin{bmatrix} 1 \\ 0 \\ 0
+  \end{bmatrix}
+  + c_2 e^{2t} \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}
+  + c_3 e^{-t} \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}$$
+
+
+- let 
+  $B = \begin{bmatrix} 1 & -1 & -1 \\
+  1 & 1 & 0 \\
+  0 & 0 & 1 \end{bmatrix}$
+
+:::
+
+----
+
+::: incremental
+
+- let 
+  $B = \begin{bmatrix} 1 & -1 & -1 \\
+  1 & 1 & 0 \\
+  0 & 0 & 1 \end{bmatrix}$
+
+- to solve the initial value problem $(\clubsuit)$, we need to solve the matrix equation
+  $$B \begin{bmatrix} c_1 \\ c_2 \\ c_3 \end{bmatrix} = \begin{bmatrix} 1\\ 1 \\ 1
+  \end{bmatrix}$$
+  
+- so we need to do row operations on the augmented matrix
+  $\left [
+  \begin{array}{l|l}
+  B & \begin{matrix} 1 \\ 1 \\ 1
+  \end{matrix}
+  \end{array} \right]$
+
+- 
+  $$\left [
+  \begin{array}{l|l}
+  \begin{matrix} 1 & -1 & -1 \\
+  1 & 1 & 0 \\
+  0 & 0 & 1 \end{matrix} 
+  & \begin{matrix} 1 \\ 1 \\ 1
+  \end{matrix}
+  \end{array} \right]
+  \sim \left [
+  \begin{array}{l|l}
+  \begin{matrix} 1 & -1 & -1 \\
+  0 & 2 & 1 \\
+  0 & 0 & 1 \end{matrix} 
+  & \begin{matrix} 1 \\ 0 \\ 1
+  \end{matrix}
+  \end{array} \right]
+  \sim \left [
+  \begin{array}{l|l}
+  \begin{matrix} 1 & -1 & 0 \\
+  0 & 2 & 0 \\
+  0 & 0 & 1 \end{matrix} 
+  & \begin{matrix} 2 \\ -1 \\ 1
+  \end{matrix}
+  \end{array} \right]
+  \sim \left [
+  \begin{array}{l|l}
+  \begin{matrix} 1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1 \end{matrix} 
+  & \begin{matrix} 3/2 \\ -1/2 \\ 1
+  \end{matrix}
+  \end{array} \right]$$
+
+:::
+
+---
+
+::: incremental
+
+- thus we find that $\mathbf{c} = \begin{bmatrix} 3/2 \\ -1/2 \\ 1
+  \end{bmatrix}$
+  
+- so that the solution to the IVP $(\clubsuit)$ is given by  
+  $$\mathbf{x}(t) = (3/2) e^t \begin{bmatrix} 1 \\ 0 \\ 0
+  \end{bmatrix}
+  + (-1/2) e^{2t} \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}
+  +  e^{-t} \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}$$
+
+- let's check the initial condition:
+  $$\mathbf{x}(0) = (3/2) \begin{bmatrix} 1 \\ 1 \\ 0
+  \end{bmatrix}
+  + (-1/2) \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}
+  +  \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}
+  = \begin{bmatrix} 3/2 + 1/2 - 1 \\ 3/2 - 1/2 \\ 1 \end{bmatrix}
+  = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$$
+
+:::
 
 ## Bibliography {.unnumbered}
 
