@@ -325,7 +325,7 @@ Let $A$ be an $n \times n$ matrix.
   \sim \begin{bmatrix} 1 & -1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}$$
 
   Thus an eigenvector for $\lambda = 2$ is $\mathbf{w}_2 = 
-  \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}.$
+  \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}.$
 
 :::
 
@@ -350,8 +350,8 @@ Let $A$ be an $n \times n$ matrix.
 
 
 - let 
-  $B = \begin{bmatrix} 1 & -1 & -1 \\
-  1 & 1 & 0 \\
+  $B = \begin{bmatrix} 1 & 1 & -1 \\
+  0 & 1 & 0 \\
   0 & 0 & 1 \end{bmatrix}$
 
 :::
@@ -361,8 +361,8 @@ Let $A$ be an $n \times n$ matrix.
 ::: incremental
 
 - let 
-  $B = \begin{bmatrix} 1 & -1 & -1 \\
-  1 & 1 & 0 \\
+  $B = \begin{bmatrix} 1 & 1 & -1 \\
+  0 & 1 & 0 \\
   0 & 0 & 1 \end{bmatrix}$
 
 - to solve the initial value problem $(\clubsuit)$, we need to solve the matrix equation
@@ -379,26 +379,18 @@ Let $A$ be an $n \times n$ matrix.
 - 
   $$\left [
   \begin{array}{l|l}
-  \begin{matrix} 1 & -1 & -1 \\
-  1 & 1 & 0 \\
+  \begin{matrix} 1 & 1 & -1 \\
+  0 & 1 & 0 \\
   0 & 0 & 1 \end{matrix} 
   & \begin{matrix} 1 \\ 1 \\ 1
   \end{matrix}
   \end{array} \right]
   \sim \left [
   \begin{array}{l|l}
-  \begin{matrix} 1 & -1 & -1 \\
-  0 & 2 & 1 \\
+  \begin{matrix} 1 & 1 & 0 \\
+  0 & 1 & 0 \\
   0 & 0 & 1 \end{matrix} 
-  & \begin{matrix} 1 \\ 0 \\ 1
-  \end{matrix}
-  \end{array} \right]
-  \sim \left [
-  \begin{array}{l|l}
-  \begin{matrix} 1 & -1 & 0 \\
-  0 & 2 & 0 \\
-  0 & 0 & 1 \end{matrix} 
-  & \begin{matrix} 2 \\ -1 \\ 1
+  & \begin{matrix} 2 \\ 1 \\ 1
   \end{matrix}
   \end{array} \right]
   \sim \left [
@@ -406,7 +398,7 @@ Let $A$ be an $n \times n$ matrix.
   \begin{matrix} 1 & 0 & 0 \\
   0 & 1 & 0 \\
   0 & 0 & 1 \end{matrix} 
-  & \begin{matrix} 3/2 \\ -1/2 \\ 1
+  & \begin{matrix} 1 \\ 1 \\ 1
   \end{matrix}
   \end{array} \right]$$
 
@@ -416,21 +408,21 @@ Let $A$ be an $n \times n$ matrix.
 
 ::: incremental
 
-- thus we find that $\mathbf{c} = \begin{bmatrix} 3/2 \\ -1/2 \\ 1
+- thus we find that $\mathbf{c} = \begin{bmatrix} 1 \\ 1 \\ 1
   \end{bmatrix}$
   
 - so that the solution to the IVP $(\clubsuit)$ is given by  
-  $$\mathbf{x}(t) = (3/2) e^t \begin{bmatrix} 1 \\ 0 \\ 0
+  $$\mathbf{x}(t) =  e^t \begin{bmatrix} 1 \\ 0 \\ 0
   \end{bmatrix}
-  + (-1/2) e^{2t} \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}
+  +  e^{2t} \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
   +  e^{-t} \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}$$
 
 - let's check the initial condition:
-  $$\mathbf{x}(0) = (3/2) \begin{bmatrix} 1 \\ 1 \\ 0
+  $$\mathbf{x}(0) = \begin{bmatrix} 1 \\ 0 \\ 0
   \end{bmatrix}
-  + (-1/2) \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix}
+  +  \begin{bmatrix} 1 \\ 1 \\ 0 \end{bmatrix}
   +  \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}
-  = \begin{bmatrix} 3/2 + 1/2 - 1 \\ 3/2 - 1/2 \\ 1 \end{bmatrix}
+  = \begin{bmatrix} 2-1 \\ 1 \\ 1 \end{bmatrix}
   = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$$
 
 :::

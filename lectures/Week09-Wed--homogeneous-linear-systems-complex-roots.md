@@ -209,41 +209,56 @@ This lecture covers material from [@gutermanNitecki, sec. 3.8].
 
 ## Summarizing our observations
 
-Let $A$ be an $n\times n$ matrix, and let $\lambda = a+ bi$ be an
-eigenvalue for $A$ with $b \ne 0$ (thus $\lambda$ is a complex but not
-real number).
+::: incremental 
 
-. . .
+- Let $A$ be an $n\times n$ matrix, and let $\lambda = a+ bi$ be an
+  eigenvalue for $A$ with $b \ne 0$ (thus $\lambda$ is a complex but
+  not real number).
 
-Choose a $\lambda$-eigenvector $\mathbf{v}$ in $\mathbb{C}^n$ for $A$.
+- Choose a $\lambda$-eigenvector $\mathbf{v}$ in $\mathbb{C}^n$ for
+  $A$.
 
-Then 
+- Then 
 
-$$\mathbf{h_1} = \operatorname{Re}(e^{\lambda t} \mathbf{v}) \quad
-\text{and} \quad
-\mathbf{h_2} = \operatorname{Im}(e^{\lambda t} \mathbf{v})$$
+  $$\mathbf{h_1} = \operatorname{Re}(e^{\lambda t} \mathbf{v}) \quad
+  \text{and} \quad \mathbf{h_2} = \operatorname{Im}(e^{\lambda t}
+  \mathbf{v})$$
 
-are real-valued solutions to $D \mathbf{x} = A \mathbf{x}$ with
-linearly independent initial vectors.
+  are real-valued solutions to $D \mathbf{x} = A \mathbf{x}$ with
+  linearly independent initial vectors.
+
+- here, for a complex number $z = a + bi$, we write $\operatorname{Re}(z) = a$
+  for the *real part* of $z$ and $\operatorname{Im}(z) = b$ for 
+  the *imaginary part* of $z$
+  
+  notice that $\operatorname{Im}(z)$ *does not include the factor $i = \sqrt{-1}$*!  
+
+:::
 
 ## Strategy
 
 Given an $n \times n$ matrix, find a list of real-valued functions as follows:
+
+::: incremental
 
 - to each real eigenvalue $\lambda$, find as many linearly independent
   eigenvectors as possible. To each such eigenvector $\mathbf{v}$,
   associated the vector-valued function $e^{\lambda t} \mathbf{v}$.
   
 - to each pair of complex eigenvalues $\lambda = a \pm bi$ with $b \ne
-  0$, find as many linearly independent eigenvectors as possible. To
-  each such eigenvector $\mathbf{w}$ in $\mathbb{C}^n$, associated the
-  vector-valued functions $\operatorname{Re}(e^{\lambda t}\mathbf{w})$
-  and $\operatorname{Im}(e^{\lambda t}\mathbf{w})$
+  0$, find as many linearly independent eigenvectors as possible *for
+  one of the two eigenvalues* $\lambda = a + bi$. 
+  
+- To each such eigenvector $\mathbf{w}$ in $\mathbb{C}^n$, associated
+  the vector-valued functions $\operatorname{Re}(e^{\lambda
+  t}\mathbf{w})$ and $\operatorname{Im}(e^{\lambda t}\mathbf{w})$
 
-- then the resulting list consists of solutions to the system $D
-  \mathbf{x} = A \mathbf{x}$ with linearly independent initial
-  vectors.  In particular, if there are $n$ such functions, they
-  generate the general solution.
+- the list resulting from this process consists of solutions to the
+  system $D \mathbf{x} = A \mathbf{x}$ with linearly independent
+  initial vectors.  In particular, if there are $n$ such functions,
+  they generate the general solution.
+
+:::
 
 ## Example
 
