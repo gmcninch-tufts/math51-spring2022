@@ -1,7 +1,8 @@
 
 CMD=/home/george/.local/bin/course report
 
-PD=pandoc --from markdown 
+PD=pandoc --from markdown
+GC = google-chrome --headless 
 
 TEX=pdflatex
 
@@ -20,12 +21,11 @@ pacing_md   = $(wildcard pacing/*.md)
 pacing_html = $(patsubst %.md,%.html,$(wildcard pacing/*.md)) 
 pacing_pdf  = $(patsubst %.md,%.pdf,$(wildcard pacing/*.md)) 
 
-lectures = $(patsubst %.md,%-reg.html, $(wildcard lectures/*.md)) \
-           $(patsubst %.md,%-slides.html, $(wildcard lectures/*.md)) \
-           $(patsubst %.md,%-slideous.html, $(wildcard lectures/*.md)) \
-#	   $(patsubst %.md,%.pdf, $(wildcard lectures/*.md))
+lectures = $(patsubst %.md,%-slides.html, $(wildcard lectures/*.md)) \
+	   $(patsubst %.md,%.pdf, $(wildcard lectures/*.md))
 #	   $(patsubst %.md,%-beamer.pdf, $(wildcard lectures/*.md)) \
-          
+#          $(patsubst %.md,%-reg.html, $(wildcard lectures/*.md)) \
+
 
 psets = $(patsubst %.md,%.html,$(wildcard problem-sets/*.md)) \
         $(patsubst %.md,%.pdf, $(wildcard problem-sets/*.md)) \
@@ -64,7 +64,10 @@ pacing/%.pdf resources/%.pdf: %.md
 
 
 
-problem-sets/%.pdf lectures/%.pdf exams/%.pdf practicum/%.pdf: %.md
+problem-sets/%.pdf exams/%.pdf practicum/%.pdf: %.md
+	$(PD)   --citeproc --self-contained --pdf-engine=xelatex --resource-path=$(RP) -t latex $<  -o $@
+
+lectures/%.pdf: %.md
 	$(PD)   --citeproc --self-contained --pdf-engine=xelatex --resource-path=$(RP) -t latex $<  -o $@
 
 problem-sets/%.pdf: %.tex
@@ -74,14 +77,14 @@ practicum/%.pdf: %.tex
 	$(TEX) -output-directory=practicum $<
 
 
-exams/%.html problem-sets/%.html lectures/%-reg.html resources/%.html practicum/%.html: %.md
+exams/%.html problem-sets/%.html resources/%.html practicum/%.html: %.md
 	$(PD) $<  --number-sections --citeproc  --standalone --css=$(CSS_DEFAULT) --mathjax=$(MJ) --to html  -o $@
 
 lectures/%-slides.html: %.md
 	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -V slideous-url=$(SLIDEOUS) -t slidy --mathjax=$(MJ)  -o $@
 
-lectures/%-slideous.html: %.md
-	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -t slideous --mathjax=$(MJ)  -o $@
+# lectures/%-slideous.html: %.md
+# 	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -t slideous --mathjax=$(MJ)  -o $@
 
 # lectures/%-beamer.pdf: %.md
 # 	$(PD) $< --standalone --citeproc --css=$(CSS_DEFAULT) -t beamer --mathjax=$(MJ)  -o $@
