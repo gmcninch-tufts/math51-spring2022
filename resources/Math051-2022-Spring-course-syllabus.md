@@ -83,7 +83,7 @@ from **homework**, **recitation work**, and **exams**.
   
   - **Midterm 1** -- **Mon 2022-02-14 @ 12:00-01:20 PM**.
 	
-  - **Midterm 2** -- **Mon 2022-04-04  @ 12:00-01:20 PM**.
+  - **Midterm 2** -- **Mon 2022-04-11  @ 12:00-01:20 PM**.
   
   - the **Final Exam** -- **Mon 2022-05-09  @ 08:30-10:30 AM**.
 
