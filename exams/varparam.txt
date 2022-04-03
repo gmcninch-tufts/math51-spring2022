@@ -1,0 +1,85 @@
+6. Consider the matrix $A =
+   \begin{bmatrix}
+   2 & 5 \\
+   1 & -2
+   \end{bmatrix}$
+
+   a. Find solutions $\vec h_1(t)$ and $\vec h_2(t)$ that generate the
+     *general solution* to the linear system $D \vec x = A \vec x$.
+	 
+   b. Suppose that $\vec E(t)$ is a vector valued function, and that
+     we wish to find a particular solution to the inhomogeneous system
+     $$D \vec x = A \vec x + \vec E(t)$$ of the form $\vec p(t) =
+     c_1(t)\vec h_1(t) + c_2(t)\vec h_2(t)$ where the $\vec h_i(t)$
+     are the solutions you found in (c), and $c_1(t)$ and $c_2(t)$ are
+     "unknown functions". What matrix equation must you solve in order
+     to find the *derivatives* $c_1'(t)$ and $c_2'(t)$? 
+
+
+6. Consider the matrix $A =
+   \begin{bmatrix}
+   2 & 5 \\
+   1 & -2
+   \end{bmatrix}$
+
+   a. Find solutions $\vec h_1(t)$ and $\vec h_2(t)$ that generate the
+     *general solution* to the linear system $D \vec x = A \vec x$.
+
+      :::{.solution}
+      \color{red}  
+      **Solution:**
+      
+	  The char. poly is $\lambda^2 - 9$ so the eigenvalues are $\pm
+	  3$.  To find an eigenvector for $\lambda = 3$, we consider $$A -
+	  3\mathbf{I}_2 = \begin{bmatrix} -1 & 5 \\ 1 & -5 \end{bmatrix}
+	  \sim \begin{bmatrix} 1 & -5 \\ 0 & 0 \end{bmatrix}$$ and find
+	  the eigenvector $\mathbf{v} = \begin{bmatrix} 5 \\ 1
+	  \end{bmatrix}.$
+   
+      To find an eigenvector for $\lambda = -3$, we consider $$A +
+	  3\mathbf{I}_2 = \begin{bmatrix} 5 & 5 \\ 1 & 1 \end{bmatrix}
+	  \sim \begin{bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix}$$ and find
+	  the eigenvector $\mathbf{w} = \begin{bmatrix} -1 \\ 1
+	  \end{bmatrix}.$
+   
+      Thus the general solution is given by
+	  $$x(t) = c_1 e^{3t} \mathbf{v} + c_2 e^{-3t}\mathbf{w}
+	  = c_1 e^{3t} \begin{bmatrix} 5 \\ 1
+	  \end{bmatrix} + c_2 e^{-3t} \begin{bmatrix} -1 \\ 1
+	  \end{bmatrix}$$
+   
+      -----
+      
+      \color{black}
+      :::
+
+   b. Suppose that $\mathbf{E}(t)$ is a vector valued function, and that
+     we wish to find a particular solution to the non-homogeneous system
+     $$D \mathbf{x} = A \mathbf{x} + \mathbf{E}(t)$$ of the form $\mathbf{p}(t) =
+     c_1(t)\mathbf{h}_1(t) + c_2(t)\mathbf{h}_2(t)$ where the $\mathbf{h}_i(t)$
+     are the solutions you found in (c), and $c_1(t)$ and $c_2(t)$ are
+     "unknown functions". What matrix equation must you solve in order
+     to find the *derivatives* $c_1'(t)$ and $c_2'(t)$? 
+
+      :::{.solution}
+      \color{red}  
+      **Solution:**
+      
+	  Let $W$ be the matrix whose columns are the solutions $\mathbf{h}_i$; thus
+	  $$W =\begin{bmatrix} 5e^{3t} & -e^{-3t} \\
+	  e^{3t} & e^{-3t} \end{bmatrix}.$$
+   
+      Form the vector $\mathbf{c}(t) = \begin{bmatrix} c_1(t) \\ c_2(t) \end{bmatrix}$
+	  where $c_i(t)$ are the unknown coefficient functions. To find the $c_i(t)$, we must
+	  solve the matrix equation
+	  $$W \mathbf{c}'(t) = \mathbf{E}(t)$$
+	  i.e.
+	  $$W \begin{bmatrix} c_1'(t) \\ c_2'(t) \end{bmatrix} = \mathbf{E}(t).$$
+	  
+	  To then find the $c_i(t)$, we must compute antiderivatives:
+	  $$c_i(t) = \int c_i'(t) dt.$$
+   
+      -----
+      
+      \color{black}
+      :::

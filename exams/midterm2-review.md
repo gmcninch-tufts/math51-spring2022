@@ -1,15 +1,14 @@
 ---
-author: Math 51 Fall 2021 -- Z. Nitecki and G. McNinch
+author: Math 51 Spring 2022
 title: |
-  Review material for the Final Exam
-date: 2021-12-17
+  Review material for Midterm 2
+date: exam date 2022-04-11
 bibliography: 
  - /home/george/Prof-Math/assets/math-bibliography.bib
  - /home/george/Prof-Math/assets/teaching.bib 
 csl: assets/chicago-author-date.csl
 header-includes: |
   \usepackage[top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}
-  \usepackage{palatino,mathpazo}
 ---
 
 # Problems
@@ -40,24 +39,8 @@ header-includes: |
    $(\cos(t) + i\sin(t)) \cdot \begin{bmatrix} 2+i\\ 1 \\ i
    \end{bmatrix}$ for any value of $t$.
 
-6. Consider the matrix $A =
-   \begin{bmatrix}
-   2 & 5 \\
-   1 & -2
-   \end{bmatrix}$
 
-   a. Find solutions $\vec h_1(t)$ and $\vec h_2(t)$ that generate the
-     *general solution* to the linear system $D \vec x = A \vec x$.
-	 
-   b. Suppose that $\vec E(t)$ is a vector valued function, and that
-     we wish to find a particular solution to the inhomogeneous system
-     $$D \vec x = A \vec x + \vec E(t)$$ of the form $\vec p(t) =
-     c_1(t)\vec h_1(t) + c_2(t)\vec h_2(t)$ where the $\vec h_i(t)$
-     are the solutions you found in (c), and $c_1(t)$ and $c_2(t)$ are
-     "unknown functions". What matrix equation must you solve in order
-     to find the *derivatives* $c_1'(t)$ and $c_2'(t)$? 
-
-7. Let $A= \begin{bmatrix} 2 & 2 & 1 \\ 0 & 2 & 0 \\ 0 & 0 & -1
+6. Let $A= \begin{bmatrix} 2 & 2 & 1 \\ 0 & 2 & 0 \\ 0 & 0 & -1
    \end{bmatrix}.$
 	
    a. Find the characteristic polynomial and show that eigenvalues of
@@ -70,7 +53,7 @@ header-includes: |
    c. Find the general solution to the linear
       system $D\vec x = A\vec x$.  
 
-8. Let $B =
+7. Let $B =
    \begin{bmatrix} 1 & -1 & 0 & 1 & 1 \\ 0 & 2 & -1 & 2 & 0 \\ 0 & 0 &
    0 & 1 & 3 \\ 0 & 0 & 0 & 0 & 0 \\ \end{bmatrix}$
     
@@ -81,7 +64,7 @@ header-includes: |
       $\mathbf{R}^4$. Are these vectors linearly independent? Why or
       why not?
 	  
-9. Find the solution $\vec h(t)$ to the homogeneous system
+8. Find the solution $\vec h(t)$ to the homogeneous system
    $$D \vec x = 
    \begin{bmatrix}
     3 & -2 & 1 \\
@@ -94,7 +77,7 @@ header-includes: |
    0 \\ 1 \\ 0
    \end{bmatrix}.$ What is $\vec h(1)$?
 
-10. Suppose that the $3 \times 3$ matrix $A$ has eigenvalues $2$ and $1 \pm 3i$, 
+9.  Suppose that the $3 \times 3$ matrix $A$ has eigenvalues $2$ and $1 \pm 3i$, 
     that $\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}$
     is an eigenvector for $\lambda  = 2$, and that $\mathbf{w} = \begin{bmatrix} u_1 +
     w_1 i \\ u_2 + w_2 i \\ u_3 + w_3 i \end{bmatrix}$ is an
@@ -104,16 +87,6 @@ header-includes: |
     ODES $D \mathbf{x} = A \mathbf{x}$ with linearly independent
     initial vectors.
 
-11. Find the *inverse Laplace transform*
-    $\mathscr{L}^{-1}\left[\dfrac{1+2s}{(s^2 + 9)s^2}\right].$
-
-12. Consider the initial value problem $(D^2 + D)x = e^{3t}; \quad x(0) = 0, x'(0) = 0$.
-
-    a. Find an expression for the Laplace transform $\mathscr{L}[x]$ as
-       a function of the variable $s$.
-   
-    b. Use your answer to (a) to find the solution $x = x(t)$ for the
-    given initial value problem.
 
 
 ## Bibliography {.unnumbered}
