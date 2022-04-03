@@ -1,0 +1,444 @@
+\documentclass[12pt]{amsart}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{epstopdf}
+\usepackage{nicefrac}
+\usepackage{enumerate}
+\usepackage[inline]{enumitem}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{pst-all}
+\usepackage{graphicx}        % standard LaTeX graphics tool
+\usepackage{pst-grad,pst-plot,pst-coil}
+%\usepackage{pstricks}
+\usepackage{multicol}
+\usepackage{mathtools}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{palatino}
+\usepackage{mathpazo}
+
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+
+
+%\parskip = 6pt
+%\parindent = 0.0in
+
+%\hoffset=-.7in
+%\voffset=-.7in
+%\setlength{\textwidth}{6in}
+%\setlength{\textheight}{8.5in}
+
+\newtheorem{theorem}{THEOREM}%[section]
+\newtheorem{thm}{THEOREM}%[section]
+\newtheorem{conj}[thm]{CONJECTURE}
+\newtheorem{cor}[thm]{COROLLARY}
+\newtheorem{definition}[thm]{DEFINITION}
+\newtheorem{defn}[thm]{DEFINITION}
+\newtheorem{ex}[thm]{EXAMPLE}
+\newtheorem{hyp}[thm]{HYPOTHESES}
+\newtheorem{lemma}[thm]{LEMMA}
+\theoremstyle{definition}
+\newtheorem{prob}[thm]{}
+\newtheorem{prop}[thm]{PROPOSITION}
+\newtheorem{quest}[thm]{QUESTION}
+\newtheorem{remark}[thm]{REMARK}
+\newtheorem{const}[thm]{CONSTRUCTION}
+
+% math notation shortcuts
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\sop}{{\bf Proof:} } % replaced by command \proof
+\newcommand{\eop}{\;\;\; \Box} % replaced by command \endproof - still used inside theorem environment
+
+\newcommand{\F}{{\mathcal F}} % our favorite foliation
+\newcommand{\wtF}{{\widetilde{\mathcal F}}} % some lift of our favorite foliation
+\newcommand{\wF}{{\widehat{\F}}} % some modification of our favorite foliation - not used so far
+\newcommand{\G}{\Gamma}
+\newcommand{\g}{\gamma}
+\newcommand{\D}{{{\mathbb D}^q}}
+
+\newcommand{\wL}{\widetilde{L}} % covering of leaf L
+\newcommand{\e}{{\varepsilon}} % some choice
+\newcommand{\eF}{{\varepsilon_{\mathcal F}}} % convex diameter defined in Lemma~\ref{lem-conhull}
+\newcommand{\eU}{{\varepsilon_{\cU}}} % Lebesgue number for given covering.
+\newcommand{\eFU}{{\varepsilon^{\F}_{\cU}}} % leafwise Lebesgue number defined in equation~\ref{eq-leafdiam}
+\newcommand{\eTU}{{\varepsilon^{\cT}_{\cU}}} % transverse Lebesgue number defined in equation~\ref{eq-transdiam}
+
+\newcommand{\ve}{\varepsilon}
+
+\newcommand{\adj}{\text{\bf adj}}
+
+\newcommand{\dF}{d_{\F}} % leafwise metric
+\newcommand{\dFU}{\delta^{\F}_{\cU}} % leafwise radius defined by Equation~\ref{eq-Fdelta}
+\newcommand{\dTU}{\delta^{\cT}_{\cU}} % equicontinuous uniform domain size defined in Proposition~\ref{prop-uniformdom}
+\newcommand{\dT}{\delta^{\cT}} % some transverse modulus
+
+\newcommand{\kF}{{\kappa_{\mathcal F}}} % minimal net distance defined in equation~\ref{eq-kF}
+\newcommand{\kL}{{\kappa_{L}}} % minimal net distance defined in leaf L
+\newcommand{\lF}{{\lambda_{\mathcal F}}} % leafwise convexity diameter defined in Lemma~\ref{lem-stronglyconvex}
+\newcommand{\lU}{{\lambda_{\mathcal U}}} % not used so far
+\newcommand{\rp}{\rho_{\pi}} % modulus of continuity function for projections defined in equation~\ref{eq-modpi}
+\newcommand{\rt}{\rho_{\tau}} % modulus of continuity function for sections defined in equation~\ref{eq-modtau}
+\newcommand{\rF}{{\lambda_{\mathcal F}^*}} % leafwise radius for good geometry \ref{eq-convex}
+
+\newcommand{\cBF}{\cB(\F)} % denotes Borel Sigma algebra for F - not used so far
+\newcommand{\cGF}{\cG_{\F}} % denotes the pseudogroup of F
+\newcommand{\cRF}{\cR_{\F}} % denotes the equivalence relation of F - not used so far
+\newcommand{\cNF}{{\mathcal{N}_{\F}}} % who knows?
+\newcommand{\GF}{\Gamma_{\F}} % denotes the groupoid of F - not used so far
+
+\newcommand{\PF}{{\rm Pen}_{\F}} % denotes the penumbra of a set in a leaf of \F
+\newcommand{\wtPF}{{\rm Pen}_{\wtF}} % denotes the penumbra of a set in a leaf of \wtF
+\newcommand{\PR}{{\rm Pen}_{\mR^n}} % denotes the penumbra of a set in \mR^n
+
+\newcommand{\wtdF}{d_{\wtF}} % leafwise metric
+\newcommand{\dM}{d_{\fM}} % leafwise metric
+\newcommand{\eM}{{\varepsilon_{\fM}}} % convex diameter defined in Lemma~\ref{lem-conhull}
+
+
+% we next have groupings of useful shortcuts as needed frequently
+
+% primed letters
+
+\newcommand{\wtdp}{{\widetilde{d}\hspace{.8pt}'}}
+\newcommand{\wtgp}{{\widetilde{g}\hspace{.8pt}'}}
+\newcommand{\wtxp}{{\widetilde{x}\hspace{.5pt}'}}
+\newcommand{\wtzp}{{\widetilde{z}\hspace{.5pt}'}}
+\newcommand{\wtyp}{{\widetilde{y}\hspace{.8pt}'}}
+\newcommand{\whup}{{\widehat{u}\hspace{.5pt}'}}
+\newcommand{\whvp}{{\widehat{v}\hspace{.5pt}'}}
+\newcommand{\whwp}{{\widehat{w}\hspace{.5pt}'}}
+
+\newcommand{\vzpj}{{\vec{z}_j\hspace{-2.6pt}'}}
+\newcommand{\vzpk}{{\vec{z}_k\hspace{-2.6pt}'}}
+
+\newcommand{\vwpj}{{\vec{w}_j\hspace{-2.6pt}'}}
+\newcommand{\vwpk}{{\vec{w}_k\hspace{-2.6pt}'}}
+
+\newcommand{\vop}{{\vec{\omega}\hspace{.5pt}'}}
+\newcommand{\vopj}{{\vec{\omega}_j\hspace{-2.6pt}'}}
+\newcommand{\vopk}{{\vec{\omega}_k\hspace{-2.6pt}'}}
+
+\newcommand{\whrho}{{\widehat{\rho}}}
+\newcommand{\whrhop}{\widehat{\rho}\hspace{1.8pt}'}
+\newcommand{\wtrho}{{\widetilde{\rho}}}
+\newcommand{\wtl}{{\widetilde{\lambda}}}
+\newcommand{\whl}{{\widehat{\lambda}}}
+\newcommand{\whphi}{{\widehat{\phi}}}
+\newcommand{\wtrhop}{\widetilde{\rho}\hspace{1.8pt}'}
+
+\newcommand{\whvarp}{{\widehat \varphi}}
+\newcommand{\wtvarp}{{\widetilde \varphi}}
+\newcommand{\wtPhi}{{\widetilde \Phi}}
+
+\newcommand{\oo}{{\overline{\omega}}}
+\newcommand{\who}{{\widehat{\omega}}}
+
+\newcommand{\whpsi}{{\widehat \psi}}
+
+% widetilde lowercase letters
+\newcommand{\wtd}{{\widetilde{d}}}
+\newcommand{\wte}{{\widetilde{e}}}
+\newcommand{\wtf}{{\widetilde{f}}}
+\newcommand{\wtg}{{\widetilde{g}}}
+\newcommand{\wth}{{\widetilde{h}}}
+\newcommand{\wtq}{{\widetilde{q}}}
+\newcommand{\wtu}{{\widetilde{u}}}
+\newcommand{\wtv}{{\widetilde{v}}}
+\newcommand{\wtw}{{\widetilde{w}}}
+\newcommand{\wtx}{{\widetilde{x}}}
+\newcommand{\wtz}{{\widetilde{z}}}
+\newcommand{\wty}{{\widetilde{y}}}
+
+% widetilde uppercase letters
+\newcommand{\wtB}{\widetilde{B}}
+\newcommand{\wtD}{\widetilde{D}}
+\newcommand{\wtK}{\widetilde{K}}
+\newcommand{\wtL}{{\widetilde L}}
+\newcommand{\wtM}{\widetilde{M}}
+\newcommand{\wtN}{\widetilde{N}}
+\newcommand{\wtR}{\widetilde{R}}
+\newcommand{\wtS}{\widetilde{S}}
+\newcommand{\wtT}{\widetilde{T}}
+\newcommand{\wtU}{{\widetilde U}}
+\newcommand{\wtV}{\widetilde{V}}
+\newcommand{\wtX}{\widetilde{X}}
+
+% widetilde misc letters
+\newcommand{\wtomega}{{\widetilde{\omega}}}
+\newcommand{\wtpi}{{\widetilde{\pi}}}
+\newcommand{\wtnu}{{\widetilde{\nu}}}
+\newcommand{\wtiota}{{\widetilde{\iota}}}
+\newcommand{\wttau}{{\widetilde{\tau}}}
+\newcommand{\wtvp}{{\widetilde{\varphi}}}
+\newcommand{\wtgamma}{{\widetilde{\gamma}}}
+\newcommand{\wtlambda}{{\widetilde{\lambda}}}
+\newcommand{\wtLambda}{{\widetilde{\Lambda}}}
+\newcommand{\wtDelta}{{\widetilde{\Delta}}}
+\newcommand{\wtGamma}{{\widetilde{\Gamma}}}
+\newcommand{\wtPsi}{{\widetilde{\Psi}}}
+\newcommand{\wtsigma}{{\widetilde{\sigma}}}
+\newcommand{\wtxi}{{\widetilde{\xi}}}
+\newcommand{\wtXi}{{\widetilde{\Xi}}}
+\newcommand{\wtcN}{{\widetilde{\mathcal N}}}
+\newcommand{\wtcP}{{\widetilde{\mathcal P}}}
+\newcommand{\wtfN}{\widetilde{\mathfrak{N}}}
+\newcommand{\wtfT}{\widetilde{\mathfrak{T}}}
+\newcommand{\wtfU}{\widetilde{\mathfrak{U}}}
+\newcommand{\wtfS}{\widetilde{\mathfrak{S}}}
+\newcommand{\wtcM}{\widetilde{\mathcal M}}
+\newcommand{\wtexp}{\widetilde{\exp}}
+\newcommand{\wtphi}{\widetilde{\phi}}
+\newcommand{\wtpsi}{\widetilde{\psi}}
+
+% widehat lowercase letters
+\newcommand{\whd}{{\widehat d}}
+\newcommand{\whe}{{\widehat e}}
+\newcommand{\whf}{{\widehat f}}
+\newcommand{\whp}{{\widehat p}}
+\newcommand{\whu}{{\widehat u}}
+\newcommand{\whv}{{\widehat v}}
+\newcommand{\whw}{{\widehat w}}
+
+% widehat uppercase letters
+\newcommand{\whK}{{\widehat K}}
+\newcommand{\whL}{{\widehat L}}
+\newcommand{\whN}{{\widehat N}}
+\newcommand{\whU}{{\widehat U}}
+\newcommand{\whV}{{\widehat V}}
+
+\newcommand{\whcN}{{\widehat{\mathcal N}}}
+\newcommand{\whcP}{{\widehat{\mathcal P}}}
+\newcommand{\whcX}{{\widehat{\mathcal X}}}
+\newcommand{\whcZ}{{\widehat{\mathcal Z}}}
+
+\newcommand{\whXi}{{\widehat{\Xi}}}
+\newcommand{\wtwhXi}{\widetilde{\widehat{\Xi}}}
+\newcommand{\whdelta}{\widehat{\delta}}
+\newcommand{\whmu}{\widehat{\mu}}
+
+\newcommand{\vl}{{\vec{\lambda}}}
+
+
+% overline letters
+\newcommand{\oU}{{\overline{U}}}
+\newcommand{\oV}{{\overline{V}}}
+\newcommand{\oW}{{\overline{W}}}
+
+% bolds
+\newcommand{\bA}{{\bf A}}
+\newcommand{\bB}{{\bf B}}
+\newcommand{\bC}{{\bf C}}
+\newcommand{\bE}{{\bf E}}
+\newcommand{\bQ}{{\bf Q}}
+\newcommand{\bU}{{\bf U}}
+\newcommand{\bV}{{\bf V}}
+\newcommand{\bW}{{\bf W}}
+\newcommand{\bX}{{\bf X}}
+\newcommand{\bY}{{\bf Y}}
+\newcommand{\bZ}{{\bf Z}}
+
+
+% the rest of these are shortcuts for standard text formats
+
+% blackboard bolds
+\newcommand{\mB}{{\mathbb B}}
+\newcommand{\mC}{{\mathbb C}}
+\newcommand{\mD}{{\mathbb D}}
+\newcommand{\mE}{{\mathbb E}}
+\newcommand{\mF}{{\mathbb F}}
+\newcommand{\mG}{{\mathbb G}}
+\newcommand{\mK}{{\mathbb K}}
+\newcommand{\mN}{{\mathbb N}}
+\newcommand{\mQ}{{\mathbb Q}}
+\newcommand{\mR}{{\mathbb R}}
+\newcommand{\mS}{{\mathbb S}}
+\newcommand{\mT}{{\mathbb T}}
+\newcommand{\mV}{{\mathbb V}}
+\newcommand{\mZ}{{\mathbb Z}}
+
+% cal script letters
+\newcommand{\cA}{{\mathcal A}}
+\newcommand{\cB}{{\mathcal B}}
+\newcommand{\cC}{{\mathcal C}}
+\newcommand{\cD}{{\mathcal D}}
+\newcommand{\cE}{{\mathcal E}}
+\newcommand{\cG}{{\mathcal G}}
+\newcommand{\cH}{{\mathcal H}}
+\newcommand{\cI}{{\mathcal I}}
+\newcommand{\cJ}{{\mathcal J}}
+\newcommand{\cK}{{\mathcal K}}
+\newcommand{\cL}{{\mathcal L}}
+\newcommand{\cM}{{\mathcal M}}
+\newcommand{\cN}{{\mathcal N}}
+\newcommand{\cO}{{\mathcal O}}
+\newcommand{\cP}{{\mathcal P}}
+\newcommand{\cQ}{{\mathcal Q}}
+\newcommand{\cS}{{\mathcal S}}
+\newcommand{\cT}{{\mathcal T}}
+\newcommand{\cU}{{\mathcal U}}
+\newcommand{\cV}{{\mathcal V}}
+\newcommand{\cW}{{\mathcal W}}
+\newcommand{\cX}{{\mathcal X}}
+\newcommand{\cZ}{{\mathcal Z}}
+
+% fraktur letters
+
+\newcommand{\fA}{{\mathfrak{A}}}
+\newcommand{\fB}{{\mathfrak{B}}}
+\newcommand{\fC}{{\mathfrak{C}}}
+\newcommand{\fD}{{\mathfrak{D}}}
+\newcommand{\fG}{\mathfrak{G}}
+\newcommand{\fH}{\mathfrak{H}}
+\newcommand{\fK}{{\mathfrak{K}}}
+\newcommand{\fL}{{\mathfrak{L}}}
+\newcommand{\fM}{{\mathfrak{M}}}
+\newcommand{\fN}{{\mathfrak{N}}}
+\newcommand{\fO}{{\mathfrak{O}}}
+\newcommand{\fP}{{\mathfrak{P}}}
+\newcommand{\fQ}{{\mathfrak{Q}}}
+\newcommand{\fS}{{\mathfrak{S}}}
+\newcommand{\fT}{{\mathfrak{T}}}
+\newcommand{\fU}{{\mathfrak{U}}}
+\newcommand{\fV}{{\mathfrak{V}}}
+\newcommand{\fX}{{\mathfrak{X}}}
+\newcommand{\fY}{{\mathfrak{Y}}}
+\newcommand{\fZ}{{\mathfrak{Z}}}
+
+\newcommand{\bu}{{\bf u}}
+\newcommand{\bv}{{\bf v}}
+\newcommand{\bw}{{\bf w}}
+\newcommand{\ba}{{\bf a}}
+\newcommand{\bb}{{\bf b}}
+\newcommand{\bh}{{\bf h}}
+\newcommand{\bx}{{\bf x}}
+\newcommand{\bo}{{\bf 0}}
+\newcommand{\bp}{{\bf p}}
+\newcommand{\br}{{\bf r}}
+\newcommand{\bF}{{\bf F}}
+\newcommand{\bn}{{\bf n}}
+\newcommand{\bT}{{\bf T}}
+\newcommand{\bk}{{\bf k}}
+
+% Greek letters
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gc}{\gamma}
+
+
+\newcommand{\bs}{\boldsymbol}
+%\newcommand{\cyan{}}{{\textcolor{cyan}{{\sc}}}} (didn't work)
+
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\scal}{scal}
+
+\input xy
+\xyoption {all}
+
+% greek letters
+
+\newcommand{\vp}{{\varphi}}
+
+\usepackage{tikz}
+\usepackage{color}
+\newcommand{\tred}[1]{{\color{red}{#1}}}
+
+\parindent=0pt
+
+\begin{document}
+
+\thispagestyle{empty}
+\noindent
+\textbf{Math 51 \hfill Homework 10 \hfill Spring 2022}
+
+\bigskip
+\bigskip
+
+\centerline{\textbf{Readings for the Week of March 28, 2022}}
+
+\medskip
+    \begin{description}
+    \item[\S 3.6--10] Homogeneous linear systems (real, complex, double, multiple roots)
+    \end{description}
+
+ \bigskip
+\noindent
+\centerline{\textbf{Problem Set 10}}
+\centerline{(Due Monday, April 4, 2022, at 11:59pm.)}
+
+\medskip
+
+\noindent
+For a 10\% penalty on your grade, you may hand in the problem set late, until Tuesday, April 5, 2022, 11:59 pm.
+
+
+%\begin{enumerate}[label=\arabic*.]
+%\setlength{\itemsep}{5mm}
+%
+%\item
+\begin{prob}Let
+  \(A=\begin{bmatrix*}[r]0&0&3&0\\1&3&0&-1\\0&0&3&0\\1&0&-1&3\end{bmatrix*}\),\quad
+  \(B=\begin{bmatrix*}[r]0&1\\1&0\\0&1\\0&1\end{bmatrix*}\),\quad
+  \(C=\begin{bmatrix*}[r]1&3\\0&-1\\1&0\\1&0\end{bmatrix*}\),\quad and
+  \(F=\begin{bmatrix*}[r]1&0&-1&0\\0&1&0&0\end{bmatrix*}\). 
+\newline Find the indicated matrices or explain that this cannot be done.
+\newline\begin{enumerate*}[itemjoin={{; }},label=(\alph*)]
+\item\(AB\)
+\item\(BA\)
+\item\(AC\)
+%\item\(CA\)
+\item\(A(B-C)\)
+%\item\(FA\)
+\item\(AF\)
+\item\(BF\)
+\item\(FB\)
+%\item\((FA)B\)
+%\item\(F(AB)\)
+%\item\((AB)F\)
+\end{enumerate*}
+\end{prob}
+
+%\begin{prob}
+%\(\begin{bmatrix*}[r]1\\0\end{bmatrix*}\) is a generalized eigenvector of \(\begin{bmatrix*}[r]0&1\\-1&2\end{bmatrix*}\) for the eigenvalue 1. 
+%\newline Find the associated solution of \(D\vec x=A\vec x\). 
+%\end{prob}
+
+
+\begin{prob}
+\(\begin{bmatrix*}[r]1\\1\\1\end{bmatrix*}\) is a generalized eigenvector of \(\begin{bmatrix*}[r]-1&1&4\\-2&2&4\\-1&0&4\end{bmatrix*}\) for the eigenvalue 2. 
+\newline Find the associated solution of \(D\vec x=A\vec x\). 
+\end{prob}
+
+
+\begin{prob}
+Find the general solution of \(D\vec x=\begin{bmatrix*}[r]1&-1\\1&3\end{bmatrix*}\vec x\).%This is 3.9.5 in the book
+
+\end{prob}
+\begin{prob}
+Find the general solution of \(D\vec x=\begin{bmatrix*}[r]1&-1&-1\\0&-1&-1\\0&0&1\end{bmatrix*}\vec x\).%This is 3.9.7 in the book
+
+\end{prob}
+
+\begin{prob}
+Find the general solution of \(D\vec x=\begin{bmatrix*}[r]2&0&1&0\\0&1&0&1\\0&0&2&1\\0&-1&0&1\\\end{bmatrix*}\vec x\).%This is 3.9.9 in the book.
+
+\end{prob}
+
+\begin{prob}
+Find the general solution of\qquad\(\begin{aligned}x_1'&=3x_1-x_2-4x_4\\x_2'&=3x_2-4x_4\\x_3'&=2x_3\\x_4'&=x_2-x_4\end{aligned}\) as well as the specific solution satisfying \(x_1(0)=x_2(0)=x_3(0)=1\), \(x_4(0)=0\).%This is 3.9.14 in the book
+\end{prob}
+
+\begin{prob}
+Suppose \(A\) is a square matrix. Show that if \((A-\lambda I)^2\vec v=\vec0\) and \((A-\lambda I)\vec v\neq\vec0\), then \(\vec v_1=(A-\lambda I)\vec v\) is an eigenvector of \(A\).%This is 3.9.22 in the book
+\end{prob}
+
+
+%\end{enumerate}
+
+\bigskip
+
+\centering{(End of Homework 10)}
+\eject
+\end{document}
