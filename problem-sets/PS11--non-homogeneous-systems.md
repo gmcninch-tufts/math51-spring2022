@@ -3,7 +3,7 @@ author: Math 51 Spring 2022
 title: |
   Problem Set 11 \
   Non-homogeneous systems
-date: 2022-04-04 -- because of Midterm 2, this assignment won't be collected
+date: 2022-04-11 -- because of Midterm 2, this assignment won't be collected
 bibliography: 
  - /home/george/Prof-Math/assets/math-bibliography.bib
  - /home/george/Prof-Math/assets/teaching.bib
