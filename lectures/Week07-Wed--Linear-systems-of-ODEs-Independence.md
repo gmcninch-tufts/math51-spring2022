@@ -1,7 +1,7 @@
 ---
 author: George McNinch
 title: |
-  Math 51 Spring 2022 - Week 7 Mon \
+  Math 51 Spring 2022 - Week 7 Wed \
   Linear ODEs & independence
 date: 2022-02-28
 bibliography:
