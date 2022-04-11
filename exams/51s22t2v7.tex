@@ -1,0 +1,415 @@
+%  This exam is identical to 136s16t2makeup.
+
+\documentclass[12pt]{article} 
+\usepackage{amssymb,amsmath}
+\usepackage{mdwlist}
+%\usepackage{calculusmacros}
+\usepackage{pstricks}
+\usepackage{pst-grad,pst-plot,pst-coil}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+%\pagestyle{empty}
+
+%\oddsidemargin=0.0in
+%\evensidemargin=0.0in
+%\textwidth=6.5in
+%\textheight=9.0in
+%%\topmargin=-0.5in
+%\thispagestyle{empty}
+%
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{proposition}[theorem]{Proposition}
+%
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%
+%
+%\newcommand{\xo}{x_0}
+
+
+%\newcommand{\vw}{V\times W}
+%\newcommand{\cA}{\mathcal{A}}
+%\newcommand{\cC}{\mathcal{C}}
+%\newcommand{\cL}{\mathcal{L}}
+%
+%\newcommand{\cl}{\operatorname{cl}}
+%\newcommand{\intt}{\operatorname{int}}
+%
+%\newcommand{\norm}[1]{\|#1\|}
+%
+%\newcommand{\bel}[1]{\begin{equation}\label{#1}}
+%\newcommand{\be}{\begin{equation}}
+%\newcommand{\ee}{\end{equation}}
+%
+%\newcommand{\deriv}[2]{\frac{d #1}{d #2}}
+%\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+%\newcommand{\pd}[1]{\partial /\partial{#1}}
+%\newcommand{\pdiffx}[1]{\frac{\partial\ }{\partial x_{#1}}}
+%\newcommand{\pdiffy}[1]{\frac{\partial\ }{\partial y_{#1}}}
+%\newcommand{\pdiffz}[1]{\frac{\partial\ }{\partial z_{#1}}}
+%\newcommand{\pdiffzbar}[1]{\frac{\partial\ }{\partial \bar{z}_{#1}}}
+%
+%\newcommand{\cinf}{C^{\infty}}
+%
+%%\newcommand{\qed}{\vrule height 2ex depth 0pt width 0.5em}
+%
+%\newcommand{\ra}{\rangle}
+%\newcommand{\supp}{\operatorname{supp}}
+
+
+\newcommand\ms {\medskip}
+\newcommand\bs {\bigskip}
+\newcommand\dsp{\displaystyle}
+\newcommand\cc{{\mathcal{C}}}
+\newcommand\rr{{\mathbb{R}}}
+\newcommand\rone{{\mathbb{R}}}
+\newcommand\rtwo{{\mathbb{ R}^2}}
+\newcommand\rn{{\mathbb{R}^n}}
+\newcommand\rrm{{\mathbb{R}^m}}
+\newcommand\V{\mathcal{V}}
+
+\newcommand\nn{{\mathbb{N}}}
+\renewcommand\ss{{\mathbb{S}}}
+
+%\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\bd}{\operatorname{bd}}
+\newcommand\zz{{\mathbb{Z}}}
+\newcommand\ii{{\mathbb{I}}}
+\newcommand\qq{{\mathbb{Q}}}
+\newcommand\eps{{\epsilon}}
+\newcommand\rar{\rightarrow}
+\newcommand\st{\hspace{0.4mm}\big|\hspace{0.4mm}}
+\newcommand\x{\mathbf{x}}
+\newcommand\y{\mathbf{y}}
+\newcommand\zero{\mathbf{0}}
+\newcommand\xoyo{(x_0,y_0)}
+
+\def\dsp{\displaystyle}
+\def\rr{{\mathbb R}}
+\def\R{{\mathbb R}}
+\def\rone{{\mathbb R}}
+\def\rtwo{{\mathbb R^2}}
+\def\rn{{\mathbb R^n}}
+\def\rm{{\mathbb R^m}}
+\def\nn{{\mathbb N}}
+\def\zz{{\mathbb Z}}
+\def\Q{{\mathbb Q}}
+\def\rar{\rightarrow}
+\def\st{\,\big|\,}
+\def\eps{\epsilon}
+\def\acc{\operatorname{acc}}
+\def\sup{\operatorname{sup}}
+\def\inf{\operatorname{inf}}
+\def\intt{\operatorname{int}}
+\def\bd{\operatorname{bd}}
+\def\cl{\operatorname{cl}}
+\def\intab{\int_a^b}
+\def\gap{\operatorname{gap}}
+\def\vh{\vec {\mathbf{h}}}
+\def\vp{\vec {\mathbf{p}}}
+\def\vE{\vec {\mathbf{E}}}
+\def\vx{\vec {\mathbf{x}}}
+\def\vv{\vec {\mathbf{v}}}
+\def\vy{\vec {\mathbf{y}}}
+\def\vL{\vec {\mathbf{L}}}
+\def\v0{\vec {\mathbf{0}}}
+
+\def\vM{\vec {\mathbf{M}}}
+\def\ms{\medskip}
+\def\ss{\smallskip}
+\def\bfu{\mathbf u}
+\def\bfv{\mathbf v}
+
+
+\newcommand{\bE}{\vec{E}}
+\newcommand{\bF}{{\bf F}}
+\newcommand{\bu}{\vec{\mathbf{u}}}
+\newcommand{\bv}{\vec{\mathbf{v}}}
+\newcommand{\bw}{{\bf w}}
+\newcommand{\ba}{{\bf a}}
+\newcommand{\bb}{{\bf b}}
+\newcommand{\bh}{{\bf h}}
+\newcommand{\bx}{\vec{x}}
+\newcommand{\bo}{{\bf 0}}
+\newcommand{\bp}{{\bf p}}
+\newcommand{\br}{{\bf r}}
+\newcommand{\bn}{{\bf n}}
+\newcommand{\bT}{{\bf T}}
+\newcommand{\bk}{{\bf k}}
+
+
+\setlength\parindent{25pt}
+
+\usepackage{color}
+\newcommand{\tred}[1]{{\color{black}{#1}}}
+
+\parindent=0pt
+\parskip=\baselineskip
+
+\begin{document}
+
+
+\noindent
+Carefully PRINT your full name:  \framebox(250,30){}
+
+
+\begin{center}
+Math 51 \hfill Differential Equations \hfill April 11, 2022\\
+\phantom{noon--1:20 p.m.} \hfill Exam 2 (100 points) \hfill noon--1:20 p.m.
+\end{center}
+
+\medskip
+
+There are seven problems on the exam.
+
+You may not use calculators, books or notes during the exam. All electronic devices (including
+your phones) must be silenced and put away for the duration of the
+exam.
+
+After finishing your exam, you will submit this exam booklet. We will scan your submission and
+upload it to Gradescope for marking (you do not need to take images of your exam). You should
+write your name at the top of each page, as indicated (especially if you remove the staples from
+your exam booklet).
+
+For the partial credit problems, always show your work. Try to fit this work in the available space
+if possible. There is a blank page at the back of your exam for use as scratch paper. If you need
+more space for a solution, please write clearly in the indicated space that your solution continues
+later.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * *
+
+Please sign the pledge below. With your signature, you pledge that
+you have neither given nor received assistance on this exam.
+
+
+\bigskip
+\bigskip
+Signature:  \framebox(250,30){}
+
+\newpage
+
+% 1.
+\begin{enumerate}
+   
+%\setcounter{enumi}{1}
+
+\item (14 points) True-False and Multiple Choice.
+  \begin{enumerate}
+    \setlength{\itemsep}{20mm}
+    
+    \item (2 pts.) True or False (circle your choice).  Any set of vectors that includes the zero
+      vector $\mathbf{0}$ is linearly dependent.
+      
+     
+
+\item (2 pts.) True or False (circle your choice).  If $\vp_1$ and $\vp_2$ are solutions of the nonhomogeneous
+  system $D\vx = A\vx + \vE(t)$, then $\vp_1 - \vp_2$ is a solution of
+  the related homogeneous system $D\vx = A\vx$.
+  
+ 
+
+  \item (2 pts.) True or False (circle your choice).  Assume that all the functions in this question are differentiable.  Let $\vx_1, \ldots, \vx_n$ be solutions of the \emph{nonhomogeneous}
+  linear system $D\vx = A\vx + \vE(t)$ on an interval $I$ and let
+  $t_0$ be a point in $I$.
+  Then $\vx_1, \ldots, \vx_n$ generate the general solution of the given
+  system if and only if the Wronskian $W[\vx_1, \ldots, \vx_n](t_0)
+  \ne 0$.
+  
+
+
+  \item (2 pts.) True or False (circle your choice). Two vectors $\bv_1$ and $\bv_2$ are linearly dependent if and
+  only if one of them is a constant multiple of the other. 
+
+
+\item (2 pts.) True or False (circle your choice).  Three vectors $\bv_1$, $\bv_2$ and
+  $\bv_3$ are linearly dependent if and only if some vector is a constant multiple of another vector.
+
+
+\item  (2 pts.)  Which of the following formulas for $\vx$ gives the
+  general solution to the linear homogeneous ode $(D^2+1)^3\vx\ =\v0$?
+  Circle your choice.
+    \begin{enumerate}
+\item[A.] $c_1 \cos t +c_2 \sin t$
+\item[B.] $c_1t^2 \cos t +c_2t^2 \sin t$
+\item[C.] $c_1t^2 \cos t +c_2t^2 \sin t +c_3t \cos t +c_4t \sin t +c_5
+  \cos t +c_6 \sin t$
+\item[D.] None of the above.
+\end{enumerate}
+
+
+\newpage
+\vspace*{-.5in}
+\rightline{Your full name:  \framebox(250,30){}}
+\item (2 pts.) For which of the following expressions for $E(t)$ does the method of
+undetermined coefficients \textbf{not} apply when solving the linear nonhomogeneous
+ode $Lx = E(t)$?  Circle your choice.
+\[
+3t^4, \qquad \sin t, \qquad 2t^3e^{-4t} \cos 5t, \qquad \ln t.
+\]
+
+\begin{enumerate}
+  \item[A.] Only $3t^4$.
+\item[B.] Only $\sin t$.
+\item[C.] Only $2t^3e^{-4t} \cos 5t$.
+\item[D.] Only $\ln t$.
+\item[E.] The method of undetermined coefficients does not apply for at least two of the four functions.
+  \item[F.] The method of undetermined coefficients applies for all four functions.
+  \end{enumerate}
+  
+\end{enumerate}
+
+\vspace*{.5in}
+
+\item (16 points) Short-Answer Questions.
+  \begin{enumerate}
+
+      \item (3 pts.) The matrix 
+\begin{equation*}
+          A = \left[
+            \begin{array}{rrr}
+              1 & 0 & 0 \\
+              1 & 1 & 1\\
+              1 & 0 & 1
+            \end{array}
+          \right]
+        \end{equation*}
+has eigenvalue 1 with multiplicity 3.  Find three linearly independent
+generalized eigenvectors.  No explanation is required.  (\textit{Hint}:  Approached correctly, this
+problem does not need any computation.)
+
+\vfill
+
+\newpage
+
+\item (5 pts.) Write down an annihilator of smallest possible order
+  with real coefficients for the function $3e^t + 2te^{-t} + \sin t$.
+  No work or explanation is required.
+  
+  \vfill
+ 
+
+\item (3 pts.) Suppose
+  \begin{equation*}
+          \begin{array}{rrrrrrl}
+              2 u_1&+& 5 u_2&+& 3 u_3&= & a\\
+               u_1& -&2 u_2& +& u_3& = & b\\
+               u_1& +&4 u_2& - & u_3 & = & c,
+          \end{array}
+          \end{equation*}
+          where it is given that the determinant of the coefficient matrix is nonzero.
+          Write down the formula for $u_3$ in terms of determinants.
+          Do not evaluate the determinants.
+
+\vfill
+    
+
+ 
+%\setcounter{page}{1}
+
+\item (5 points) Given that $\vh_1(t) = \left[
+            \begin{array}{r}
+              e^{-t}  \\
+              -e^{-t} 
+            \end{array}
+          \right]$  and $\vh_2(t) =\left[
+            \begin{array}{r}
+              e^{-2t}  \\
+              -2e^{-2t} 
+            \end{array}
+          \right]$ are solutions of $D\vx = A\vx$, where $A = \left[
+            \begin{array}{rr}
+              0 & 1  \\
+              -2 & -3 
+            \end{array}
+          \right]$, determine whether or not the general solution is
+          $\vx(t) = c_1\vh_1(t) + c_2 \vh_2(t)$.
+          Show your work.
+       \end{enumerate} 
+        
+          \vfill
+          
+%           \newpage
+
+% \item (10 points) Find the eigenvalues of the matrix
+%   \begin{equation*}
+%           A = \left[
+%             \begin{array}{rrr}
+%               1 & 2 & 3 \\
+%               0 & 2 & 0 \\
+%               0 & 1 & 2
+%             \end{array}
+%           \right]
+%         \end{equation*}
+% and for each eigenvalue, find as many linearly independent
+%         eigenvectors as possible.
+        
+        \newpage
+\vspace*{-.5in}
+\rightline{Your full name:  \framebox(250,30){}}
+
+
+\item (12 points)
+        \begin{enumerate}
+          \item[(a)] Convert the differential equation
+        \[
+         x'''-e^t x''-4tx + x = e^{2t}
+        \]
+        into a linear system of three equations in three unknowns
+        $x_1, x_2, x_3$.
+        \item[(b)] Write the linear system in the form $D\vx = A(t)
+          \vx + \vE(t)$ for some matrix $A(t)$ and vector $\vE(t)$.
+        \end{enumerate}
+        
+        \newpage
+
+%Sec. 3.8, \#2
+\item (10 points) Suppose $3+2i, 3-2i$ are eigenvalues of the $2 \times 2$
+            matrix $A$ with corresponding eigenvectors \tred{
+            $\begin{bmatrix} i\\1\end{bmatrix},
+            \begin{bmatrix} -i\\ \phantom{-}1\end{bmatrix}$,}
+            respectively.
+            Write down two linearly independent real
+            solutions of $D\vx = A \vx$.  Show your work and simplify
+            your answers.
+            
+            \newpage
+ \vspace*{-.5in}
+\rightline{Your full name:  \framebox(250,30){}}
+        
+
+\item (15 points) Find the general solution of $4x''-4x'+x = \frac{8}{t^2} e^{t/2}$
+  for $t > 0$, given that two solutions to the associated homogeneous
+  equation are $\vh_1 = e^{t/2}$, $\vh_2 = t e^{t/2}$.
+
+          \newpage
+          % S3.9, p. 296, #3
+         \item (13 points) The matrix $A$ below has an eigenvalue $\lambda$ and a generalized eigenvector $\vv$ as follows:
+          \begin{equation*}
+          A = \left[
+            \begin{array}{rr}
+              1 & 2  \\     0 & 1 
+            \end{array}
+          \right], \qquad \lambda =1, \qquad \vv = \begin{bmatrix} 1 \\ 0 \end{bmatrix}.
+        \end{equation*}
+Find the general solution of $D\vx = A \vx$.
+
+\newpage
+
+\vspace*{-.5in}
+\rightline{Your full name:  \framebox(250,30){}}
+
+
+% S2.7, p. 146, #14
+        \item (10 points) Make a \textit{simplified} guess for a particular solution of
+    the differential equation \tred{
+    \[
+     (D+2)^3 (D^2+1)^2 \,\vx = t e^{-2t} + \sin t.
+    \] }
+    Do not solve for the coefficients.
+  \end{enumerate}
+  
+  \end{document}
+      
