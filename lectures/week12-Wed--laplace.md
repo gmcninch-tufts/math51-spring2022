@@ -41,7 +41,7 @@ for this function.
 
   $$F(s) = \int_0^\infty e^{-st} f(t) dt = \lim_{h \to \infty} \int_0^h e^{-st}f(t)dt.$$
 
-  In this integral, the variable $s$ *behaves like a scalar*.
+  In this integral, the variable $s$ *can be treated like a scalar*.
 
 - we are going to derive *formulas* for several families of functions
   $f(t)$ which will permit us calculate $\mathscr{L}[f]$.
@@ -56,95 +56,101 @@ for this function.
 ## Basic Laplace transforms
 
 Let's first list some Laplace transforms, and then we'll check a few
-of the calculations.
+of the *derivations*.
 
-. . .
+::: incremental
 
-\begin{align*}
-\mathscr{L}[e^{\lambda t}] &= \dfrac{1}{s-\lambda}  \quad \text{for} \quad s > \lambda\\
-\mathscr{L}[1] &= \dfrac{1}{s}  \quad \text{for} \quad s > 0 \\
-\mathscr{L}[t^n] &= \dfrac{n!}{s^{n+1}} \\
-\mathscr{L}[\sin(\beta t)] &= \dfrac{\beta}{s^2 + \beta^2} \\
-\mathscr{L}[\cos(\beta t)] &= \dfrac{s}{s^2 + \beta^2}
-\end{align*}
+- $\mathscr{L}[e^{\lambda t}] = \dfrac{1}{s-\lambda}$ for $s > \lambda$
 
-. . .
+- $\mathscr{L}[1] = \dfrac{1}{s}$ for  $s > 0$
 
-**Remark:** $\mathscr{L}[f] = F(s)$ is always defined "for large
-values of $s$" - i.e. for $s$ in some interval $(N,\infty)$.
+- $\mathscr{L}[t^n] = \dfrac{n!}{s^{n+1}}$ for $s>0$.
+
+- $\mathscr{L}[\sin(\beta t)] = \dfrac{\beta}{s^2 + \beta^2}$ for $s>0$.
+
+- $\mathscr{L}[\cos(\beta t)] = \dfrac{s}{s^2 + \beta^2}$ for $s>0$.
+
+- **Remark:** Notice that for these functions $f$, the Laplace
+transform $\mathscr{L}[f] = F(s)$ is always defined "for all large
+enough values of $s$" - i.e. for all $s$ in some interval
+$(N,\infty)$.
+
+::: 
+
 
 ## check: $\mathscr{L}[e^{\lambda t}]$
 
 $$\mathscr{L}[e^{\lambda t}](s) = \lim_{h \to \infty} \int_0^h
  e^{-st} e^{\lambda t} dt = \lim_{h \to \infty} \int_0^h e^{-(s - \lambda)t} dt  \quad (\clubsuit)$$
 
-. . .
+::: incremental
 
-Now if $\lambda \ne s$, then $$\displaystyle \int_0^h e^{-(s-\lambda)t}
-dt = \dfrac{-1}{s-\lambda} e^{-(s-\lambda )t} \bigg \vert^h_0
-= \dfrac{-1}{s- \lambda} [e^{-(s-\lambda)h} -  1]
- = \dfrac{1}{s-\lambda}  - e^{-(s-\lambda)h} \dfrac{1}{s-\lambda}$$
 
-. . .
+- Now if $\lambda \ne s$, then $$\displaystyle \int_0^h
+  e^{-(s-\lambda)t} dt = \dfrac{-1}{s-\lambda} e^{-(s-\lambda )t}
+  \bigg \vert^h_0 = \dfrac{-1}{s- \lambda} [e^{-(s-\lambda)h} - 1] =
+  \dfrac{1}{s-\lambda} - e^{-(s-\lambda)h} \dfrac{1}{s-\lambda}$$
 
-If $\lambda < s$ then $\displaystyle \lim_{h \to \infty} e^{-(s-\lambda)h} = 0$
-and we see that $(\clubsuit) = \dfrac{1}{s-\lambda}$.
+- If $\lambda < s$ then $\displaystyle \lim_{h \to \infty}
+  e^{-(s-\lambda)h} = 0$ and we see that $(\clubsuit) =
+  \dfrac{1}{s-\lambda}$.
 
-. . .
+- This confirms that $\mathscr{L}[e^{\lambda t}](s) =
+  \dfrac{1}{s-\lambda}$
 
-This confirms that $\mathscr{L}[e^{\lambda t}](s) = \dfrac{1}{s-\lambda}$
-
-. . .
-
-Notice that if $\lambda = 0$ then $e^{\lambda t} = 1$ and we get $\mathscr{L}[1] = \dfrac{1}{s}$.
+- Notice that if $\lambda = 0$ then $e^{\lambda t} = 1$ and we get
+  $\mathscr{L}[1] = \dfrac{1}{s}$.
 
 ## check: $\mathscr{L}[\cos(\beta t)]$
 
 $$\mathscr{L}[\cos(\beta t)] = \lim_{h \to \infty} \int_0^h e^{-st} \cos(\beta t) dt.$$
 
-. . .
+::: incremental
 
 
-Now integration by parts with $u = e^{-st}$ and $dv = \cos(\beta t)dt$ gives
-$$\int_0^h e^{st} \cos(\beta t) dt = \dfrac{e^{-st} \sin(\beta t)}{\beta}\bigg \vert^{t=h}_{t=0}
- + \dfrac{s}{\beta} \int_0^h e^{-st} \sin(\beta t)dt \quad (\diamondsuit)$$
+- Now integration by parts with $u = e^{-st}$ and $dv = \cos(\beta
+  t)dt$ gives $$\int_0^h e^{st} \cos(\beta t) dt = \dfrac{e^{-st}
+  \sin(\beta t)}{\beta}\bigg \vert^{t=h}_{t=0}
+  + \dfrac{s}{\beta} \int_0^h e^{-st} \sin(\beta t)dt \quad (\diamondsuit)$$
 
-. . .
 
-Integration by parts again, this time with $U = e^{-st}$ and $dV =
-\sin(\beta t)dt$ gives $$\int_0^h e^{-st} \sin(\beta t)dt =
-\dfrac{-e^{-st} \cos(\beta t)}{\beta}\bigg\vert^{t=h}_{t=0} -
-\dfrac{s}{\beta}\int_0^h e^{-st}\cos(\beta t) dt$$
+- Integration by parts again, this time with $U = e^{-st}$ and $dV =
+  \sin(\beta t)dt$ gives $$\int_0^h e^{-st} \sin(\beta t)dt =
+  \dfrac{-e^{-st} \cos(\beta t)}{\beta}\bigg\vert^{t=h}_{t=0} -
+  \dfrac{s}{\beta}\int_0^h e^{-st}\cos(\beta t) dt$$
 
-. . .
+- Plugging this back into $(\diamondsuit)$ we get: $$\int_0^h e^{st}
+  \cos(\beta t) dt= \dfrac{e^{-st} \sin(\beta t)}{\beta}\bigg
+  \vert^{t=h}_{t=0}
+  + \dfrac{-se^{-st} \cos(\beta t)}{\beta^2}\bigg\vert^{t=h}_{t=0}
+  - \dfrac{s^2}{\beta^2} \int_0^h e^{st} \cos(\beta t) dt$$
 
-Plugging this back into $(\diamondsuit)$ we get:
-$$\int_0^h e^{st} \cos(\beta t) dt= 
-\dfrac{e^{-st} \sin(\beta t)}{\beta}\bigg \vert^{t=h}_{t=0}
-+ \dfrac{-se^{-st} \cos(\beta t)}{\beta^2}\bigg\vert^{t=h}_{t=0}
-- \dfrac{s^2}{\beta^2} \int_0^h e^{st} \cos(\beta t) dt$$
+:::
 
 -----
 
-We now get 
-\begin{align*}
-(1 + \dfrac{s^2}{\beta^2})\int_0^h e^{st} \cos(\beta t) dt &= 
-\dfrac{e^{-st} \sin(\beta t)}{\beta}\bigg \vert^{t=h}_{t=0}
-+ \dfrac{-se^{-st} \cos(\beta t)}{\beta^2}\bigg \vert^{t=h}_{t=0} \\
-&=\dfrac{e^{-sh} \sin(\beta h)}{\beta}
-+ \dfrac{- se^{-sh} \cos(\beta h) + s}{\beta^2}
-\end{align*}
+::: incremental
 
-. . .
+- We now get 
 
-Now for $s>0$, we know that $\displaystyle \lim_{h \to \infty} e^{-sh} = 0$ so we conclude that
-$$(\dfrac{\beta^2 + s^2}{\beta^2})\int_0^\infty e^{st} \cos(\beta t) dt = \dfrac{s}{\beta^2}$$
+  \begin{align*} (1 + \dfrac{s^2}{\beta^2})\int_0^h e^{st} \cos(\beta
+  t) dt &= \dfrac{e^{-st} \sin(\beta t)}{\beta}\bigg
+  \vert^{t=h}_{t=0} + \dfrac{-se^{-st} \cos(\beta t)}{\beta^2}\bigg
+  \vert^{t=h}_{t=0} \\ &=\dfrac{e^{-sh} \sin(\beta h)}{\beta} +
+  \dfrac{- se^{-sh} \cos(\beta h) + s}{\beta^2} 
+  \end{align*}
 
-. . .
 
-This shows that
-$$\mathscr{L}[\cos(\beta t)](s) = \int_0^\infty e^{st} \cos(\beta t) dt
-= \dfrac{s}{\beta^2} \cdot \dfrac{\beta^2}{\beta^2 + s^2} = \dfrac{s}{\beta^2 + s^2}$$
+- Now for $s>0$, we know that $\displaystyle \lim_{h \to \infty}
+  e^{-sh} = 0$ so we conclude that $$(\dfrac{\beta^2 +
+  s^2}{\beta^2})\int_0^\infty e^{st} \cos(\beta t) dt =
+  \dfrac{s}{\beta^2}$$
+
+- This shows that $$\mathscr{L}[\cos(\beta t)](s) = \int_0^\infty
+  e^{st} \cos(\beta t) dt = \dfrac{s}{\beta^2} \cdot
+  \dfrac{\beta^2}{\beta^2 + s^2} = \dfrac{s}{\beta^2 + s^2}$$
+
+:::
 
 ## Check: $\mathscr{L}[t^n]$, $n \ge 1$.
 
@@ -165,15 +171,17 @@ $$\mathscr{L}[\cos(\beta t)](s) = \int_0^\infty e^{st} \cos(\beta t) dt
 
 - we get $\mathscr{L}[t] = \dfrac{1}{s}\mathscr{L}[t^0] = \dfrac{1}{s^2}.$
 
-- and now we can bootstrap using the previous fact; we get:
-  $\mathscr{L}[t^2] = \dfrac{2}{s}\mathscr{L}[t] = \dfrac{2}{s}\cdot
-  \dfrac{1}{s^2} = \dfrac{2}{s^3}$.
 
 :::
 
 ----
 
 ::: incremental
+
+- and now we can bootstrap using the previous fact; we get:
+  $\mathscr{L}[t^2] = \dfrac{2}{s}\mathscr{L}[t] = \dfrac{2}{s}\cdot
+  \dfrac{1}{s^2} = \dfrac{2}{s^3}$.
+
 
 - similarly $\mathscr{L}[t^3] = \dfrac{3}{s}\mathscr{L}[t^2] =
   \dfrac{3}{s} \cdot \dfrac{2}{s^3} = \dfrac{3!}{s^4}$.
