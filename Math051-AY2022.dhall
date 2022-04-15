@@ -1,4 +1,4 @@
--- Time-stamp: <2022-03-03 Thu 12:34 EST - george@valhalla>
+-- Time-stamp: <2022-04-14 Thu 13:46 EDT - george@podkayne>
 let Dow = < Mon | Tue | Wed | Thu | Fri | Sat | Sun >
 
 let concat = https://prelude.dhall-lang.org/List/concat
@@ -42,8 +42,8 @@ let assignments =
       , "PS09: Homog linear sys (§ 3.7, 3.8)"
       , "PS10: Homog linear systems -- multiple roots (§ 3.9, 3.10)"
       , "PS11: Non-homogeneous systems (§ 3.11)"
-      , "PS12: Laplace transform \$\\mathscr{L}\$ and initial value problems (§ 5.2, 5.3)"
       , "no assignment collected"
+      , "PS12: Laplace transform \$\\mathscr{L}\$ and initial value problems (§ 5.2, 5.3)"
       , "PS13: Properties of \$\\mathscr{L}\$ and  \$\\mathscr{L}^{-1}\$; piecewise functions (§ 5.4, 5.5)"
       ]
 
