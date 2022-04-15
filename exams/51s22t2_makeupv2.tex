@@ -1,0 +1,422 @@
+%  This exam is identical to 136s16t2makeup.
+
+\documentclass[12pt]{article} 
+\usepackage{amssymb,amsmath}
+\usepackage{mdwlist}
+%\usepackage{calculusmacros}
+\usepackage{pstricks}
+\usepackage{pst-grad,pst-plot,pst-coil}
+\usepackage{graphicx}
+\usepackage[margin=1.1in]{geometry}
+%\pagestyle{empty}
+
+%\oddsidemargin=0.0in
+%\evensidemargin=0.0in
+%\textwidth=6.5in
+%\textheight=9.0in
+%%\topmargin=-0.5in
+%\thispagestyle{empty}
+%
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{proposition}[theorem]{Proposition}
+%
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%
+%
+%\newcommand{\xo}{x_0}
+
+
+%\newcommand{\vw}{V\times W}
+%\newcommand{\cA}{\mathcal{A}}
+%\newcommand{\cC}{\mathcal{C}}
+%\newcommand{\cL}{\mathcal{L}}
+%
+%\newcommand{\cl}{\operatorname{cl}}
+%\newcommand{\intt}{\operatorname{int}}
+%
+%\newcommand{\norm}[1]{\|#1\|}
+%
+%\newcommand{\bel}[1]{\begin{equation}\label{#1}}
+%\newcommand{\be}{\begin{equation}}
+%\newcommand{\ee}{\end{equation}}
+%
+%\newcommand{\deriv}[2]{\frac{d #1}{d #2}}
+%\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+%\newcommand{\pd}[1]{\partial /\partial{#1}}
+%\newcommand{\pdiffx}[1]{\frac{\partial\ }{\partial x_{#1}}}
+%\newcommand{\pdiffy}[1]{\frac{\partial\ }{\partial y_{#1}}}
+%\newcommand{\pdiffz}[1]{\frac{\partial\ }{\partial z_{#1}}}
+%\newcommand{\pdiffzbar}[1]{\frac{\partial\ }{\partial \bar{z}_{#1}}}
+%
+%\newcommand{\cinf}{C^{\infty}}
+%
+%%\newcommand{\qed}{\vrule height 2ex depth 0pt width 0.5em}
+%
+%\newcommand{\ra}{\rangle}
+%\newcommand{\supp}{\operatorname{supp}}
+
+
+\newcommand\ms {\medskip}
+\newcommand\bs {\bigskip}
+\newcommand\dsp{\displaystyle}
+\newcommand\cc{{\mathcal{C}}}
+\newcommand\rr{{\mathbb{R}}}
+\newcommand\rone{{\mathbb{R}}}
+\newcommand\rtwo{{\mathbb{ R}^2}}
+\newcommand\rn{{\mathbb{R}^n}}
+\newcommand\rrm{{\mathbb{R}^m}}
+\newcommand\V{\mathcal{V}}
+
+\newcommand\nn{{\mathbb{N}}}
+\renewcommand\ss{{\mathbb{S}}}
+
+%\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\bd}{\operatorname{bd}}
+\newcommand\zz{{\mathbb{Z}}}
+\newcommand\ii{{\mathbb{I}}}
+\newcommand\qq{{\mathbb{Q}}}
+\newcommand\eps{{\epsilon}}
+\newcommand\rar{\rightarrow}
+\newcommand\st{\hspace{0.4mm}\big|\hspace{0.4mm}}
+\newcommand\x{\mathbf{x}}
+\newcommand\y{\mathbf{y}}
+\newcommand\zero{\mathbf{0}}
+\newcommand\xoyo{(x_0,y_0)}
+
+\def\dsp{\displaystyle}
+\def\rr{{\mathbb R}}
+\def\R{{\mathbb R}}
+\def\rone{{\mathbb R}}
+\def\rtwo{{\mathbb R^2}}
+\def\rn{{\mathbb R^n}}
+\def\rm{{\mathbb R^m}}
+\def\nn{{\mathbb N}}
+\def\zz{{\mathbb Z}}
+\def\Q{{\mathbb Q}}
+\def\rar{\rightarrow}
+\def\st{\,\big|\,}
+\def\eps{\epsilon}
+\def\acc{\operatorname{acc}}
+\def\sup{\operatorname{sup}}
+\def\inf{\operatorname{inf}}
+\def\intt{\operatorname{int}}
+\def\bd{\operatorname{bd}}
+\def\cl{\operatorname{cl}}
+\def\intab{\int_a^b}
+\def\gap{\operatorname{gap}}
+\def\vx{\vec {\mathbf{x}}}
+\def\vy{\vec {\mathbf{y}}}
+\def\vL{\vec {\mathbf{L}}}
+\def\vM{\vec {\mathbf{M}}}
+\def\ms{\medskip}
+\def\ss{\smallskip}
+\def\bfu{\mathbf u}
+\def\bfv{\mathbf v}
+
+
+\newcommand{\bE}{\vec{E}}
+\newcommand{\bF}{{\bf F}}
+\newcommand{\bu}{\vec{u}}
+\newcommand{\bv}{\vec{v}}
+\newcommand{\bw}{{\bf w}}
+\newcommand{\ba}{{\bf a}}
+\newcommand{\bb}{{\bf b}}
+\newcommand{\bh}{{\bf h}}
+\newcommand{\bx}{\vec{x}}
+\newcommand{\bo}{{\bf 0}}
+\newcommand{\bp}{{\bf p}}
+\newcommand{\br}{{\bf r}}
+\newcommand{\bn}{{\bf n}}
+\newcommand{\bT}{{\bf T}}
+\newcommand{\bk}{{\bf k}}
+
+
+\newcommand{\Real}{\operatorname{Re}}
+\newcommand{\Imag}{\operatorname{Im}}
+
+\setlength\parindent{25pt}
+
+\usepackage{color}
+\newcommand{\tred}[1]{{\color{red}{#1}}}
+
+
+\begin{document}
+
+
+\noindent
+Carefully PRINT your full name:  \framebox(250,30){}
+
+
+\begin{center}
+Math 51 \hfill Differential Equations \hfill Spring 2022\\
+Alternate Exam 2 (90 pts.+ 10 bonus pts) 
+\end{center}
+
+\medskip
+
+
+You may not use calculators, books or notes during the exam. All electronic devices (including
+your phones) must be silenced and put away for the duration of the
+exam.
+
+After finishing your exam, you will submit this exam booklet. We will scan your submission and
+upload it to Gradescope for marking (you do not need to take images of your exam). You should
+write your name at the top of each page, as indicated (especially if you remove the staples from
+your exam booklet).
+
+For the partial credit problems, always show your work. Try to fit this work in the available space
+if possible.
+% There is a blank page at the back of your exam for use as scratch paper. If you need
+% more space for a solution, please write clearly in the indicated space that your solution continues
+% later.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* * * * *
+
+Please sign the pledge below. With your signature, you pledge that
+you have neither given nor received assistance on this exam.
+
+
+\bigskip
+\bigskip
+Signature:  \framebox(250,30){}
+
+\newpage
+
+
+% 1.
+\begin{enumerate}
+
+\item (16 points)  True-false and multiple choice.  Circle the correct choice.
+  \begin{enumerate}
+  \setlength{\itemsep}{10mm}
+  
+
+\item Let $\bh_1, \ldots, \bh_n$ be $n$ solutions of an order-$n$
+  linear system $D\bx=A\bx$ on an
+  interval $I$.  Is it possible that the Wronkisan $W[\bh_1, \ldots,
+  \bh_n](t)$ is 0 at one point $t_0$ of $I$ but nonzero at another
+  point $t_1$ of $I$?
+  
+  \bigskip
+  
+      \begin{enumerate}
+      \item[A.] Yes
+      \item[B.] No
+      \end{enumerate}
+
+
+     \item True or False.  An $n\times n$ real matrix must have $n$ linearly
+       independent eigenvectors, some of which may be complex.
+
+
+       \item True or False.  Let $A$ be a matrix of real numbers.  The linear system
+         $D\bx = A \bx$ must have $n$ linearly independent real
+         solutions.
+
+         \item True or False. Let $A$ be a matrix of real numbers. If $\bx$ is a
+           complex solution of $D\bx = A\bx$, then both $\Real \bx$ and
+           $\Imag \bx$ are real solutions of $D\bx = A\bx$.
+
+          \item True or False.  Five vectors in $\R^5$ are linearly independent if
+            and only if they generate (span) $\R^5$.
+
+            \item True or False.   Let $A$ be an $n \times n$ matrix with an eigenvalue
+              $\lambda$ of multiplicity $3$.  An eigenvector
+              corresponding to $\lambda$ is also a generalized eigenvector.
+
+          \item True or False.  Let $A$ be an $n \times n$ real matrix.  The general
+            solution of $D\bx = A\bx$ can be generated by fewer than
+            $n$ solutions.
+
+          \item True or False. For every eigenvalue $\lambda$ of an $n \times n$
+            matrix, there must be a corresponding eigenvector.
+\end{enumerate}
+            \newpage
+            
+\item (8 pts) Write down an annihilator of smallest
+      possible order with real coefficients for the function
+      \[
+        4 t e^{3t}+ t^2 e^{2t} \sin t.
+      \]
+
+
+\newpage
+      
+\item  (10 points) Make a \textit{simplified} guess for a particular solution of
+    the differential equation
+    \[
+      (D+2)^7 (D^2+1)^6 x = t e^{-2t} + \cos t.
+    \]
+    Do not solve for the coefficients.
+
+%\setcounter{page}{1}
+
+
+\newpage
+
+% \setlength{\itemsep}{5mm}
+%\setcounter{enumi}{1}
+
+      \item (14 points)
+        \begin{enumerate}
+          \item[(a)] Convert the differential equation
+        \[
+          x''' - t^2 x'' + \pi x' + t x = \sin t
+        \]
+        into a linear system of three equations in three unknowns
+        $x_1, x_2, x_3$.
+        \item[(b)] Write the linear system in the form $D\bx = A(t)
+          \bx + \bE(t)$ for some matrix $A(t)$ and vector $\bE(t)$.
+        \end{enumerate}
+
+
+
+        \newpage
+
+%      \item (14 points)  Find the eigenvalues of the matrix
+%        \begin{equation*}
+%          A = \left[
+%            \begin{array}{rrr}
+%              1 & -1 & -1 \\
+%              0 & 0 & -1 \\
+%              0 & 0 & 1
+%            \end{array}
+%          \right]
+%        \end{equation*}
+%        and for each eigenvalue, find as many linearly indepedent
+%        eigenvectors as possible.
+%
+%        \newpage
+
+      \item (15 points) 
+      \begin{enumerate}
+      \item[(a)] (10 pts) The matrix $A=\begin{bmatrix} 1 & -1 \\ 1 &\phantom{-}3
+          \end{bmatrix}$ has eigenvalue $\lambda =2$ of multiplicity
+          2.
+          It has an eigenvector
+          $\bv =\begin{bmatrix} \phantom{-}1 \\ -1\end{bmatrix}$
+          and a generalized eigenvector
+          $\bu=\begin{bmatrix} \phantom{-}0 \\ -1\end{bmatrix}$.
+          Using these two vectors, write down two solutions of $D\bx = A\bx$ that generate the
+          general solution.  
+          
+     \vspace{2in}
+     
+     \item[(b)] (5 pts) Suppose we have found three solutions of a linear system $D\bx = A\bx$:
+     \begin{gather*}
+     e^t \left( \begin{bmatrix} 1 \\0 \\0 \end{bmatrix} +      t \begin{bmatrix} -1 \\ \phantom{-}0 \\ \phantom{-} 1   \end{bmatrix}
+      + \frac{1}{2} t^2 \begin{bmatrix} 1\\1\\1\end{bmatrix}\right), \quad
+ e^t \left( \begin{bmatrix} 0 \\1 \\0 \end{bmatrix} +
+      t \begin{bmatrix} \phantom{-}1 \\ -1 \\ -3   \end{bmatrix}
+      - t^2 \begin{bmatrix} 1\\1\\1\end{bmatrix}\right),  \\  
+      e^t \left( \begin{bmatrix} 0 \\0 \\1 \end{bmatrix} +
+      t \begin{bmatrix} 0 \\ 1 \\ 2   \end{bmatrix}
+      + \frac{1}{2} t^2 \begin{bmatrix} 1\\1\\1\end{bmatrix}\right).
+  \end{gather*}
+  Explain why these three solutions generate the general solution of
+  $D\bx = A\bx$.
+      
+      
+     \end{enumerate}     
+          
+          
+          
+          
+          
+          \newpage
+
+
+          \item (12 points) Suppose $i, -i$ are eigenvalues of the $2 \times 2$
+            matrix $A$ with corresponding eigenvectors
+            $\begin{bmatrix} 1\\i\end{bmatrix},
+            \begin{bmatrix} \phantom{-}1\\-i\end{bmatrix}$,
+            respectively.
+            Write down two linearly independent real
+            solutions of $D\vx = A \vx$.  Show your work and simplify
+            your answers.
+
+            \newpage
+
+    \item (15 points) Find the general solution of the differential
+      equation
+      \[
+        5 x'' -10 x' + 5x = t^{1/5} e^t,
+      \]
+      given that two independent solutions of the related homogeneous
+      equation are $e^t$ and $te^t$.
+
+     \newpage
+      (Continuation of Question 7)
+
+     % \newpage
+
+    % \item (10 points)
+    %   Decide if the vectors
+    %   \[
+    %      \bu_1 = \begin{bmatrix} 1\\1\\1\\2 \end{bmatrix}, \quad
+    %       \bu_2 = \begin{bmatrix} 2\\0\\3\\1\end{bmatrix}, \quad
+    %     \bu_3 = \begin{bmatrix} 0\\2\\1\\3\end{bmatrix}
+    %     \]
+    %   are linearly independent.  You must show your work.
+           
+   
+      
+        
+    % \item (20 points)  Given that the characteristic polynomial of the
+    %   matrix
+    %   \[
+    %     A = \begin{bmatrix}
+    %       1 & 2 & 3\\
+    %       0 & 2 & 0 \\
+    %       0 & 1 & 2
+    %     \end{bmatrix}
+    %   \]
+    %   is $\det (A - \lambda I) = (1-\lambda)(2- \lambda)^2$, find the
+    %   general solution of the system $D\bx = A \bx$.
+
+   
+      
+
+    % \item (15 points)  Given that
+    %   \[
+    %     A = \begin{bmatrix}
+    %       1 & -1\\
+    %       5 & -3
+    %     \end{bmatrix},
+    %   \]
+    %   find the general solution of the system $D\bx = A\bx$.
+    %   (\textit{Hint}: The characteristic polynomial has complex roots.)
+
+    %\newpage
+    
+  
+   
+  %\item (15 points)
+
+    % Given that two linearly independent solutions of $D\bx = A\bx$
+    %   are
+    %   \[
+    %      \begin{bmatrix} 2 e^t \\ e^t\end{bmatrix}, \quad
+    %     \begin{bmatrix} e^{2t} \\
+    %       e^{2t}\end{bmatrix},
+    %   \]
+    %   find the general solution of $D\bx = A\bx + \begin{bmatrix}
+    %    e^t\\ e^t\end{bmatrix}$.
+      
+ %    \newpage
+% (Continuation of Question 8)
+
+ 
+   \end{enumerate}
+
+\vfill
+
+\begin{center}
+(End of Exam)
+\end{center}
+
+\end{document}
