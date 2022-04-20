@@ -25,6 +25,12 @@ This lecture follows [@gutermanNitecki, sec. 5.4].
   \hline
   \mathscr{L}^{-1}\left[\dfrac{1}{s^n}\right] =\dfrac{t^{n-1}}{(n-1)!} & 
   \mathscr{L}^{-1}\left[\dfrac{1}{(s-\alpha)^n}\right] = \text{?? for $\alpha \ne 0$} \\
+  \end{array}$$
+
+-
+  $$\begin{array}{l|l}
+  \text{Known} & \text{not yet known} \\
+  \hline  
   \mathscr{L}^{-1}\left[\dfrac{1}{s^2 + \beta^2}\right] =
   \dfrac{\sin(\beta t)}{\beta} & 
   \mathscr{L}^{-1}\left[\dfrac{1}{s^2 + \gamma s +  \delta}\right] = \text{??} \\
@@ -34,7 +40,7 @@ This lecture follows [@gutermanNitecki, sec. 5.4].
 
 - **Fact:** if $\mathscr{L}[f(t)] = F(s)$, then $\mathscr{L}[e^{\alpha t}f(t)] = F(s-\alpha)$.
 
-- **Consequence:** $\mathscr{L}^{-1}[F(s)] = e^{\alpha t}f(t + \alpha) = e^{\alpha t}\mathscr{L}^{-1}[F(s)]$.
+- **Consequence:** $\mathscr{L}^{-1}[F(s)] = e^{\alpha t}f(t + \alpha) = e^{\alpha t}\mathscr{L}^{-1}[F(s + \alpha)]$.
 
 :::
 
@@ -103,6 +109,12 @@ This lecture follows [@gutermanNitecki, sec. 5.4].
   A\mathscr{L}^{-1}\left[\dfrac{1}{s-\alpha_1}\right] + B \mathscr{L}^{-1}\left[\dfrac{1}{s-\alpha_2}\right]
   = Ae^{\alpha_1 t} + B e^{\alpha_2 t}$$
   
+:::
+
+---
+
+::: incremental
+  
 - when there is a multiple real root $\alpha_1 = \alpha_2$ we find by
   the formula on the previous slide that
   $$\mathscr{L}^{-1}\left[\dfrac{1}{s^2 + \gamma s + \delta}\right] =
@@ -116,6 +128,8 @@ This lecture follows [@gutermanNitecki, sec. 5.4].
 :::  incremental
 
 - finally suppose that $s^2 + \gamma s + \delta$ does not have real roots.
+  
+- i.e. $\gamma^2 - 4\delta < 0$  
   
 - after  *completing the square* we find that
   $$s^2 + \gamma s + \delta = \left (s + \dfrac{\gamma}{2} \right)^2 - \dfrac{\gamma^2}{4} + \delta
@@ -137,7 +151,29 @@ This lecture follows [@gutermanNitecki, sec. 5.4].
 
 ::: incremental
 
+- e.g. let's compute $\mathscr{L}^{-1}\left[\dfrac{s+1}{s^2 + s + 1}\right]$
 
+- we have $s^2 + s + 1 = \left(s + \dfrac{1}{2}\right)^2 + \dfrac{3}{4}$
+
+- thus
+  \begin{align*}
+  \mathscr{L}^{-1}\left[\dfrac{s+1}{s^2 + s + 1}\right]
+  &= \mathscr{L}^{-1}\left[\dfrac{s+1}{\left(s + \dfrac{1}{2}\right)^2 + \dfrac{3}{4}}\right]\\
+  &= e^{-t/2} \mathscr{L}^{-1}\left[\dfrac{s + 1/2}{s^2 + \dfrac{3}{4}}\right]  = (\clubsuit)  \\
+  \end{align*}
+  
+:::
+
+---
+
+::: incremental
+
+- \begin{align*}
+  (\clubsuit) &= e^{-t/2} \mathscr{L}^{-1}\left[\dfrac{s}{s^2 + \dfrac{3}{4}}\right] 
+  + e^{-t/2} \mathscr{L}^{-1}\left[\dfrac{1/2}{s^2 + \dfrac{3}{4}}\right] \\
+  &= e^{-t/2} \cos\left(\dfrac{\sqrt{3}t}{2}\right)
+  + \dfrac{2e^{-t/2}}{\sqrt{3}} \sin\left(\dfrac{\sqrt{3}t}{2}\right)
+  \end{align*}
 
 :::
 
@@ -159,6 +195,19 @@ This lecture follows [@gutermanNitecki, sec. 5.4].
 
 - more generally we find that
   $$\mathscr{L}[t^nf(t)] = (-1)^n \dfrac{d^n}{ds^n}\mathscr{L}[f(t)].$$
+
+:::
+
+## Example
+
+::: incremental
+
+- let's compute $\mathscr{L}[t\sin(4t)]$
+
+- the *second differentiation formula* tells us that
+  $$\mathscr{L}[t\sin(4t)] = -\dfrac{d}{ds}\left[ \dfrac{4}{s^2 + 16}\right]
+  = \dfrac{4\cdot 2s}{(s^2 + 16)^2}
+  = \dfrac{8s}{(s^2 + 16)^2}$$
 
 :::
 
