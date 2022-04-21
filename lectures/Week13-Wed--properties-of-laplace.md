@@ -211,6 +211,95 @@ This lecture follows [@gutermanNitecki, sec. 5.4].
 
 :::
 
+
+## Example: initial value problem
+
+::: incremental
+
+- Let's consider the IVP $$(D^2 + D+ 1)x = te^t \quad \text{for} \quad
+  x(0) = x'(0) = 0.$$
+  
+- apply $\mathscr{L}$ to each side and using the first and second differentiation
+  formula gives
+
+  $$(s^2 + s + 1) \mathscr{L} = \mathscr{L}[te^t] = -
+  \dfrac{d}{ds}\left[\dfrac{1}{s-1}\right] = \dfrac{1}{(s-1)^2}$$
+
+- we now have a partial fractions problem $$\mathscr{L}[x] =
+  \dfrac{1}{(s-1)^2(s^2 + s + 1)} = \dfrac{A+Bs}{(s-1)^2} +
+  \dfrac{C+Ds}{s^2 + s + 1}.$$
+
+- we find the equation
+  $$1 = (A+Bs)(s^2+s+1) + (C +Ds)(s-1)^2.$$
+
+:::
+
+---
+
+$$1 = (A+Bs)(s^2+s+1) + (C +Ds)(s-1)^2.$$
+
+::: incremental
+
+- using 4 distinct values of $s$ we find the following equations
+
+  - $s=0$: $1 = A + C$
+  - $s=1$: $1 = 3A + 3B$
+  - $s=-1$: $1=A-B + 4(C-D)$
+  - $s=2$: $1 = 7(A+2B) + C+2D$
+
+- this leads to the augmented matrix
+  $$\left[\begin{array}{l|l}
+  \begin{matrix} 1 & 0 & 1 & 0 \\
+  3 & 3 & 0 & 0 \\
+  1 & -1 & 4 & -4 \\
+  7 & 14 & 1 & 2 \\
+  \end{matrix} &
+  \begin{matrix} 1 \\ 1 \\ 1 \\ 1
+  \end{matrix}
+  \end{array}\right]$$
+
+:::
+
+---
+
+::: incremental
+
+- we skip here the row reduction, the solution is
+  $\mathbf{c} = \dfrac{1}{3} \begin{bmatrix} 2 \\ -1 \\ 1 \\ 1 \end{bmatrix}.$
+
+- we conclude that
+  $$\mathscr{L}[x] =
+  \dfrac{1}{(s-1)^2(s^2 + s + 1)} = \dfrac{1}{3}\left[\dfrac{2-s}{(s-1)^2} +
+  \dfrac{1+s}{s^2 + s + 1}\right]$$
+
+- now using the shift formula we find that
+  \begin{align*}
+  \mathscr{L}^{-1}\left[\dfrac{2-s}{(s-1)^2}\right] &= e^t \mathscr{L}^{-1}\left[\dfrac{2-s-1}{s^2}\right]
+  = e^t \mathscr{L}^{-1}\left[\dfrac{1-s}{s^2}\right] ]\\
+  &= e^t \mathscr{L}^{-1}\left[\dfrac{1}{s^2}\right] - e^t \mathscr{L}^{-1}\left[\dfrac{s}{s^2}\right] ]
+  = e^t \mathscr{L}^{-1}\left[\dfrac{1}{s^2}\right] - e^t \mathscr{L}^{-1}\left[\dfrac{1}{s}\right] ] \\
+  &= e^t(t-1)
+  \end{align*}
+
+:::
+
+---
+
+::: incremental
+
+- now we observe that
+  $$\mathscr{L}^{-1}\left[\dfrac{1+s}{s^2 + s + 1}\right]$$
+  was computed earlier and was found to be
+  $$e^{-t/2} \cos\left(\dfrac{\sqrt{3}t}{2}\right)
+  + \dfrac{2e^{-t/2}}{\sqrt{3}} \sin\left(\dfrac{\sqrt{3}t}{2}\right)$$
+  
+- thus we find that the solution to the IVP is
+
+  $$x(t) = \dfrac{1}{3}\left[e^t(t-1) + e^{-t/2} \cos\left(\dfrac{\sqrt{3}t}{2}\right)
+  + \dfrac{2e^{-t/2}}{\sqrt{3}} \sin\left(\dfrac{\sqrt{3}t}{2}\right)\right]$$
+:::
+
+
 ## Bibliography {.unnumbered}
 
 ::: {.refs}
