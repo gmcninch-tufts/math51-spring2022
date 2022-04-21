@@ -40,7 +40,7 @@ This lecture follows [@gutermanNitecki, sec. 5.4].
 
 - **Fact:** if $\mathscr{L}[f(t)] = F(s)$, then $\mathscr{L}[e^{\alpha t}f(t)] = F(s-\alpha)$.
 
-- **Consequence:** $\mathscr{L}^{-1}[F(s)] = e^{\alpha t}f(t + \alpha) = e^{\alpha t}\mathscr{L}^{-1}[F(s + \alpha)]$.
+- **Consequence:** $\mathscr{L}^{-1}[F(s)] = e^{\alpha t}\mathscr{L}^{-1}[F(s + \alpha)]$.
 
 :::
 
