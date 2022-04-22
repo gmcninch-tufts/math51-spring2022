@@ -108,7 +108,7 @@ This lecture follows [@gutermanNitecki, sec. 5.5].
 - another example: notice that $|t-1| = -t + 1 + u_1(t)\cdot (2t - 2)$
 
 - thus 
-  $$\mathscr{L}[|t|] = \mathscr{L}[-t + 1] + \mathscr{L}[u_1(t) \cdot (2t - 2)] \quad (*)$$
+  $$\mathscr{L}[|t-1|] = \mathscr{L}[-t + 1] + \mathscr{L}[u_1(t) \cdot (2t - 2)] \quad (*)$$
 
 - 
   \begin{align*}
@@ -137,6 +137,21 @@ This lecture follows [@gutermanNitecki, sec. 5.5].
 
 :::
 
+## Summary
+
+::: incremental
+
+- **Second shift formula for $\mathscr{L}$**:
+
+  for $a \ge 0$,
+  $$\mathscr{L}[u_a(t) \cdot f(t)] = e^{-as} \mathscr{L}[f(t+a)].$$
+
+- **Second shift formula for $\mathscr{L}^{-1}$**:
+
+  $$\mathscr{L}^{-1}[e^{-as} F(s)] = u_a(t)f(t-a) \quad \text{where $f(t) = \mathscr{L}^{-1}[F(s)]$.}$$
+
+:::
+
 ## Examples 
 
 ::: incremental
@@ -155,6 +170,135 @@ This lecture follows [@gutermanNitecki, sec. 5.5].
   \end{align*}
 
 :::
+
+## Example
+
+Let's solve the *initial value problem* $$(D^2 -4)x = u_2(t) \quad
+\text{where} \quad x(0) = 1, x'(0) = 0.$$
+
+::: incremental
+
+- applying $\mathscr{L}$ to each side, find the following:
+  $$(\clubsuit) \quad \mathscr{L}[D^2x] - 4\mathscr{L}[x] = \mathscr{L}[u_2(t)]$$
+  
+- we have
+  $$\mathscr{L}[D^2x] = s^2 \mathscr{L}[x] - sx(0) - x'(0) = s^2 \mathscr{L}[x] - s$$
+  
+- and we have
+  $$\mathscr{L}[u_2(t)] = e^{-2s}\mathscr{L}[1] = \dfrac{e^{-2s}}{s}$$
+
+
+:::
+
+---
+
+::: incremental
+
+- substituting these two expressions in $(\clubsuit)$ we find
+  $$(s^2 - 4)\mathscr{L}[x] - s = \dfrac{e^{-2s}}{s}$$
+
+- and thus
+  $$\mathscr{L}[x] = \dfrac{e^{-2s}}{s(s^-4)} + \dfrac{s}{s^2-4}$$
+
+- so to solve our problem, we must compute the inverse Laplace transform of the RHS.
+
+:::
+
+---
+
+::: incremental
+
+- we treat the two terms separately; let's begin by computing
+  $\mathscr{L}^{-1}\left[\dfrac{s}{s^2-4}\right]$:
+
+- $$\dfrac{s}{s^2-4} = \dfrac{s}{(s+2)(s-2)} = \dfrac{A}{s+2} +
+  \dfrac{B}{s-2} = \dfrac{A(s-2) + B(s+2)}{s^2 -4}$$
+
+- thus $$s = A(s-2) + B(s+2) = (A+B)s -2A + 2B$$
+
+- leading to equations $1 = A+B$ and $0 = -2A + 2B$.
+  
+- performing row operations on the augmented matrix
+  
+  $$\left[\begin{array}{l|l} \begin{matrix} 1 & 1 \\ -2 & 2
+  \end{matrix} & \begin{matrix} 1 \\ 0 \end{matrix} \end{array}\right]
+  \quad \text{we find the solution} \begin{bmatrix} A \\ B
+  \end{bmatrix} = \dfrac{1}{2} \begin{bmatrix} 1 \\ 1 \end{bmatrix} $$
+
+- thus $\dfrac{s}{s^2-4} = \dfrac{1}{2}\left[\dfrac{1}{s-2} + \dfrac{1}{s+2}\right]$.
+
+:::
+
+---
+
+::: incremental
+
+- so that $$\mathscr{L}^{-1}\left[\dfrac{s}{s^2-4}\right]= 
+  \dfrac{1}{2}\left[e^{-2t} + e^{2t}\right]$$
+
+- we now compute $\mathscr{L}^{-1} \left [\dfrac{e^{-2s}}{s(s^2-4)}  \right ]$
+
+- we perform partial fractions: 
+
+  $$\dfrac{1}{s(s^2-4)} = \dfrac{A}{s} + \dfrac{B}{s-2} +
+  \dfrac{C}{s+2} = \dfrac{A(s^2 -4) + Bs(s+2) + Cs(s-2)}{s(s^2-4)}$$
+
+- so we need $1 = A(s^2 -4) + Bs(s+2) + Cs(s-2)$.
+
+:::
+
+---
+
+::: incremental
+
+- $1 = A(s^2 -4) + Bs(s+2) + Cs(s-2)$.
+
+- evaluation at $s=0,2,-2$ gives equations
+  $$1 = -4A, \quad 1 = 8B, \quad 1 = 8C$$
+  so that $\begin{bmatrix} A \\ B \\ C \end{bmatrix} = \dfrac{1}{8} \begin{bmatrix}  -2 \\ 1 \\ 1
+  \end{bmatrix}$
+
+- this shows that
+  $$\dfrac{e^{-2s}}{s(s^2-4)} 
+  = \dfrac{e^{-2s}}{8}\left[ \dfrac{-2}{s} + \dfrac{1}{s-2} + \dfrac{1}{s+2}\right]$$
+
+:::
+
+---
+
+::: incremental
+
+- now
+  $$\mathscr{L}^{-1}\left[\dfrac{e^{-2s}}{s(s^2-4)} \right]
+  =\dfrac{1}{8} \mathscr{L}^{-1} \left[e^{-2s} \cdot \left( \dfrac{-2}{s} + \dfrac{1}{s-2} + \dfrac{1}{s+2}\right)\right]= (*)$$
+  
+- to apply the second shift formula we compute $$f(t) =
+  \mathscr{L}^{-1}\left[\dfrac{-2}{s} + \dfrac{1}{s-2} +
+  \dfrac{1}{s+2} \right] = -2 + e^{-2t} + e^{2t}$$
+
+- now the second shift formula gives
+  $$(*) = \dfrac{1}{8} u_{2}(t) f(t-2) = \dfrac{1}{8} u_2(t) \cdot ( -2 + e^{-2t+4} + e^{2t -4} )
+  $$
+
+:::
+
+---
+
+
+::: incremental
+
+- we can now find the solution $x$ to our initial value problem. 
+  \begin{align*}
+  x &= \mathscr{L}^{-1}\left[\dfrac{e^{-2s}}{s(s^2-4)} + \dfrac{s}{s^2-4}\right] \\
+  &= \mathscr{L}^{-1}\left[\dfrac{e^{-2s}}{s(s^2-4)}\right] + \mathscr{L}^{-1}\left[\dfrac{s}{s^2-4}\right] \\
+  &= \dfrac{1}{8}  u_2(t) \cdot ( -2 + e^{-2t+4} + e^{2t -4} )+ 
+  \dfrac{1}{2}\left[e^{-2t} + e^{2t}\right]
+  \end{align*}
+
+
+
+:::
+
 
 ## Bibliography {.unnumbered}
 
