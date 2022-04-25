@@ -139,6 +139,42 @@ This lecture follows [@gutermanNitecki, sec. 5.6].
 - $$= \dfrac{1}{2} \sin(t) - \dfrac{t\cos(t)}{2}$$
 :::
 
+## Example
+
+::: incremental
+
+- solve the initial value problem: $(D^2+1)x = u_{2\pi}(t) \cdot \sin(t)$, where $x(0) = x'(0) = 0$.
+
+- applying $\mathscr{L}$ we get
+  $$(s^2 + 1)\mathscr{L}[x] = \mathscr{L}[u_{2\pi}(t) \cdot \sin(t)] = e^{-2\pi t}\mathscr{L}[\sin(t + 2\pi)] 
+  = e^{-2\pi s}\mathscr{L}[\sin(t)] 
+  = \dfrac{e^{-2\pi s}}{s^2+1}.$$
+
+- thus
+  $$\mathscr{L}[x] = \dfrac{e^{-2\pi s}}{(s^2+1)^2}$$
+
+- on a previous slide, we computed $$f(t) =
+  \mathscr{L}^{-1}\left[\dfrac{1}{(s^2+1)^2}\right] = \dfrac{1}{2} \sin(t) -
+  \dfrac{t\cos(t)}{2}$$
+
+:::
+
+---
+
+::: incremental
+
+- so we find that
+  \begin{align*}
+  x &= \mathscr{L}^{-1}\left[\dfrac{e^{-2\pi s}}{(s^2+1)^2}\right]  \\
+  &= u_{2\pi}(t) f(t-\pi) = u_{2\pi}(t)\left(\dfrac{1}{2} \sin(t-2\pi) -
+  \dfrac{t\cos(t-2\pi)}{2}\right) \\
+  &= u_{2\pi}(t)\left(\dfrac{1}{2} \sin(t) -
+  \dfrac{t\cos(t)}{2}\right)
+  \end{align*}
+
+
+:::
+
 ## Bibliography {.unnumbered}
 
 ::: {.refs}
