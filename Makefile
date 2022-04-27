@@ -11,7 +11,7 @@ SLIDEOUS=assets/slideous
 CSS_DEFAULT="/home/george/Classes/math51-spring2022/assets/default.css"
 CSS_PANDOC="/home/george/Classes/math51-spring2022/assets/pandoc.css"
 
-VPATH = .:pacing:resources:problem-sets:lectures:exams:practicum
+VPATH = .:pacing:resources:problem-sets:lectures:exams:practicum:exam-review
 
 resources = $(patsubst %.md,%.html,$(wildcard resources/*.md)) \
             $(patsubst %.md,%.pdf,$(wildcard resources/*.md)) \
@@ -37,12 +37,16 @@ practicum = $(patsubst %.md,%.pdf, $(wildcard practicum/*.md)) \
 exams = $(patsubst %.md,%.html,$(wildcard exams/*.md)) \
         $(patsubst %.md,%.pdf,$(wildcard exams/*.md))
 
+exam-review = $(patsubst %.md,%.html,$(wildcard exam-review/*.md)) \
+              $(patsubst %.md,%.pdf,$(wildcard exam-review/*.md))
 
-all: pacing resources lectures psets exams practicum
+
+all: pacing resources lectures psets exams practicum exam-review
 
 pacing: $(pacing_md) $(pacing_html) $(pacing_pdf)
 resources: $(resources)
 exams: $(exams)
+exam-review: $(exam-review)
 lectures: $(lectures)
 practicum: $(practicum)
 psets: $(psets)
@@ -64,7 +68,7 @@ pacing/%.pdf resources/%.pdf: %.md
 
 
 
-problem-sets/%.pdf exams/%.pdf practicum/%.pdf: %.md
+exam-review/%.pdf problem-sets/%.pdf exams/%.pdf practicum/%.pdf: %.md
 	$(PD)   --citeproc --self-contained --pdf-engine=xelatex --resource-path=$(RP) -t latex $<  -o $@
 
 lectures/%.pdf: %.md
@@ -77,7 +81,7 @@ practicum/%.pdf: %.tex
 	$(TEX) -output-directory=practicum $<
 
 
-exams/%.html problem-sets/%.html resources/%.html practicum/%.html: %.md
+exam-review/%.html exams/%.html problem-sets/%.html resources/%.html practicum/%.html: %.md
 	$(PD) $<  --number-sections --citeproc  --standalone --css=$(CSS_DEFAULT) --mathjax=$(MJ) --to html  -o $@
 
 lectures/%-slides.html: %.md

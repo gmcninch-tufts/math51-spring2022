@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Laplace transform formulas</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="/home/george/Classes/math51-spring2022/assets/default.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Laplace transform formulas</h1>
+</header>
+<h1 data-number="1" id="definition"><span class="header-section-number">1</span> definition</h1>
+<ul>
+<li><span class="math inline">\(F(s) = \displaystyle \mathscr{L}[f(t)] = \int_0^\infty e^{-st}f(t)dt\)</span></li>
+</ul>
+<h1 data-number="2" id="basic-formulas"><span class="header-section-number">2</span> basic formulas</h1>
+<p><span class="math display">\[\begin{array}{lcl}
+    \mathscr{L}[e^{\lambda t}] = \dfrac{1}{s-\lambda} \quad \text{for $s &gt; \lambda$} &amp; \quad, \quad  &amp;
+    \mathscr{L}^{-1}\left[\dfrac{1}{s-\lambda}\right] =  e^{\lambda t} \\
+    %
+    \mathscr{L}[t^n] = \dfrac{n!}{s^{n+1}} \quad \text{for $s &gt; 0$} &amp; \quad, \quad  &amp;
+    \mathscr{L}^{-1}\left[\dfrac{1}{s^{n+1}}\right]  = \dfrac{t^n}{n!} \\
+    %
+    \mathscr{L}[\sin(\beta t)] = \dfrac{\beta}{s^2 + \beta^2} \quad \text{for $s &gt; 0$} &amp; \quad, \quad  &amp;
+    \mathscr{L}^{-1}\left[\dfrac{1}{s^2 + \beta^2}\right] = \dfrac{1}{\beta} \sin(\beta t) \\
+    %
+    \mathscr{L}[\cos(\beta t)] = \dfrac{s}{s^2 + \beta^2} \quad \text{for $s &gt; 0$} &amp; \quad, \quad  &amp;
+    \mathscr{L}^{-1}\left[\dfrac{s}{s^2 + \beta^2}\right] = \cos(\beta t)
+  \end{array}\]</span></p>
+<h1 data-number="3" id="first-differentiation-formula"><span class="header-section-number">3</span> first differentiation formula:</h1>
+<ul>
+<li><span class="math inline">\(\mathscr{L}[Dx] = s\mathscr{L}[x] - x(0)\)</span>,</li>
+<li><span class="math inline">\(\mathscr{L}[D^2x] = s^2\mathscr{L}[x] -sx(0) - x&#39;(0)\)</span>,</li>
+<li><span class="math inline">\(\mathscr{L}[D^kx] = s^k \mathscr{L}[x(t)] - s^{k-1}x(0) - s^{k-2}x&#39;(0) - \cdots - s x^{(k-2)}(0) - x^{(k-1)}(0)\)</span> for <span class="math inline">\(k \ge 1\)</span>.</li>
+</ul>
+<h1 data-number="4" id="first-shift-formula"><span class="header-section-number">4</span> first shift formula</h1>
+<ul>
+<li>if <span class="math inline">\(\mathscr{L}[f(t)] = F(s)\)</span> then <span class="math inline">\(\mathscr{L}[e^{\alpha t}f(t)] = F(s-\alpha).\)</span></li>
+<li><span class="math inline">\(\mathscr{L}^{-1}[F(s)] = e^{\alpha t} \mathscr{L}^{-1}[F(s+\alpha)]\)</span></li>
+</ul>
+<h1 data-number="5" id="second-differentiation-formula"><span class="header-section-number">5</span> second differentiation formula</h1>
+<ul>
+<li><span class="math inline">\(\mathscr{L}[t^n f(t)] = (-1)^n \dfrac{d^n}{ds^n}\mathscr{L}[f(t)]\)</span></li>
+</ul>
+<h1 data-number="6" id="second-shift-formula"><span class="header-section-number">6</span> second shift formula</h1>
+<ul>
+<li><span class="math inline">\(\mathscr{L}[u_a(t) f(t)] = e^{-as} \mathscr{L}[f(t+a)].\)</span></li>
+<li>if <span class="math inline">\(f(t) = \mathscr{L}^{-1}[F(s)]\)</span> then <span class="math inline">\(\mathscr{L}^{-1}[e^{-as}F(s)] = u_a(t)f(t-a).\)</span></li>
+</ul>
+<h1 data-number="7" id="convolution"><span class="header-section-number">7</span> convolution</h1>
+<ul>
+<li>definition: <span class="math inline">\((f*g)(t) = \displaystyle \int_0^t f(t-u)g(u)du\)</span>.</li>
+<li><span class="math inline">\(\mathscr{L}[(f*g)(t)]= \mathscr{L}[f(t)] \mathscr{L}[g(t)].\)</span></li>
+<li><span class="math inline">\(\mathscr{L}^{-1}[F(s)G(s)] = \mathscr{L}^{-1}[F(s)] * \mathscr{L}^{-1}[G(s)]\)</span></li>
+</ul>
+</body>
+</html>
