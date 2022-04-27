@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+%\pagestyle{empty}
+% \usepackage[left = 0.9in, right = 0.9in, top = 0.9in, bottom =
+% 0.9in]{geometry}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{amsmath,amssymb,comment, enumerate,hyperref,xcolor,bm,graphicx}
+
+%\usepackage{soul}
+ \usepackage{palatino}
+ \usepackage{mathpazo}
+ 
+\def\A{\mathbf{A}}
+\def\B{\mathbf{B}}
+\def\C{\mathbf{C}}
+\def\P{\mathbf{P}}
+\def\D{\mathbf{D}}
+\def\T{T}
+\def\V{\mathbf{V}}
+\def\U{\mathbf{U}}
+\def\X{\mathbf{X}}
+\def\Z{\mathbf{Z}}
+\def\c{\mathbf{c}}
+\def\e{\mathbf{e}}
+\def\x{\mathbf{x}}
+\def\z{\mathbf{z}}
+\def\v{\mathbf{v}}
+\def\y{\mathbf{y}}
+\newcommand{\cL}{{\mathcal L}}
+
+\usepackage{color}
+\newcommand{\tred}[1]{{\color{red}{#1}}}
+
+
+\begin{document}
+\noindent
+{\large {\bf Math 51}   \hfill  {\bf Homework 12} \hfill   Spring 2022}   
+
+\bigskip
+\bigskip
+
+\centerline{\textbf{Readings for the Week of April 11, 2022}}
+
+\medskip
+\noindent
+Martin Guterman and Zbigniew Nitecki,
+  \textit{Differential Equations: A First Course}, 3rd edition.  ISBN: 81-89617-20-6.
+\begin{enumerate}
+    \item[\S 5.2] The Laplace Transform: Definitions and Basic Calculations
+    \item[\S 5.3] The Laplace Transform and Initial-Value Problems
+    \end{enumerate}
+
+
+ \bigskip
+\noindent
+\centerline{\textbf{Problem Set 12}}
+\centerline{(Due \tred{Monday, April 25}, 2022, at 11:59 p.m.)}
+
+\medskip
+
+\noindent
+For a 10\% penalty on your grade, you may hand in the problem set
+late, until Tuesday, April 26, 2022, 11:59 p.m.
+
+\medskip
+
+\begin{enumerate}[1.]
+\setlength{\itemsep}{5mm}
+
+% Similar to \S 5.2, p. 421, #4.
+\item \textbf{(Laplace transform from the definition)} \\
+Let $f(t) = te^{2t}$.  Calculate the Laplace transform
+  $F(s) = \cL[f(t)]$ directly
+  from the definition and indicate the values of $s$ for which the
+  integral defining $F(s)$ converges.
+
+  % Similar to \S 5.2, p. 421, #12, #14, #15.
+\item \textbf{(Laplace transform)} \\
+For each of the following functions, calculate its Laplace
+  transform $F(s) = \cL[f(t)]$ using the linearity of $\cL$ together
+  with the basic formulas summarized at the end of \S 5.2.
+  
+  \bigskip
+  \begin{enumerate}
+    \setlength{\itemsep}{2mm}
+  \item[(a)] $f(t) = 2t + e^{-4t} - 3\cos 5t$.
+  \item[(b)] $f(t) = e^{3t+2}$.
+    \item[(c)] $f(t) = (t+2)(t+3)$.
+      \end{enumerate}
+
+       % \S 5.2, p. 422, #19 (similar), #24.
+  \item \textbf{(Inverse transform)} \\
+  For each of the following functions, calculate its inverse
+  transform $f(t) = \cL^{-1}[F(s)]$ using the linearity of $\cL^{-1}$ together
+  with the basic formulas summarized at the end of \S 5.2.
+  \begin{enumerate}
+    \setlength{\itemsep}{2mm}
+  \item[(a)] $F(s) =\displaystyle \frac{1}{3s+1}$.
+ 
+  \item[(b)] $F(s) = \displaystyle \frac{2}{s^2+4} -\frac{10}{s^4}
+    +\frac{1}{s}$.
+    
+    \end{enumerate}
+
+    % \S 5.3, pp. 432--433, #2, #4, #6.
+    \item \textbf{(First differentiation formula)} \\
+    Use the first differentiation formula to find an expression
+      for the Laplace transform $\cL[x]$, where $x$ is the solution of
+      the given initial-value problem.
+    
+      \begin{enumerate}
+        \setlength{\itemsep}{2mm}
+      \item $(D - 1) x = e^{2t}, \quad x(0) =2$.
+      \item $(D^2 -1) x = e^{2t}, \quad x(0) = 0, \ \ x'(0) = 1$.
+      \item $(D^2 + 1) x = \cos 3t, \quad x(0)=0, \ \ x'(0) = 3$.
+      \end{enumerate}
+
+      % \S 5.3, pp.~433, \#12.
+     \item \textbf{(Partial fraction decompostion)} \\
+      Find the inverse transform of $F(s) = \displaystyle \frac{s+4}{s^2
+         + 4s +3}$.
+
+       % \S 5.3, pp.~433, \#20.
+      \item \textbf{(Initial-value problem)}\\
+       Use the Laplace tranform to solve the initial-value problem:
+       \[
+         (D^2 + 4) x = t, \quad x(0)= -1,\ \  x'(0) = 0.
+         \]
+     
+
+
+\end{enumerate}
+
+\bigskip
+
+\centering{(End of Homework 11)}
+
+\end{document}
