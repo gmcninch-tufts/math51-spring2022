@@ -1,0 +1,132 @@
+\documentclass[12pt]{article} 
+\usepackage{amsmath,amssymb,amscd,enumerate,mathtools} 
+%\usepackage{pstricks}
+%\usepackage[pdftex]{graphicx}
+%\thispagestyle{empty}
+
+\usepackage[margin=.9in]{geometry}
+
+%\addtolength{\textwidth}{1in}
+%\addtolength{\oddsidemargin}{-.5in}
+%\addtolength{\evensidemargin}{-.5in}
+%\addtolength{\textheight}{1in}
+%\addtolength{\topmargin}{-.5in}
+
+% \usepackage{mathptmx}
+% \renewcommand{\rmdefault}{ptm}		% set Times as the default text font
+ \usepackage{palatino}
+ \usepackage{mathpazo}
+
+ 
+\newcommand{\vh}{\mathbf{h}}
+\newcommand{\vp}{\mathbf{p}}
+\newcommand{\vu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\vw}{\mathbf{w}}
+\newcommand{\vx}{\mathbf{x}}
+\newcommand{\vy}{\mathbf{y}}
+\newcommand{\vz}{\mathbf{z}}
+\newcommand{\zero}{\mathbf{0}}
+\newcommand{\cL}{{\mathcal L}}
+
+\renewcommand{\vec}[1]{{\bf #1}}
+
+
+%\thispagestyle{empty}
+
+\usepackage{color}
+\newcommand{\tred}[1]{{\color{red}{#1}}}
+
+
+\begin{document}
+
+%\setcounter{page}{4}
+
+\noindent
+Math 51~~~~~~~~~~~~~~~~~ \hfill Differential Equations \hfill April 28--29, 2022 
+\centerline{Week 14 Worksheet}
+
+\bigskip
+\noindent
+
+\bigskip
+\begin{center}
+  \textbf{Exercises}
+  \end{center}
+
+
+\begin{enumerate}
+  \setlength{\itemsep}{2mm}
+\item Calculate the Laplace transform of the following functions:
+\begin{enumerate}[(a)]
+\item $te^{2t}\cos(3t)$
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\item $t\sin^2(2t)$
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\item $e^{-t}\cos(3t)$
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+\end{enumerate}
+\item Write the following functions in step function notation, where  $u_a(t) = \left\{\begin{aligned} 0 \quad t<a\\
+a\quad t\geq a \end{aligned}  \right.$
+\begin{enumerate}
+\item 
+\begin{equation*}
+g(t) =  \left\{\begin{aligned} t-3 \quad t<3\\
+0\quad t\geq 3 \end{aligned}  \right.
+\end{equation*}
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\item 
+\begin{equation*}
+g(t) =  \left\{\begin{aligned} t^2 \quad t<1\\
+t^2-1\quad 1\leq t<2  \\
+t^2-2\quad t\geq 3 \end{aligned}  \right.
+\end{equation*}
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\newpage
+\item $f(t)$ described by the following figure:
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.5]{ws13_tent.png}
+\end{figure}
+\end{enumerate}
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+\item Using the Laplace Transform, solve the following initial value problem:
+\begin{equation*}
+(D^2+1)x = \left\{\begin{aligned}
+0,\quad t<2\\
+e^{-t},\quad t\geq 2
+\end{aligned} \right.;\quad x(0)=x'(0)=0
+\end{equation*}
+\end{enumerate}
+
+
+\end{document}
