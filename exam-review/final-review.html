@@ -49,7 +49,7 @@
 <li>The Laplace transform <span class="math inline">\(\mathscr{L}\)</span> and initial value problems (§ 5.2, 5.3)</li>
 <li>Properties of <span class="math inline">\(\mathscr{L}\)</span> and <span class="math inline">\(\mathscr{L}^{-1}\)</span> (§ 5.4)</li>
 <li>Piecewise functions (§ 5.5)</li>
-<li>Convolution (§ 5.6)</li>
+<li><del>Convolution (§ 5.6)</del></li>
 </ul>
 <ol>
 <li><p>Indicate which of the following best represents a <em>simplified guess</em> for a particular solution <span class="math inline">\(p(t)\)</span> to the non-homogeneous linear ODE: <span class="math display">\[(D-3)(D-1)x = te^{3t} + \cos(2t)\]</span></p>
@@ -148,6 +148,41 @@
 <li><p>Show that the vectors <span class="math inline">\(\begin{bmatrix} 1 \\ 0 \\ 1\end{bmatrix}\)</span>, <span class="math inline">\(\begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}\)</span>, and <span class="math inline">\(\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}\)</span> are linearly dependent.</p></li>
 <li><p>Let <span class="math inline">\(\mathbf{h}_1(t),\mathbf{h}_2(t),\mathbf{h}_3(t)\)</span> be solutions to <span class="math inline">\((\diamondsuit)\)</span>. Suppose that <span class="math inline">\(\mathbf{h}_1(0) = \begin{bmatrix} 1 \\ 0 \\ 1\end{bmatrix}\)</span>, <span class="math inline">\(\mathbf{h}_2(0) = \begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}\)</span>, and <span class="math inline">\(\mathbf{h}_3(0) = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}\)</span> are the vectors from b. Do the solutions <span class="math inline">\(\mathbf{h}_1(t),\mathbf{h}_2(t),\mathbf{h}_3(t)\)</span> generate the general solution to <span class="math inline">\((\diamondsuit)\)</span>? Why or why not?</p></li>
 </ol></li>
+<li><p>A drug is absorbed by the body at a rate proportional to the amount of the drug present in the bloodstream after <span class="math inline">\(t\)</span> hours. If there are <span class="math inline">\(x(t)\)</span> mg of the drug present in the bloodstream at time <span class="math inline">\(t\)</span>, assume that the drug is absorbed at a rate of <span class="math inline">\(0.5 x(t)\)</span> /hour. If a patient receives the drug intravenously at a constant rate of 3 mg/hour, to which of the following ODEs is <span class="math inline">\(x(t)\)</span> a solution?</p>
+<ol type="a">
+<li><p><span class="math inline">\(x&#39;(t) = -0.5x(t) + 3\)</span></p></li>
+<li><p><span class="math inline">\(x&#39;(t) = -0.5x(t); \quad x(0) = 3\)</span></p></li>
+<li><p><span class="math inline">\(x&#39;(t) = 0.5x(0) + 3\)</span></p></li>
+<li><p><span class="math inline">\(x&#39;(t) = .5x(t) - 3\)</span></p></li>
+</ol></li>
+<li><p>You are given that a particular solution to <span class="math display">\[(\heartsuit) \quad (D^2-2D +1)x = e^t\]</span> is <span class="math inline">\(p(t) = \dfrac{t^2 e^t}{2}\)</span>. Which of the following best represents the general solution to <span class="math inline">\((\heartsuit)\)</span>?</p>
+<ol type="a">
+<li><p><span class="math inline">\(c_1 e^t + c_2 te^t\)</span>.</p></li>
+<li><p><span class="math inline">\(\dfrac{t^2 e^t}{2} + c_1 e^t + c_2 te^t\)</span>.</p></li>
+<li><p><span class="math inline">\(\dfrac{t^2 e^t}{2} + c e^t\)</span>.</p></li>
+<li><p><span class="math inline">\(\dfrac{t^2 e^t}{2} + c_1 e^t + c_2 e^{-t}\)</span>.</p></li>
+</ol></li>
+<li><p>Let <span class="math inline">\(x_1(t)\)</span> and <span class="math inline">\(x_2(t)\)</span> be solutions to the ODE <span class="math inline">\((t+1)x&#39;&#39; + x&#39; + x = 0\)</span>. Suppose that <span class="math inline">\(x_1(0) = x_2(0)\)</span> and that <span class="math inline">\(x_1&#39;(0) = x_2&#39;(0)\)</span>. Which of the following statements is most correct?</p>
+<ol type="a">
+<li><p><span class="math inline">\(x_1(t) = x_2(t)\)</span> for every <span class="math inline">\(t\)</span>.</p></li>
+<li><p>Since the ODE is <em>normal</em> on the interval <span class="math inline">\((-1,\infty)\)</span>, we can conclude that <span class="math inline">\(x_1(t) = x_2(t)\)</span> for <span class="math inline">\(-1 &lt; t &lt; \infty\)</span>.</p></li>
+<li><p>No conclusion is possible because the existence and uniqueness theorem does not apply to this ODE.</p></li>
+<li><p>We can only conclude that <span class="math inline">\(x_1(t) = x_2(t)\)</span> for all <span class="math inline">\(t\)</span> if we also assume that <span class="math inline">\(x&#39;&#39;_1(0) = x&#39;&#39;_2(0)\)</span>.</p></li>
+</ol></li>
+<li><p>Show that the functions <span class="math display">\[f_1(t) = e^t\cos(t), \quad
+f_2(t) = e^t\sin(t), \quad f_3(t) = e^t\]</span> are linearly independent.</p>
+<p>You have been told that functions like this are independent. However, here we want you to demonstrate it directly in this case. You may use the <em>Wronskian test</em> (with all details needed to justify using it) or other, direct arguments from the definition.</p></li>
+<li><p>Find the Laplace transform of the function <span class="math display">\[\begin{equation*}
+f(t)=\left\{ 
+\begin{array}{ll}
+1 &amp; \text{ for } t&lt;1, \\
+t-1 &amp; \text{ for } 1\leq t&lt;2, \\
+1 &amp; \text{ for }t\geq 2.
+\end{array}\right .
+\end{equation*}\]</span></p></li>
+<li><p>Suppose <span class="math inline">\(g(t)\)</span> is the inverse Laplace transform of <span class="math display">\[\begin{equation*}
+F(s)=\frac{2se^{\pi s/2}}{(s^{2}+4)}.
+\end{equation*}\]</span> Find <span class="math inline">\(g\left(\dfrac{\pi}{4}\right)\)</span>.</p></li>
 </ol>
 </body>
 </html>

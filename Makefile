@@ -29,10 +29,10 @@ lectures = $(patsubst %.md,%-slides.html, $(wildcard lectures/*.md)) \
 
 psets = $(patsubst %.md,%.html,$(wildcard problem-sets/*.md)) \
         $(patsubst %.md,%.pdf, $(wildcard problem-sets/*.md)) \
-        $(patsubst %.tex,%.pdf, $(wildcard problem-sets/*.tex))
+#        $(patsubst %.tex,%.pdf, $(wildcard problem-sets/*.tex))
 
 practicum = $(patsubst %.md,%.pdf, $(wildcard practicum/*.md)) \
-            $(patsubst %.tex,%.pdf, $(wildcard practicum/*.tex))
+#            $(patsubst %.tex,%.pdf, $(wildcard practicum/*.tex))
 
 exams = $(patsubst %.md,%.html,$(wildcard exams/*.md)) \
         $(patsubst %.md,%.pdf,$(wildcard exams/*.md))
@@ -74,11 +74,11 @@ exam-review/%.pdf problem-sets/%.pdf exams/%.pdf practicum/%.pdf: %.md
 lectures/%.pdf: %.md
 	$(PD)   --citeproc --self-contained --pdf-engine=xelatex --resource-path=$(RP) -t latex $<  -o $@
 
-problem-sets/%.pdf: %.tex
-	$(TEX) -output-directory=problem-sets $<
+# problem-sets/%.pdf: %.tex
+# 	$(TEX) -output-directory=problem-sets $<
 
-practicum/%.pdf: %.tex
-	$(TEX) -output-directory=practicum $<
+# practicum/%.pdf: %.tex
+# 	$(TEX) -output-directory=practicum $<
 
 
 exam-review/%.html exams/%.html problem-sets/%.html resources/%.html practicum/%.html: %.md

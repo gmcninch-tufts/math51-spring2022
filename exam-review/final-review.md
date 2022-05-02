@@ -30,7 +30,7 @@ header-includes: |
   - The Laplace transform $\mathscr{L}$ and initial value problems (§ 5.2, 5.3)
   - Properties of $\mathscr{L}$ and $\mathscr{L}^{-1}$ (§ 5.4)
   - Piecewise functions (§ 5.5)
-  - Convolution (§ 5.6)
+  - ~~Convolution (§ 5.6)~~
 
 
 
@@ -46,6 +46,7 @@ header-includes: |
    
    d. $p(t) = k_1 te^{3t} + k_2 t^2 e^{3t} + k_3 \cos(2t) + k_4 \sin(2t)$
  
+
 
 #. Indicate which of the following represents the general
    solution to the homogeneous linear ODE $(D^2 - 2D + 2)^2x = 0.$
@@ -272,3 +273,78 @@ header-includes: |
       $\mathbf{h}_1(t),\mathbf{h}_2(t),\mathbf{h}_3(t)$ generate the
       general solution to $(\diamondsuit)$? Why or why not?
 
+
+#. A drug is absorbed by the body at a rate proportional to
+   the amount of the drug present in the bloodstream after $t$ hours. If
+   there are $x(t)$ mg of the drug present in the bloodstream at time $t$,
+   assume that the drug is absorbed at a rate of $0.5 x(t)$ /hour.
+   If a patient receives the drug intravenously at a constant rate of
+   3 mg/hour, to which of the following ODEs is $x(t)$ a solution?
+
+   a. $x'(t) = -0.5x(t) + 3$
+   
+   b. $x'(t) = -0.5x(t); \quad x(0) = 3$
+   
+   c. $x'(t) = 0.5x(0) + 3$
+   
+   d. $x'(t) = .5x(t) - 3$
+
+  
+
+
+#. You are given that a particular solution to
+   $$(\heartsuit) \quad (D^2-2D +1)x = e^t$$ is $p(t) = \dfrac{t^2
+   e^t}{2}$. Which of the following best represents the general
+   solution to $(\heartsuit)$?
+   
+   a. $c_1 e^t + c_2 te^t$.
+   
+   b. $\dfrac{t^2 e^t}{2} + c_1 e^t + c_2 te^t$.
+   
+   c. $\dfrac{t^2 e^t}{2} + c e^t$.
+   
+   d. $\dfrac{t^2 e^t}{2} + c_1 e^t + c_2 e^{-t}$.
+
+#. Let $x_1(t)$ and $x_2(t)$ be solutions to the ODE
+   $(t+1)x'' + x' + x = 0$. Suppose that $x_1(0) = x_2(0)$ and that
+   $x_1'(0) = x_2'(0)$. Which of the following statements is most
+   correct?
+   
+   a.  $x_1(t) = x_2(t)$ for every $t$.
+   
+   b. Since the ODE is *normal* on the interval $(-1,\infty)$, we can
+      conclude that $x_1(t) = x_2(t)$ for $-1 < t < \infty$.
+
+   c. No conclusion is possible because the existence and uniqueness
+      theorem does not apply to this ODE.
+	  
+   d. We can only conclude that $x_1(t) = x_2(t)$ for all $t$ if we also
+      assume that $x''_1(0) = x''_2(0)$.
+
+
+
+#. Show that the functions $$f_1(t) = e^t\cos(t), \quad
+   f_2(t) = e^t\sin(t), \quad f_3(t) = e^t$$ are linearly independent.
+   
+   You have been told that functions like this are independent.
+   However, here we want you to demonstrate it directly in this
+   case. You may use the *Wronskian test* (with all details needed to
+   justify using it) or other, direct arguments from the definition.
+
+   
+   
+#. Find the Laplace transform of the function
+   \begin{equation*}
+   f(t)=\left\{ 
+   \begin{array}{ll}
+   1 & \text{ for } t<1, \\
+   t-1 & \text{ for } 1\leq t<2, \\
+   1 & \text{ for }t\geq 2.
+   \end{array}\right .
+   \end{equation*}
+		
+#. Suppose $g(t)$ is the inverse Laplace transform of 
+   \begin{equation*}
+   F(s)=\frac{2se^{\pi s/2}}{(s^{2}+4)}.
+   \end{equation*}
+   Find $g\left(\dfrac{\pi}{4}\right)$.
