@@ -51,7 +51,10 @@ header-includes: |
    \color{red}
    **Solution:**
       
-   correct response was a.
+   correct response was ~~a.~~ c. 
+   
+   (The roots of the char poly are $\lambda = 1 \pm i$, which leads to solutions of the form
+   $t^j \sin(t)$ and $t^j \cos(t)$.)
    
    -----
    
