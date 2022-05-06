@@ -80,7 +80,9 @@ header-includes: |
    \color{red}
    **Solution:**
       
-   correct response was d.
+   both b and d give eigenvectors. You can check that 
+   $\begin{bmatrix} -2 & 5 \\ -2 & 4 \end{bmatrix} \cdot \begin{bmatrix} 3 \pm i \\ 2 \end{bmatrix}
+   = (1\pm i)\begin{bmatrix} 3 \pm i \\ 2 \end{bmatrix}$
    
    -----
    
