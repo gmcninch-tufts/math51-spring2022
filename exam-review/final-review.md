@@ -261,7 +261,7 @@ header-includes: |
    b. Show that the vectors $\begin{bmatrix} 1 \\ 0 \\
       1\end{bmatrix}$, $\begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}$,
       and $\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$ are linearly
-      dependent.
+      independent ~~dependent~~.
    
    
    c. Let $\mathbf{h}_1(t),\mathbf{h}_2(t),\mathbf{h}_3(t)$ be

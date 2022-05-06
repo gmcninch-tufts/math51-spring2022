@@ -364,7 +364,7 @@ header-includes: |
    \begin{equation*}
    X(t)=
    \frac{1}{5}e^{2t}\begin{bmatrix}2\cos t+\sin t\\5\cos t\end{bmatrix}
-   -\frac{3}{4}e^{2t}\begin{bmatrix}-\cos t+2\sin t\\5\sin t\end{bmatrix}
+   -\frac{3}{5}e^{2t}\begin{bmatrix}-\cos t+2\sin t\\5\sin t\end{bmatrix}
    =e^{2t}\begin{bmatrix}\cos t-\sin t\\\cos t-3\sin t\end{bmatrix}.
    \end{equation*}
    
@@ -593,7 +593,7 @@ header-includes: |
    \color{red}
    **Solution:**
 
-   correct answer is c.
+   ~~correct answer is c.~~ correct answer is a - i.e. $e^{4t}$.
 
    -----
       
@@ -725,7 +725,7 @@ header-includes: |
    b. Show that the vectors $\begin{bmatrix} 1 \\ 0 \\
       1\end{bmatrix}$, $\begin{bmatrix} -1 \\ 2 \\ 1 \end{bmatrix}$,
       and $\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$ are linearly
-      dependent.
+      independent ~~dependent~~.
    
 
    :::{.solution}
@@ -752,7 +752,7 @@ header-includes: |
    \begin{bmatrix} c_1 \\ c_2 \\ c_3 \end{bmatrix} = \mathbf{0}$.
    (Alternatively, you could have obtained this conclusion by noting
    that the *determinant* of the matrix $\begin{bmatrix} 1 & -1 & 1 \\
-   0 & 2 & 2 \\ 1 & 1 & 1 \end{bmatrix}$ is equal to $0$).
+   0 & 2 & 2 \\ 1 & 1 & 1 \end{bmatrix}$ is equal to $-4$).
    
    Thus the only coefficients satisfying the following equation $$c_1
    \begin{bmatrix} 1 \\ 0 \\ 1\end{bmatrix} + c_2 \begin{bmatrix} -1
