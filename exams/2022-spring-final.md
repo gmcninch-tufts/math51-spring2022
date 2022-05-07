@@ -92,7 +92,7 @@ that your solution continues later.
 
       \vfil
 
-   #. Let $A$ be an $n \times n$ matrix with an eigenvalue of $\lambda
+   #. Let $A$ be an $n \times n$ matrix with an eigenvalue $\lambda
       = 2$ with *multiplicity 3*. Suppose that the vector $\mathbf{v}
       \ne \mathbf{0}$ in $\mathbb{R}^n$ is a solution to the equation
       $\left(A-2\mathbf{I}_n\right)^3\mathbf{x} = \mathbf{0}$.  Give a
@@ -116,6 +116,7 @@ that your solution continues later.
 	  u_3 & v_3 & w_3 
 	  \end{bmatrix} = 0$$
 	  then $\mathbf{u},\mathbf{v},\mathbf{w}$ are *linearly dependent*.
+	  *Circle your answer*. 
 	  
 	  \vfil
 	  \hfill \tfbox{20mm}{6cm}
@@ -132,6 +133,7 @@ that your solution continues later.
    #. Indicate whether the following statement is true or false:
       If $h_1(t)$ and $h_2(t)$ are solutions to $P(D)x = e^t$, 
 	  then $h_1(t) + h_2(t)$ is a solution to $P(D)x = 2e^t$.
+	  *Circle your answer*. 	  
 
 	  \vfil
 	  \hfill \tfbox{20mm}{6cm}

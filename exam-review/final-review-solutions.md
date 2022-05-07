@@ -1045,17 +1045,18 @@ header-includes: |
    set
    $$f(t) = \mathscr{L}^{-1}\left[\dfrac{s}{s^2 + 4}\right] = 
    \cos(2t)$$
-   then the second shift formula yields
+   then the second shift formula yields    
 
-   \begin{align*}
-   g(t) &= \mathscr{L}^{-1}[F(s)] =
-   2\mathscr{L}^{-1}\left[e^{(\pi/2)s} \dfrac{s}{s^2+4}\right]  \\
-   &= 2 u_{\pi/2}(t)f(t-\pi/2)
-   \end{align*}
-   
-   Thus $u_{\pi/2}(\pi/4) = 0$ so that $g(\pi/4) = 2u_{\pi/2}(\pi/4)
-   \cdot f(\pi/4 - \pi/2) = 0$.
-   
+   \begin{align*} g(t) &= \mathscr{L}^{-1}[F(s)] =
+   2\mathscr{L}^{-1}\left[e^{(\pi/2)s} \dfrac{s}{s^2+4}\right] \\ &= 2
+   u_{-\pi/2}(t)f(t-\pi/2) \end{align*}
+
+   \footnote{There was an error in an early version of these solutions}   
+
+   Thus $u_{-\pi/2}(\pi/4) = 1$ so that $g(\pi/4) = 2f(\pi/4 - \pi/2) = 2\cos(2(-\pi/4))
+   =2\cos(-\pi/2) = 0$.
+
+
    -----
    
    \color{black}
