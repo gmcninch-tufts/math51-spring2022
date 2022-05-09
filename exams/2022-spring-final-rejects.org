@@ -1,0 +1,27 @@
+#
+
+   #. Let $A = \begin{bmatrix} 2 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 2
+      \end{bmatrix}$.  Find all generalized eigenvectors for $A$ with
+      eigenvalue $\lambda = 2$.
+
+      \vfil 
+	  
+	  \newpage
+      > Name: _________________
+
+      \vspace{5mm}
+
+      ------
+
+	  
+
+
+  #. (7 pts) Let $B = \begin{bmatrix} 0 & 1 & 1 & 1 & -1 \\ 0 & 0 & 2 & 2 &
+   -1 \\ 0 & 0 & 0 & 0 & 1 \end{bmatrix}$. Find all solutions
+   $\mathbf{x}$ to the matrix equation $B \mathbf{x} = \mathbf{0}$.
+
+	  
+   \vfil
+   \hfill \emptybox{30mm}{10cm}
+   \bigskip
+

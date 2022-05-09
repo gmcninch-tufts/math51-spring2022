@@ -1,0 +1,100 @@
+:PROPERTIES:
+:ID:       r8y42q417gj0
+:END:
+
+* round one
+
+- [X] #1(a) What is the meaning of "for all t" at the end?  Does it
+  mean for all t in (0, \infty) or for all real numbers t ?  This
+  should be made explicit.
+
+- [X] #1(b) This could be worth more than 2 points; maybe make it 4
+  points.
+
+- [X] #1(c) It would probably be a good idea to say what P(D) stands for,
+  for example, a polynomial in D with constant coefficients or
+  function coefficients.
+
+- [X] #2(a) This is not a short-answer problem since it involves a lot of
+  calculation and several concepts: partial fraction decomposition and
+  the inverse Laplace transform using a shift formula.  It can become
+  two problems: the inverse Laplace of e^{-s}/2 (5 points) and the
+  inverse Laplace of 1/s(s^2+4) (10 points).  This problem also needs
+  a whole page.
+
+- [X] #2(b) This problem involves three things: (1) writing a
+  piecewise function using a step function, (2) Laplace of an
+  exponential, (3) Laplace of a unit step function times an
+  exponential.  To make it easier to grade, I would break it into two
+  or three separate problems.  The total could be worth 9 points,
+  instead of 5 points.
+  
+- [X] #2(d) Again, this is not a short-answer question.  Am I looking
+  at this problem the wrong way?  Computing the Wronskian of the three
+  functions involves a lot of busywork even with the exponential shift
+  formula, which most students will not think of using.  It is also
+  not the right way to decide the linear independence of the three
+  functions.  I would suggest dropping the Wronskian part.  In some
+  old exams, just showing linear independence is worth 10 points.
+  
+- [X] #4.  This problem will be a nightmare to grade, because students
+  will make mistakes in so many places.  The Laplace transform of a
+  unit step function times an exponential is already in #2(b); there
+  is no need to test it again.  Partial fraction decomposition is
+  already in #2(a).  Maybe change the right-hand side to something
+  simple and change the problem to
+
+  > Transform the following initial-value problem to an equation of
+  > the form L[x] = F(s).  Find F(s).
+
+  I understand your desire to have students demonstrate their ability
+  to do multi-step problems.  The problem is that if they get the firs
+  step wrong, the rest becomes difficult to grade.  We can have some
+  multistep problems, but not too many.
+
+- [X] #6.  This problem can be 15 points.  There need to be more space
+  for (a) and (b).  I also feel that there is too much calculation in
+  (b).
+
+- [ ] #7.  This problem can be worth 15 points.
+
+- [ ] #8.  This problem can be worth 15 points.
+
+Since most of the short-answer questions in #2 are not short-answers,
+there are actually eleven questions.  I suggest dropping two of them.
+
+* round two
+
+- [X] In #2, if a student does not know how to write a piecewise
+  function in terms of a unit step function, they will not be able to
+  demonstrate their ability to compute a Laplace transform using a
+  shift formula.  I suggest making this into two problems.
+
+- [X] (a) (3 points) Let f(t) = ... .  Write f(t) in step-function
+  notation.
+
+- [X] (b) (5 points) Find the Laplace transform
+  L[ u_2(t) e^{3t}]. (
+  This problem involves a shift formula and linearity of the
+  Laplace transform.)
+
+- [X]  To make the total 100 points, make #8 a 12-point problem
+  instead of 15-point.
+
+- [X] • #7(a) needs more space.  #7(c) does not much space.  We can
+  move (b) down and write at the bottom of the page "(Continue on next
+  page)," then move (c) down to the middle of the next page.
+
+- [X] In #7(c) I would remove the period after "answer to b", since a
+  period signals a stop.
+
+- [X] • In #8, would it make sense to say "Use variation of parameters
+  to find ..."?  There is no other way to do the problem, and if a
+  student does not start out right, they can lose all the credit. As I
+  suggested earlier, make this 12 points instead of 15 points to
+  mitigate the disaster I expect on this problem.
+
+- [X] • In #9, we should say, "Do not use the Laplace transform."  If
+  the students use the Laplace transform, they will end up with a
+  time-consuming problems involving partial fraction decomposition and
+  the completion of a square (which they will not know to do).
