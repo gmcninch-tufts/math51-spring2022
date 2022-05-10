@@ -321,7 +321,8 @@ space* that your solution continues later.
    and an eigenvector for $\mu = -2$ is given
    by $\mathbf{w} = \begin{bmatrix} -2 \\ 1 \end{bmatrix}$.
    
-   #. Write the general to the homogeneous system $D\mathbf{x} = A\mathbf{x}$.
+   #. Write the general solution to the homogeneous system
+      $D\mathbf{x} = A\mathbf{x}$.
    
       \vspace{3cm}
 	  
